@@ -11,3 +11,7 @@ Confira o material original em [Xamarin Forms 2018 - Apps para Android, iOS e UW
 Aplicativo para consultar um endereço através do CEP informado no serviço [ViaCEP](http://viacep.com.br/)
 
 [Ver código-fonte](ConsultaCep)
+
+## Licença
+
+Este projeto está sob os termos da licença [MIT](LICENSE)

@@ -133,4 +133,7 @@
       <Name>ConsultaCep</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\correios.png" />
+  </ItemGroup>
 </Project>

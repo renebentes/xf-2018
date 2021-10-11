@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ConsultaCep.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource YellowColor}">
+
+    <StackLayout
+        Padding="30"
+        Spacing="30">
+        <Image Source="correios.png" />
+
+        <Entry
+            x:Name="Cep"
+            BackgroundColor="White"
+            Placeholder="digite o cep"
+            PlaceholderColor="{StaticResource YellowColor}"
+            TextColor="{StaticResource YellowColor}" />
+
+        <Button
+            x:Name="Buscar"
+            BackgroundColor="{StaticResource BlueColor}"
+            Text="BUSCAR CEP"
+            TextColor="White" />
+
+        <Label x:Name="Resultado" />
+    </StackLayout>
+
+</ContentPage>

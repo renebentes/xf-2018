@@ -1,6 +1,5 @@
-﻿using System;
+﻿using ConsultaCep.Pages;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ConsultaCep
 {

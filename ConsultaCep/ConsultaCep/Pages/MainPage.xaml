@@ -13,7 +13,7 @@
         <Entry
             x:Name="Cep"
             BackgroundColor="White"
-            Placeholder="digite o cep"
+            Placeholder="Digite o cep"
             PlaceholderColor="{StaticResource YellowColor}"
             TextColor="{StaticResource YellowColor}" />
 

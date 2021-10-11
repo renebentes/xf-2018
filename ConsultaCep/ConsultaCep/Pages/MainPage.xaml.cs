@@ -1,4 +1,5 @@
-﻿using ConsultaCep.Services;
+﻿using ConsultaCep.Model;
+using ConsultaCep.Services;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
 
@@ -23,8 +24,14 @@ namespace ConsultaCep.Pages
 
             if (Validate(cep))
             {
-                Model.Endereco endereco = await _service.ObterEndereco(cep);
-                Resultado.Text = $"Endereço: {endereco.Localidade} - {endereco.Uf}, {endereco.Logradouro} - {endereco.Bairro}";
+                if (await _service.ObterEndereco(cep) is Endereco endereco)
+                {
+                    Resultado.Text = $"Endereço: {endereco.Localidade} - {endereco.Uf}, {endereco.Logradouro} - {endereco.Bairro}";
+                }
+                else
+                {
+                    await DisplayAlert("ERRO", $"O CEP {cep} não foi encontrado", "Ok").ConfigureAwait(false);
+                }
             }
             else
             {

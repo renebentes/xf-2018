@@ -16,7 +16,6 @@ namespace ConsultaCep.Services
 
         public async Task<Endereco> ObterEndereco(string cep)
         {
-            var endereco = new Endereco();
             string[] segments = new string[] { Constants.ViaCepBaseUrl, cep, "json" };
             string url = string.Join("/", segments);
             var uri = new Uri(url);
@@ -34,7 +33,8 @@ namespace ConsultaCep.Services
                 if (reponse.IsSuccessStatusCode)
                 {
                     string content = await reponse.Content.ReadAsStringAsync();
-                    endereco = JsonSerializer.Deserialize<Endereco>(content, serializerOptions);
+                    Endereco endereco = JsonSerializer.Deserialize<Endereco>(content, serializerOptions);
+                    return endereco.Cep is null ? null : endereco;
                 }
             }
             catch (Exception ex)
@@ -42,7 +42,7 @@ namespace ConsultaCep.Services
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
             }
 
-            return endereco;
+            return null;
         }
     }
 }

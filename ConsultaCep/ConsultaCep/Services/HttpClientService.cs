@@ -11,7 +11,6 @@ namespace ConsultaCep.Services
     public class HttpClientService : ICepService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _baseUrl = Constants.ViaCepBaseUrl;
 
         public HttpClientService() => _httpClient = new HttpClient();
 
@@ -25,13 +24,18 @@ namespace ConsultaCep.Services
             try
             {
                 HttpResponseMessage reponse = await _httpClient.GetAsync(uri);
+                var serializerOptions = new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                    WriteIndented = true
+                };
+
 
                 if (reponse.IsSuccessStatusCode)
                 {
                     string content = await reponse.Content.ReadAsStringAsync();
-                    endereco = JsonSerializer.Deserialize<Endereco>(content);
+                    endereco = JsonSerializer.Deserialize<Endereco>(content, serializerOptions);
                 }
-
             }
             catch (Exception ex)
             {

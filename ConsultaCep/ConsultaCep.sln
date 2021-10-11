@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultaCep.Android", "Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultaCep.iOS", "ConsultaCep.iOS\ConsultaCep.iOS.csproj", "{92BA8195-9758-4579-9BD2-DD54E0E30137}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultaCep", "ConsultaCep\ConsultaCep.csproj", "{2FF02D4A-D203-4BF8-B246-F244D0E8CFC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsultaCep", "ConsultaCep\ConsultaCep.csproj", "{2FF02D4A-D203-4BF8-B246-F244D0E8CFC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D0E6A23B-CB8D-4723-9EA9-9C27442D5996}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

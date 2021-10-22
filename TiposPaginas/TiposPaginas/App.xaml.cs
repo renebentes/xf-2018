@@ -9,7 +9,7 @@ namespace TiposPaginas
         {
             InitializeComponent();
 
-            MainPage = new TiposPagina3Page();
+            MainPage = new IntroducaoPage();
         }
 
         protected override void OnStart()

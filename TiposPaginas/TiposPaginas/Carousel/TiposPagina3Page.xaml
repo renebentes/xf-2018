@@ -11,6 +11,8 @@
             HorizontalOptions="CenterAndExpand"
             Text="Vamos Começar"
             TextColor="#3498DB" />
-        <ImageButton Source="https://raw.githubusercontent.com/Spacedu/XamarinForms2018/master/DesignApp/App02/Icones%20e%20Imagens/play.png" />
+        <ImageButton
+            Clicked="MudarPagina"
+            Source="https://raw.githubusercontent.com/Spacedu/XamarinForms2018/master/DesignApp/App02/Icones%20e%20Imagens/play.png" />
     </StackLayout>
 </ContentPage>

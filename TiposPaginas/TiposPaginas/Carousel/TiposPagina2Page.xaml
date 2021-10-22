@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiposPaginas.Carousel.TiposPagina2Page"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#dbedf9">
+    <StackLayout
+        Spacing="50"
+        VerticalOptions="CenterAndExpand">
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            Text="Tipos de Página"
+            TextColor="#3498DB" />
+        <Image Source="https://raw.githubusercontent.com/Spacedu/XamarinForms2018/master/DesignApp/App02/Icones%20e%20Imagens/Page.png" />
+    </StackLayout>
+</ContentPage>

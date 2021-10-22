@@ -14,4 +14,19 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Carousel\TiposPagina3Page.xaml.cs">
+      <DependentUpon>TiposPagina3Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Carousel\TiposPagina2Page.xaml.cs">
+      <DependentUpon>TiposPagina2Page.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Carousel\TiposPagina1Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

@@ -1,6 +1,5 @@
-﻿using System;
+using TiposPaginas.Carousel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TiposPaginas
 {
@@ -10,7 +9,7 @@ namespace TiposPaginas
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new TiposPagina3Page();
         }
 
         protected override void OnStart()

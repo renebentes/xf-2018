@@ -4,6 +4,17 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Título da Navigation">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            IconImageSource="https://img.icons8.com/material-outlined/24/000000/search--v1.png"
+            Text="Pesquisar" />
+        <ToolbarItem
+            IconImageSource="https://img.icons8.com/material-outlined/24/000000/details-pane.png"
+            Text="Detalhes" />
+        <ToolbarItem
+            IconImageSource="https://img.icons8.com/material-outlined/30/000000/sort.png"
+            Text="Ordenar" />
+    </ContentPage.ToolbarItems>
     <StackLayout>
         <Label
             HorizontalOptions="CenterAndExpand"

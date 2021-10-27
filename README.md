@@ -22,6 +22,12 @@ Aplicativo para consultar um endereço através do CEP informado no serviço [Vi
 
 Aplicativo para exemplificar o uso dos tipos de páginas disponíveis no Xamarin Forms.
 
+#### Ícones
+
+- [Search icon by Icons8](https://icons8.com/icon/82712/search)
+- [More Details icon by Icons8](https://icons8.com/icon/105609/more-details)
+- [Sort icon by Icons8](https://icons8.com/icon/100654/sort)
+
 [Ver código-fonte](TiposPaginas)
 
 ## Licença

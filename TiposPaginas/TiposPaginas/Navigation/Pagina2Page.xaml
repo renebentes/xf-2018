@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="TiposPaginas.Navigation.Pagina2Page"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Título da Página 2">
     <StackLayout>
         <Label
             HorizontalOptions="CenterAndExpand"

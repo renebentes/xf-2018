@@ -1,4 +1,5 @@
 
+using System;
 using TiposPaginas.Navigation;
 using Xamarin.Forms;
 
@@ -8,6 +9,6 @@ namespace TiposPaginas.Carousel
     {
         public TiposPagina3Page() => InitializeComponent();
 
-        private void MudarPagina(object sender, System.EventArgs e) => App.Current.MainPage = new Pagina1Page();
+        private void MudarPagina(object sender, EventArgs e) => App.Current.MainPage = new NavigationPage(new Pagina1Page());
     }
 }

@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiposPaginas.Android", "Tip
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiposPaginas.iOS", "TiposPaginas.iOS\TiposPaginas.iOS.csproj", "{74C33E8F-3735-4DC2-A8D4-E66FB3517F6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiposPaginas", "TiposPaginas\TiposPaginas.csproj", "{5C00B786-A2DC-44B8-9A9D-3154F4649F71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiposPaginas", "TiposPaginas\TiposPaginas.csproj", "{5C00B786-A2DC-44B8-9A9D-3154F4649F71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{318AEFF5-324C-4705-AD52-375036E27E17}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

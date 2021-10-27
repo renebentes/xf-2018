@@ -2,11 +2,16 @@
 <ContentPage
     x:Class="TiposPaginas.Navigation.Pagina1Page"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Título da Navigation">
     <StackLayout>
         <Label
             HorizontalOptions="CenterAndExpand"
             Text="Eu sou uma ContentPage"
             VerticalOptions="CenterAndExpand" />
+
+        <Button
+            Clicked="MudarPagina"
+            Text="Ir para página 2" />
     </StackLayout>
 </ContentPage>

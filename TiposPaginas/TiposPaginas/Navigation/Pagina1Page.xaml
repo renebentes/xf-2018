@@ -24,5 +24,9 @@
         <Button
             Clicked="MudarPagina"
             Text="Ir para página 2" />
+
+        <Button
+            Clicked="ChamarModal"
+            Text="Chamar Modal" />
     </StackLayout>
 </ContentPage>

@@ -9,5 +9,7 @@ namespace TiposPaginas.Navigation
         public Pagina1Page() => InitializeComponent();
 
         private void MudarPagina(object sender, EventArgs e) => Navigation.PushAsync(new Pagina2Page());
+
+        private void ChamarModal(object sender, EventArgs e) => Navigation.PushModalAsync(new ModalPage());
     }
 }

@@ -5,8 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:navigation="clr-namespace:TiposPaginas.Navigation">
 
-    <navigation:Pagina1Page />
+    <NavigationPage Title="Item 1">
+        <x:Arguments>
+            <navigation:Pagina1Page />
+        </x:Arguments>
+    </NavigationPage>
     <navigation:Pagina2Page />
-    <navigation:Pagina1Page />
 
 </TabbedPage>

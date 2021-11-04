@@ -28,5 +28,8 @@
         <Button
             Clicked="ChamarModal"
             Text="Chamar Modal" />
+        <Button
+            Clicked="ChamarMasterDetail"
+            Text="Chamar MasterDetail" />
     </StackLayout>
 </ContentPage>

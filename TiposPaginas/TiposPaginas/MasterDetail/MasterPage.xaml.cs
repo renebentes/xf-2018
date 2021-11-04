@@ -10,7 +10,7 @@ namespace TiposPaginas.MasterDetail
     {
         public MasterPage() => InitializeComponent();
 
-        private void MudarPagina1(object sender, EventArgs e) => Detail = new Pagina1Page();
+        private void MudarPagina1(object sender, EventArgs e) => Detail = new NavigationPage(new Pagina1Page());
 
         private void MudarPagina2(object sender, EventArgs e) => Detail = new Pagina2Page();
 

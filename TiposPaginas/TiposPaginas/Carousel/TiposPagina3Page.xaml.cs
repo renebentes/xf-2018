@@ -1,6 +1,6 @@
 
 using System;
-using TiposPaginas.Navigation;
+using TiposPaginas.Tabbed;
 using Xamarin.Forms;
 
 namespace TiposPaginas.Carousel
@@ -9,6 +9,6 @@ namespace TiposPaginas.Carousel
     {
         public TiposPagina3Page() => InitializeComponent();
 
-        private void MudarPagina(object sender, EventArgs e) => App.Current.MainPage = new NavigationPage(new Pagina1Page());
+        private void MudarPagina(object sender, EventArgs e) => App.Current.MainPage = new AbasPage();
     }
 }

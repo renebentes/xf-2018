@@ -10,10 +10,34 @@ namespace TiposPaginas.MasterDetail
     {
         public MasterPage() => InitializeComponent();
 
-        private void MudarPagina1(object sender, EventArgs e) => Detail = new NavigationPage(new Pagina1Page());
+        private void MudarPagina1(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new Pagina1Page());
 
-        private void MudarPagina2(object sender, EventArgs e) => Detail = new Pagina2Page();
+            if (Device.Idiom == TargetIdiom.Phone)
+            {
+                IsPresented = false;
+            }
+        }
 
-        private void MudarConteudo(object sender, EventArgs e) => Detail = new ConteudoPage();
+        private void MudarPagina2(object sender, EventArgs e)
+        {
+            Detail = new Pagina2Page();
+
+            if (Device.Idiom == TargetIdiom.Phone)
+            {
+                IsPresented = false;
+            }
+        }
+
+        private void MudarConteudo(object sender, EventArgs e)
+        {
+            Detail = new ConteudoPage();
+
+            if (Device.Idiom == TargetIdiom.Phone)
+            {
+                IsPresented = false;
+            }
+        }
     }
 }

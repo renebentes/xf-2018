@@ -30,6 +30,12 @@ Aplicativo para exemplificar o uso dos tipos de páginas disponíveis no Xamarin
 
 [Ver código-fonte](TiposPaginas)
 
+### Tipos de Layout
+
+Aplicativo para exemplificar o uso dos tipos de layouts disponíveis no Xamarin Forms.
+
+[Ver código-fonte](Layouts)
+
 ## Licença
 
 Este projeto está sob os termos da licença [MIT](LICENSE)

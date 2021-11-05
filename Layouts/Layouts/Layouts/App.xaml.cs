@@ -1,6 +1,5 @@
-﻿using System;
+using Layouts.Pages;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Layouts
 {
@@ -10,7 +9,7 @@ namespace Layouts
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

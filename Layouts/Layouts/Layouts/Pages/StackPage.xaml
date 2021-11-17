@@ -1,12 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Layouts.Pages.StackPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Layouts.Pages.StackPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout>
+        <StackLayout
+            Margin="15,5,10,20"
+            Padding="30"
+            BackgroundColor="Red"
+            HorizontalOptions="FillAndExpand"
+            Spacing="0"
+            VerticalOptions="FillAndExpand">
+            <BoxView
+                BackgroundColor="Green"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+            <BoxView
+                BackgroundColor="Blue"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
         </StackLayout>
-    </ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal"
+            Spacing="0"
+            VerticalOptions="FillAndExpand">
+            <BoxView
+                BackgroundColor="Green"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+            <BoxView
+                BackgroundColor="Blue"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

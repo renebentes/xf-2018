@@ -1,12 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Layouts.Pages.RelativePage">
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Layouts.Pages.RelativePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <RelativeLayout>
+            <BoxView
+                BackgroundColor="Blue"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Property=Width,
+                                                                      Factor=0.5,
+                                                                      Constant=-50}" />
+            <BoxView
+                x:Name="Vermelho"
+                Margin="100"
+                BackgroundColor="Red"
+                HeightRequest="100"
+                WidthRequest="100" />
+
+            <BoxView
+                BackgroundColor="Green"
+                HeightRequest="100"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                  Property=X,
+                                                                  Factor=1,
+                                                                  ElementName=Vermelho,
+                                                                  Constant=20}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                  Property=Y,
+                                                                  ElementName=Vermelho,
+                                                                  Factor=1,
+                                                                  Constant=20}"
+                WidthRequest="100" />
+
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

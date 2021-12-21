@@ -36,6 +36,12 @@ Aplicativo para exemplificar o uso dos tipos de layouts disponíveis no Xamarin 
 
 [Ver código-fonte](Layouts)
 
+### XamPages
+
+Aplicativo de exemplo de implementação de Layouts com Xamarin Forms.
+
+[Ver código-fonte](XamPages)
+
 ## Licença
 
 Este projeto está sob os termos da licença [MIT](LICENSE)

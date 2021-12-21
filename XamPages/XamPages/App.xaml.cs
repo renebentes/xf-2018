@@ -1,6 +1,5 @@
-﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using XamPages.Pages;
 
 namespace XamPages
 {
@@ -13,7 +12,7 @@ namespace XamPages
             MainPage = new MainPage();
         }
 
-        protected override void OnStart()
+        protected override void OnResume()
         {
         }
 
@@ -21,7 +20,7 @@ namespace XamPages
         {
         }
 
-        protected override void OnResume()
+        protected override void OnStart()
         {
         }
     }

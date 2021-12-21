@@ -1,12 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Layouts.Pages.AbsolutePage">
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Layouts.Pages.AbsolutePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout>
+            <BoxView
+                AbsoluteLayout.LayoutBounds="0,0,200,100"
+                BackgroundColor="Blue" />
+            <BoxView
+                AbsoluteLayout.LayoutBounds="50,50,100,100"
+                BackgroundColor="Green" />
+            <BoxView
+                AbsoluteLayout.LayoutBounds="150,150,50,50"
+                BackgroundColor="Red" />
+
+            <BoxView
+                AbsoluteLayout.LayoutBounds="0,400,0.8,100"
+                AbsoluteLayout.LayoutFlags="WidthProportional"
+                BackgroundColor="Yellow" />
+            <BoxView
+                AbsoluteLayout.LayoutBounds="300,300,0.5,0.5"
+                AbsoluteLayout.LayoutFlags="SizeProportional"
+                BackgroundColor="GreenYellow" />
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

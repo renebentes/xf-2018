@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage
+    x:Class="XamPages.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:XamPages.Pages">
+    <FlyoutPage.Flyout>
+        <ContentPage
+            Title="Menu"
+            BackgroundColor="#0D1F2D">
+            <StackLayout>
+                <StackLayout
+                    Padding="30"
+                    BackgroundColor="#FFC926">
+
+                    <Image
+                        HorizontalOptions="Center"
+                        Source="{OnPlatform UWP=Assets/logo.png,
+                                            Default=logo.png}"
+                        VerticalOptions="Center" />
+                </StackLayout>
+                <Button
+                    BackgroundColor="Transparent"
+                    Clicked="GoToProfilePage"
+                    Text="Miguel de Icaza" />
+                <Button
+                    BackgroundColor="Transparent"
+                    Text="Joseph Hill" />
+                <Button
+                    BackgroundColor="Transparent"
+                    Text="Nat Friedman" />
+                <Button
+                    BackgroundColor="Transparent"
+                    Text="Sobre a Xamarin" />
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:ProfilePage />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

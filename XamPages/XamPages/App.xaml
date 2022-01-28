@@ -1,8 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamPages.App">
+<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="XamPages.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Color x:Key="Amarelo">#FFC926</Color>
+            <Color x:Key="AzulEscuro">#0D1F2D</Color>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

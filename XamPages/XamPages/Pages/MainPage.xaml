@@ -7,11 +7,11 @@
     <FlyoutPage.Flyout>
         <ContentPage
             Title="Menu"
-            BackgroundColor="#0D1F2D">
+            BackgroundColor="{StaticResource AzulEscuro}">
             <StackLayout>
                 <StackLayout
                     Padding="30"
-                    BackgroundColor="#FFC926">
+                    BackgroundColor="{x:StaticResource Amarelo}">
 
                     <Image
                         HorizontalOptions="Center"

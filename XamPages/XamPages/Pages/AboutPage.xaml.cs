@@ -1,0 +1,9 @@
+using Xamarin.Forms;
+
+namespace XamPages.Pages
+{
+    public partial class AboutPage : ContentPage
+    {
+        public AboutPage() => InitializeComponent();
+    }
+}

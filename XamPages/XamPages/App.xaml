@@ -7,6 +7,8 @@
         <ResourceDictionary>
             <Color x:Key="Amarelo">#FFC926</Color>
             <Color x:Key="AzulEscuro">#0D1F2D</Color>
+            <Color x:Key="Azul">#25567E</Color>
+            <Color x:Key="AzulClaro">#4E93CB</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

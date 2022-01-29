@@ -6,6 +6,8 @@ namespace XamPages.Pages
     {
         public MainPage() => InitializeComponent();
 
+        private void GoToAboutPage(object sender, System.EventArgs e) => Detail = new NavigationPage(new AboutPage());
+
         private void GoToProfilePage(object sender, System.EventArgs e) => Detail = new NavigationPage(new ProfilePage());
     }
 }

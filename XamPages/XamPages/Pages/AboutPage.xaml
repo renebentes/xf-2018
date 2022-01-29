@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamPages.Pages.AboutPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
+    <ContentPage.Resources>
+        <Style TargetType="BoxView">
+            <Setter Property="HeightRequest" Value="30" />
+            <Setter Property="WidthRequest" Value="30" />
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout Spacing="0">
+        <Frame
+            BackgroundColor="{StaticResource Amarelo}"
+            CornerRadius="0"
+            HasShadow="False">
+            <Image
+                HorizontalOptions="Center"
+                Source="{OnPlatform UWP=Assets/logo.png,
+                                    Default=logo.png}"
+                VerticalOptions="Center" />
+        </Frame>
+        <Frame
+            BackgroundColor="{StaticResource AzulEscuro}"
+            CornerRadius="0"
+            HasShadow="False">
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Xamarin"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Frame>
+        <FlexLayout Margin="10">
+            <RelativeLayout HorizontalOptions="Center">
+                <BoxView
+                    x:Name="boxAzulEscuro"
+                    BackgroundColor="{StaticResource AzulEscuro}" />
+                <BoxView
+                    x:Name="boxAzul"
+                    BackgroundColor="{StaticResource Azul}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                      ElementName=boxAzulEscuro,
+                                                                      Property=X,
+                                                                      Factor=1,
+                                                                      Constant=15}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                      ElementName=boxAzulEscuro,
+                                                                      Property=Y,
+                                                                      Factor=1,
+                                                                      Constant=15}" />
+
+                <BoxView
+                    BackgroundColor="{StaticResource AzulClaro}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                      ElementName=boxAzul,
+                                                                      Property=X,
+                                                                      Factor=1,
+                                                                      Constant=15}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                      ElementName=boxAzul,
+                                                                      Property=Y,
+                                                                      Factor=1,
+                                                                      Constant=15}" />
+            </RelativeLayout>
+            <Label
+                Margin="10,0,0,0"
+                FlexLayout.AlignSelf="Center"
+                Text="Empresa" />
+        </FlexLayout>
+
+        <Label
+            Margin="10"
+            Text="Comprada pela Microsoft em 2016.&#10;&#10;Desenvolve tecnologia multiplataforma que funciona principalmente em Android, iOS e UWP." />
+    </StackLayout>
+</ContentPage>

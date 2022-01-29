@@ -6,6 +6,6 @@ namespace XamPages.Pages
     {
         public MainPage() => InitializeComponent();
 
-        private void GoToProfilePage(object sender, System.EventArgs e) => Navigation.PushAsync(new ProfilePage());
+        private void GoToProfilePage(object sender, System.EventArgs e) => Detail = new NavigationPage(new ProfilePage());
     }
 }

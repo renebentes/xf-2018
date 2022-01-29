@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamPages.Pages.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
+    <StackLayout Spacing="0">
+        <Grid
+            RowDefinitions="300"
+            RowSpacing="0">
+            <Image
+                Aspect="AspectFill"
+                Source="{OnPlatform UWP=Assets/fundo.png,
+                                    Default=fundo.png}"
+                VerticalOptions="Start" />
+            <Image
+                HorizontalOptions="Center"
+                Source="{OnPlatform UWP=Assets/perfil.png,
+                                    Default=perfil.png}"
+                VerticalOptions="Center" />
+
+        </Grid>
+        <Label
+            Margin="0,20"
+            HorizontalOptions="Center"
+            Text="Miguel de Icaza"
+            TextColor="Black"
+            VerticalOptions="EndAndExpand" />
+
+
+        <FlexLayout
+            AlignContent="Center"
+            AlignItems="Center"
+            BackgroundColor="{StaticResource AzulEscuro}"
+            Direction="Row"
+            JustifyContent="SpaceAround">
+            <StackLayout Spacing="0">
+                <Label
+                    FontSize="Large"
+                    Text="18" />
+
+                <Label
+                    FontSize="{OnPlatform Default=Caption,
+                                          UWP=Subtitle}"
+                    HorizontalOptions="Center"
+                    Text="anos" />
+            </StackLayout>
+            <StackLayout Spacing="0">
+                <Label
+                    FontSize="Large"
+                    Text="10/01/2000" />
+                <Label
+                    FontSize="{OnPlatform Default=Caption,
+                                          UWP=Subtitle}"
+                    HorizontalOptions="Center"
+                    Text="nasceu" />
+            </StackLayout>
+        </FlexLayout>
+        <Label
+            Padding="30"
+            BackgroundColor="White"
+            Text="Miguel de Icaza nasceu na Cidade do México e estudou na Universidade Nacional Autônoma do México UNAM. Ele começou a escrever software em 1992.&#10;&#10;Icaza começou o projeto GNOME em Agosto de 1997. Ele e Federico Mena, criaram um completo sistema de desktop livre e um componente para sistemas GNU/Linux. Antes disso, Icaza já havia trabalhado em um gerente de arquivos, o Midnight Commander, assim como no núcleo Linux."
+            TextColor="Black" />
+    </StackLayout>
+</ContentPage>

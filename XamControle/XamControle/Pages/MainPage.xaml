@@ -13,6 +13,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="ProgressBar" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="BoxView" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

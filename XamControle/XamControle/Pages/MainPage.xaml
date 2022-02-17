@@ -10,6 +10,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="Activity Indicator" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="ProgressBar" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

@@ -7,14 +7,16 @@
     <FlyoutPage.Flyout>
         <ContentPage Title="Menu">
             <StackLayout>
-                <Button />
+                <Button
+                    Clicked="GoToPage"
+                    Text="Activity Indicator" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>
     <FlyoutPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <!--<pages:ProfilePage />-->
+                <pages:ActivityIndicatorPage />
             </x:Arguments>
         </NavigationPage>
     </FlyoutPage.Detail>

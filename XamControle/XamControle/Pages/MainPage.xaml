@@ -16,6 +16,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="BoxView" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="Label" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

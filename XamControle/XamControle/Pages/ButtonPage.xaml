@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamControle.Pages.ButtonPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout>
+        <Button
+            BackgroundColor="Blue"
+            BorderColor="Red"
+            BorderWidth="5"
+            CornerRadius="20"
+            FontSize="24"
+            Text="1 botão"
+            TextColor="White" />
+        <Button Text="2 botão" />
+        <Button
+            BackgroundColor="White"
+            ImageSource="https://img.icons8.com/external-glyph-vinzence-studio/100/000000/external-button-media-button-glyph-vinzence-studio-7.png" />
+    </StackLayout>
+</ContentPage>

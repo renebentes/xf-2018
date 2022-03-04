@@ -22,6 +22,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="Button" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="EntryEditor" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

@@ -25,6 +25,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="EntryEditor" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="DatePicker" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

@@ -28,6 +28,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="DatePicker" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="TimerPicker" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

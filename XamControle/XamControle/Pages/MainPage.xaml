@@ -37,6 +37,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="SearchBar" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="SliderStepper" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

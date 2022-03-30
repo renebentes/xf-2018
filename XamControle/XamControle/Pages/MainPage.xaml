@@ -40,6 +40,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="SliderStepper" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="Switch" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

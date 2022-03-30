@@ -3,23 +3,21 @@
     x:Class="XamControle.Pages.SliderStepperPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <ContentPage.Content>
-        <StackLayout>
-            <Slider
-                Maximum="100"
-                Minimum="0"
-                ValueChanged="OnValueChanged"
-                Value="20" />
+    <StackLayout>
+        <Slider
+            Maximum="100"
+            Minimum="0"
+            ValueChanged="OnValueChanged"
+            Value="20" />
 
-            <Label x:Name="SliderResultado" />
+        <Label x:Name="SliderResultado" />
 
-            <Stepper
-                Increment="2"
-                Maximum="10"
-                Minimum="0"
-                ValueChanged="OnIncreaseValue" />
+        <Stepper
+            Increment="2"
+            Maximum="10"
+            Minimum="0"
+            ValueChanged="OnIncreaseValue" />
 
-            <Label x:Name="StepperResultado" />
-        </StackLayout>
-    </ContentPage.Content>
+        <Label x:Name="StepperResultado" />
+    </StackLayout>
 </ContentPage>

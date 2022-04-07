@@ -43,6 +43,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="Switch" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="Image" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

@@ -22,7 +22,10 @@
         </StackLayout>
 
         <FlexLayout JustifyContent="SpaceAround">
-            <Image VerticalOptions="Center" />
+            <Image
+                Source="{OnPlatform Default=CheckOff.png,
+                                    UWP=Assets/CheckOff.png}"
+                VerticalOptions="Center" />
             <Label FlexLayout.Grow="1">
                 <Label.FormattedText>
                     <FormattedString>
@@ -31,11 +34,17 @@
                 </Label.FormattedText>
             </Label>
             <Image VerticalOptions="Center" />
-            <Image VerticalOptions="Center" />
+            <Image
+                Source="{OnPlatform Default=Delete.png,
+                                    UWP=Assets/Delete.png}"
+                VerticalOptions="Center" />
         </FlexLayout>
 
         <FlexLayout JustifyContent="SpaceAround">
-            <Image VerticalOptions="Center" />
+            <Image
+                Source="{OnPlatform Default=CheckOn.png,
+                                    UWP=Assets/CheckOn.png}"
+                VerticalOptions="Center" />
             <Label
                 FlexLayout.Grow="1"
                 TextColor="LightGray">
@@ -51,9 +60,10 @@
             <Image VerticalOptions="Center" />
             <Image VerticalOptions="Center" />
         </FlexLayout>
-        <Button
+        <ImageButton
             Clicked="OpenAddPage"
             HorizontalOptions="Center"
-            Text="Adicionar" />
+            Source="{OnPlatform Default=AddBotao.png,
+                                UWP=Assets/AddBotao.png}" />
     </StackLayout>
 </ContentPage>

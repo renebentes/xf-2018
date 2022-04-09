@@ -48,7 +48,7 @@
             HorizontalOptions="FillAndExpand"
             Color="Gray" />
 
-        <ListView>
+        <ListView ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}, AncestorLevel=1}, Path=Pessoas}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

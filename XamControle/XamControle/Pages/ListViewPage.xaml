@@ -42,5 +42,28 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <BoxView
+            HeightRequest="5"
+            HorizontalOptions="FillAndExpand"
+            Color="Gray" />
+
+        <ListView>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Nome}" />
+                                    <Span Text=" - " />
+                                    <Span Text="{Binding Idade}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

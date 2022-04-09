@@ -2,8 +2,44 @@
 <ContentPage
     x:Class="XamControle.Pages.ListViewPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:XamControle.Models">
     <StackLayout>
-        <ListView />
+        <ListView>
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type models:Pessoa}">
+                    <models:Pessoa
+                        Idade="18"
+                        Nome="João Rodrigues" />
+                    <models:Pessoa
+                        Idade="21"
+                        Nome="Maria Rodrigues" />
+                    <models:Pessoa
+                        Idade="24"
+                        Nome="Felipe Rodrigues" />
+                    <models:Pessoa
+                        Idade="30"
+                        Nome="José Rodrigues" />
+                    <models:Pessoa
+                        Idade="31"
+                        Nome="Mariana Rodrigues" />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Nome}" />
+                                    <Span Text=" - " />
+                                    <Span Text="{Binding Idade}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

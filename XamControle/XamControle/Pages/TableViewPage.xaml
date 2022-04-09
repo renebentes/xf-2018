@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamControle.Pages.TableViewPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout>
+        <TableView Intent="Settings">
+            <TableSection Title="Backup">
+                <SwitchCell
+                    On="False"
+                    Text="Imagens" />
+                <SwitchCell
+                    On="False"
+                    Text="Textos" />
+                <SwitchCell
+                    On="False"
+                    Text="Chat" />
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Frequência de backup" />
+                        <Picker Title="Frequência de backup">
+                            <Picker.Items>
+                                <x:String>Nunca</x:String>
+                                <x:String>Diário</x:String>
+                                <x:String>Semanal</x:String>
+                                <x:String>Mensal</x:String>
+                                <x:String>Manual</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+            <TableSection Title="Segurança">
+                <SwitchCell
+                    On="True"
+                    Text="Criptografar senhas" />
+            </TableSection>
+        </TableView>
+    </StackLayout>
+</ContentPage>

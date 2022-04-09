@@ -12,7 +12,8 @@ public partial class MainPage : FlyoutPage
         if (sender is Button button)
         {
             var type = $"XamControle.Pages.{button.Text.Replace(" ", "")}Page";
-            Detail = (ContentPage)Activator.CreateInstance(Type.GetType(type));
+            Detail = new NavigationPage((ContentPage)Activator.CreateInstance(Type.GetType(type)));
+            IsPresented = false;
         }
     }
 }

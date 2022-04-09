@@ -3,7 +3,7 @@
     x:Class="XamControle.Pages.ImagePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <StackLayout>
+    <StackLayout x:Name="container">
         <Image
             Aspect="AspectFit"
             IsOpaque="False"

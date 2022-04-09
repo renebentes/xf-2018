@@ -52,6 +52,7 @@
             <Image VerticalOptions="Center" />
         </FlexLayout>
         <Button
+            Clicked="OpenAddPage"
             HorizontalOptions="Center"
             Text="Adicionar" />
     </StackLayout>

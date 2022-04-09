@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tarefas.Pages.AddPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout Margin="10,0">
+        <Label
+            FontAttributes="Bold"
+            Text="Nome" />
+        <Entry />
+        <Label
+            FontAttributes="Bold"
+            Text="Prioridade" />
+        <FlexLayout AlignItems="Center">
+            <BoxView
+                Margin="0,0,5,0"
+                BackgroundColor="#ff1a2b"
+                CornerRadius="50"
+                HeightRequest="10"
+                WidthRequest="10" />
+            <Label
+                FlexLayout.Grow="1"
+                Text="Urgente e importante" />
+        </FlexLayout>
+        <FlexLayout AlignItems="Center">
+            <BoxView
+                Margin="0,0,5,0"
+                BackgroundColor="#ff8220"
+                CornerRadius="50"
+                HeightRequest="10"
+                WidthRequest="10" />
+            <Label
+                FlexLayout.Grow="1"
+                Text="Urgente e não importante" />
+        </FlexLayout>
+        <FlexLayout AlignItems="Center">
+            <BoxView
+                Margin="0,0,5,0"
+                BackgroundColor="#ffd200"
+                CornerRadius="50"
+                HeightRequest="10"
+                WidthRequest="10" />
+            <Label
+                FlexLayout.Grow="1"
+                Text="Não urgente e importante" />
+        </FlexLayout>
+        <FlexLayout AlignItems="Center">
+            <BoxView
+                Margin="0,0,5,0"
+                BackgroundColor="#3daa00"
+                CornerRadius="50"
+                HeightRequest="10"
+                WidthRequest="10" />
+            <Label
+                FlexLayout.Grow="1"
+                Text="Não urgente e não importante" />
+        </FlexLayout>
+        <Button
+            BackgroundColor="#0030b8"
+            HorizontalOptions="End"
+            Text="Ok"
+            TextColor="White" />
+    </StackLayout>
+</ContentPage>

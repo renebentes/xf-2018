@@ -48,6 +48,12 @@ Aplicativo de exemplo de uso dos controles disponíveis no Xamarin Forms.
 
 [Ver código-fonte](XamControle)
 
+### Tarefas
+
+Aplicativo para lista de tarefas a fazer em Xamarin Forms.
+
+[Ver código-fonte](Tarefas)
+
 ## Licença
 
 Este projeto está sob os termos da licença [MIT](LICENSE)

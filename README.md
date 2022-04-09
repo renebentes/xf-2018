@@ -42,6 +42,12 @@ Aplicativo de exemplo de implementação de Layouts com Xamarin Forms.
 
 [Ver código-fonte](XamPages)
 
+### XamControle
+
+Aplicativo de exemplo de uso dos controles disponíveis no Xamarin Forms.
+
+[Ver código-fonte](XamControle)
+
 ## Licença
 
 Este projeto está sob os termos da licença [MIT](LICENSE)

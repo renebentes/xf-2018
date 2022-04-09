@@ -6,56 +6,58 @@
     xmlns:pages="clr-namespace:XamControle.Pages">
     <FlyoutPage.Flyout>
         <ContentPage Title="Menu">
-            <StackLayout>
-                <Button
-                    Clicked="GoToPage"
-                    Text="Activity Indicator" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="ProgressBar" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="BoxView" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="Label" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="Button" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="EntryEditor" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="DatePicker" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="TimerPicker" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="Picker" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="SearchBar" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="SliderStepper" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="Switch" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="Image" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="ListView" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="TableView" />
-                <Button
-                    Clicked="GoToPage"
-                    Text="WebView" />
-            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Button
+                        Clicked="GoToPage"
+                        Text="Activity Indicator" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="ProgressBar" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="BoxView" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="Label" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="Button" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="EntryEditor" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="DatePicker" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="TimerPicker" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="Picker" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="SearchBar" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="SliderStepper" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="Switch" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="Image" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="ListView" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="TableView" />
+                    <Button
+                        Clicked="GoToPage"
+                        Text="WebView" />
+                </StackLayout>
+            </ScrollView>
         </ContentPage>
     </FlyoutPage.Flyout>
     <FlyoutPage.Detail>

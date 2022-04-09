@@ -52,6 +52,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="TableView" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="WebView" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

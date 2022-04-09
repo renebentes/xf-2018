@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamControle.Pages.WebViewPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout>
+        <FlexLayout>
+            <Entry
+                x:Name="endereco"
+                FlexLayout.Grow="1" />
+            <Button
+                Clicked="GoTo"
+                Text="Ok" />
+            <Button
+                Clicked="GoBack"
+                Text="Voltar" />
+            <Button
+                Clicked="GoNext"
+                Text="Próximo" />
+        </FlexLayout>
+        <WebView
+            x:Name="navegador"
+            HorizontalOptions="FillAndExpand"
+            Navigated="OnNavigated"
+            Navigating="OnNavigating"
+            Source="https://www.google.com.br"
+            VerticalOptions="FillAndExpand" />
+        <Label x:Name="status" />
+    </StackLayout>
+</ContentPage>

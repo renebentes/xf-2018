@@ -1,6 +1,5 @@
-﻿using System;
+using Tarefas.Pages;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Tarefas
 {
@@ -10,10 +9,10 @@ namespace Tarefas
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
-        protected override void OnStart()
+        protected override void OnResume()
         {
         }
 
@@ -21,7 +20,7 @@ namespace Tarefas
         {
         }
 
-        protected override void OnResume()
+        protected override void OnStart()
         {
         }
     }

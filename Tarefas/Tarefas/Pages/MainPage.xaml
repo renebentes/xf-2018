@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tarefas.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <StackLayout Margin="10,0">
+        <StackLayout
+            BackgroundColor="#0030b8"
+            HeightRequest="250">
+            <Label
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                Text="Meu Dia"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" />
+            <Label
+                FlexLayout.AlignSelf="Start"
+                Text="Sábado, 09/04"
+                TextColor="White"
+                VerticalOptions="End" />
+        </StackLayout>
+
+        <FlexLayout JustifyContent="SpaceAround">
+            <Image VerticalOptions="Center" />
+            <Label FlexLayout.Grow="1">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Task 1" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Image VerticalOptions="Center" />
+            <Image VerticalOptions="Center" />
+        </FlexLayout>
+
+        <FlexLayout JustifyContent="SpaceAround">
+            <Image VerticalOptions="Center" />
+            <Label
+                FlexLayout.Grow="1"
+                TextColor="LightGray">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Task 2" />
+                        <Span
+                            FontSize="10"
+                            Text="&#10;Finalizado em 09/04/2022 13:00" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Image VerticalOptions="Center" />
+            <Image VerticalOptions="Center" />
+        </FlexLayout>
+        <Button
+            HorizontalOptions="Center"
+            Text="Adicionar" />
+    </StackLayout>
+</ContentPage>

@@ -1,6 +1,6 @@
 namespace Tarefas.Enums
 {
-    public enum Priority
+    public enum Priority : byte
     {
         Low = 1,
         Medium = 2,

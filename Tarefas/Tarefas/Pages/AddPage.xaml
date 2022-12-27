@@ -41,7 +41,7 @@
                     NumberOfTapsRequired="1"
                     Tapped="OnTapped" />
             </FlexLayout.GestureRecognizers>
-            <BoxView Style="{StaticResource VeryHighPriority}" />
+            <BoxView StyleClass="Priority, VeryHighPriority" />
             <Label
                 FlexLayout.Grow="1"
                 Style="{StaticResource PriorityLabel}"
@@ -53,7 +53,7 @@
                     NumberOfTapsRequired="1"
                     Tapped="OnTapped" />
             </FlexLayout.GestureRecognizers>
-            <BoxView Style="{StaticResource HighPriority}" />
+            <BoxView StyleClass="Priority, HighPriority" />
             <Label
                 FlexLayout.Grow="1"
                 Style="{StaticResource PriorityLabel}"
@@ -65,7 +65,7 @@
                     NumberOfTapsRequired="1"
                     Tapped="OnTapped" />
             </FlexLayout.GestureRecognizers>
-            <BoxView Style="{StaticResource MediumPriority}" />
+            <BoxView StyleClass="Priority, MediumPriority" />
             <Label
                 FlexLayout.Grow="1"
                 Style="{StaticResource PriorityLabel}"
@@ -77,7 +77,7 @@
                     NumberOfTapsRequired="1"
                     Tapped="OnTapped" />
             </FlexLayout.GestureRecognizers>
-            <BoxView Style="{StaticResource LowPriority}" />
+            <BoxView StyleClass="Priority, LowPriority" />
             <Label
                 FlexLayout.Grow="1"
                 Style="{StaticResource PriorityLabel}"

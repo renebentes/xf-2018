@@ -1,10 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application
     x:Class="Tarefas.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
-        <Style TargetType="BoxView" x:Key="Priority">
+        <Style
+            Class="Priority"
+            TargetType="BoxView">
             <Setter Property="Margin" Value="0,0,5,0" />
             <Setter Property="CornerRadius" Value="50" />
             <Setter Property="HeightRequest" Value="10" />
@@ -12,30 +14,26 @@
         </Style>
 
         <Style
-            BasedOn="{StaticResource Priority}"
-            TargetType="BoxView"
-            x:Key="VeryHighPriority">
+            Class="VeryHighPriority"
+            TargetType="BoxView">
             <Setter Property="BackgroundColor" Value="#ff1a2b" />
         </Style>
 
         <Style
-            BasedOn="{StaticResource Priority}"
-            TargetType="BoxView"
-            x:Key="HighPriority">
+            Class="HighPriority"
+            TargetType="BoxView">
             <Setter Property="BackgroundColor" Value="#ff8220" />
         </Style>
 
         <Style
-            BasedOn="{StaticResource Priority}"
-            TargetType="BoxView"
-            x:Key="MediumPriority">
+            Class="MediumPriority"
+            TargetType="BoxView">
             <Setter Property="BackgroundColor" Value="#ffd200" />
         </Style>
 
         <Style
-            BasedOn="{StaticResource Priority}"
-            TargetType="BoxView"
-            x:Key="LowPriority">
+            Class="LowPriority"
+            TargetType="BoxView">
             <Setter Property="BackgroundColor" Value="#3daa00" />
         </Style>
     </Application.Resources>

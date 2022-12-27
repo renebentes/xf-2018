@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Tarefas.Enums;
+using Tarefas.Models;
 using Xamarin.Forms;
 
 namespace Tarefas.Pages
@@ -21,6 +22,24 @@ namespace Tarefas.Pages
                             .Replace("Priority", string.Empty) ?? "Low";
 
             _priority = (Priority)Enum.Parse(typeof(Priority), priority);
+        }
+
+        private void OnSave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(name.Text))
+            {
+                DisplayAlert("Erro", "Informe o nome da tarefa!", "Ok");
+            }
+
+            var task = new Task
+            {
+                Name = name.Text,
+                Priority = _priority
+            };
+
+            new TaskManager().Save(task);
+
+            Navigation.PopAsync();
         }
 
         private void OnTapped(object sender, EventArgs e)

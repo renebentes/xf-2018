@@ -31,7 +31,7 @@
         <Label
             FontAttributes="Bold"
             Text="Nome" />
-        <Entry />
+        <Entry x:Name="name" />
         <Label
             FontAttributes="Bold"
             Text="Prioridade" />
@@ -85,6 +85,7 @@
         </FlexLayout>
         <Button
             BackgroundColor="#0030b8"
+            Clicked="OnSave"
             HorizontalOptions="End"
             Text="Ok"
             TextColor="White" />

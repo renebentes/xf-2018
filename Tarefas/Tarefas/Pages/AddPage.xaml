@@ -3,6 +3,30 @@
     x:Class="Tarefas.Pages.AddPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentPage.Resources>
+        <Style
+            x:Key="PriorityLabel"
+            TargetType="Label">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Gray" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Black" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
     <StackLayout Margin="10,0">
         <Label
             FontAttributes="Bold"
@@ -12,27 +36,51 @@
             FontAttributes="Bold"
             Text="Prioridade" />
         <FlexLayout AlignItems="Center">
-            <BoxView Style="{StaticResource VeryHighPriority}"/>
+            <FlexLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    NumberOfTapsRequired="1"
+                    Tapped="OnTapped" />
+            </FlexLayout.GestureRecognizers>
+            <BoxView Style="{StaticResource VeryHighPriority}" />
             <Label
                 FlexLayout.Grow="1"
+                Style="{StaticResource PriorityLabel}"
                 Text="Urgente e importante" />
         </FlexLayout>
         <FlexLayout AlignItems="Center">
+            <FlexLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    NumberOfTapsRequired="1"
+                    Tapped="OnTapped" />
+            </FlexLayout.GestureRecognizers>
             <BoxView Style="{StaticResource HighPriority}" />
             <Label
                 FlexLayout.Grow="1"
+                Style="{StaticResource PriorityLabel}"
                 Text="Urgente e não importante" />
         </FlexLayout>
         <FlexLayout AlignItems="Center">
+            <FlexLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    NumberOfTapsRequired="1"
+                    Tapped="OnTapped" />
+            </FlexLayout.GestureRecognizers>
             <BoxView Style="{StaticResource MediumPriority}" />
             <Label
                 FlexLayout.Grow="1"
+                Style="{StaticResource PriorityLabel}"
                 Text="Não urgente e importante" />
         </FlexLayout>
         <FlexLayout AlignItems="Center">
+            <FlexLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    NumberOfTapsRequired="1"
+                    Tapped="OnTapped" />
+            </FlexLayout.GestureRecognizers>
             <BoxView Style="{StaticResource LowPriority}" />
             <Label
                 FlexLayout.Grow="1"
+                Style="{StaticResource PriorityLabel}"
                 Text="Não urgente e não importante" />
         </FlexLayout>
         <Button

@@ -12,45 +12,25 @@
             FontAttributes="Bold"
             Text="Prioridade" />
         <FlexLayout AlignItems="Center">
-            <BoxView
-                Margin="0,0,5,0"
-                BackgroundColor="#ff1a2b"
-                CornerRadius="50"
-                HeightRequest="10"
-                WidthRequest="10" />
+            <BoxView Style="{StaticResource VeryHighPriority}"/>
             <Label
                 FlexLayout.Grow="1"
                 Text="Urgente e importante" />
         </FlexLayout>
         <FlexLayout AlignItems="Center">
-            <BoxView
-                Margin="0,0,5,0"
-                BackgroundColor="#ff8220"
-                CornerRadius="50"
-                HeightRequest="10"
-                WidthRequest="10" />
+            <BoxView Style="{StaticResource HighPriority}" />
             <Label
                 FlexLayout.Grow="1"
                 Text="Urgente e não importante" />
         </FlexLayout>
         <FlexLayout AlignItems="Center">
-            <BoxView
-                Margin="0,0,5,0"
-                BackgroundColor="#ffd200"
-                CornerRadius="50"
-                HeightRequest="10"
-                WidthRequest="10" />
+            <BoxView Style="{StaticResource MediumPriority}" />
             <Label
                 FlexLayout.Grow="1"
                 Text="Não urgente e importante" />
         </FlexLayout>
         <FlexLayout AlignItems="Center">
-            <BoxView
-                Margin="0,0,5,0"
-                BackgroundColor="#3daa00"
-                CornerRadius="50"
-                HeightRequest="10"
-                WidthRequest="10" />
+            <BoxView Style="{StaticResource LowPriority}" />
             <Label
                 FlexLayout.Grow="1"
                 Text="Não urgente e não importante" />

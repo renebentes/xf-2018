@@ -32,7 +32,7 @@ namespace Tarefas.Models
 
         private IList<Task> RetrieveFromProperties()
             => Application.Current.Properties.TryGetValue(key, out var tasks)
-                ? tasks as IList<Task>
+                ? (IList<Task>)tasks
                 : new List<Task>();
     }
 }

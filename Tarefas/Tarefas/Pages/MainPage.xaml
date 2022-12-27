@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="Tarefas.Pages.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=netstandard">
 
     <StackLayout Margin="10,0">
         <StackLayout
@@ -16,7 +17,7 @@
                 VerticalOptions="CenterAndExpand" />
             <Label
                 FlexLayout.AlignSelf="Start"
-                Text="Sábado, 09/04"
+                Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:dddd, dd/MM}'}"
                 TextColor="White"
                 VerticalOptions="End" />
         </StackLayout>

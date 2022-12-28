@@ -29,6 +29,7 @@ namespace Tarefas.Pages
             if (string.IsNullOrEmpty(name.Text))
             {
                 DisplayAlert("Erro", "Informe o nome da tarefa!", "Ok");
+                return;
             }
 
             var task = new Task

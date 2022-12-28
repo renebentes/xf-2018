@@ -3,8 +3,13 @@
     x:Class="Tarefas.Pages.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:Tarefas.Converters"
     xmlns:model="clr-namespace:Tarefas.Models"
     xmlns:sys="clr-namespace:System;assembly=netstandard">
+
+    <ContentPage.Resources>
+        <converters:PriorityToColorConverter x:Key="priorityToColorConverter" />
+    </ContentPage.Resources>
 
     <StackLayout Margin="10,0">
         <StackLayout
@@ -57,7 +62,9 @@
                                     IsVisible="{Binding Done}"
                                     Text="{Binding FinishDate, StringFormat='Finalizado em {0:dd/MM/yyyy hh:mm}h'}" />
                             </StackLayout>
-                            <BoxView StyleClass="Priority" />
+                            <BoxView
+                                BackgroundColor="{Binding Priority, Converter={StaticResource priorityToColorConverter}}"
+                                Style="{StaticResource Priority}" />
                             <Image
                                 Source="{OnPlatform Default=Delete.png,
                                                     UWP=Assets/Delete.png}"

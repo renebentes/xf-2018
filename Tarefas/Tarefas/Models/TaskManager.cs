@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.Json;
 using Xamarin.Forms;
 
 namespace Tarefas.Models
@@ -28,11 +29,20 @@ namespace Tarefas.Models
         }
 
         private void PersistOnProperties()
-            => Application.Current.Properties.Add(key, _tasks);
+        {
+            var tasksJson = JsonSerializer.Serialize<IList<Task>>(_tasks);
+            Application.Current.Properties.Add(key, tasksJson);
+        }
 
         private IList<Task> RetrieveFromProperties()
-            => Application.Current.Properties.TryGetValue(key, out var tasks)
-                ? (IList<Task>)tasks
-                : new List<Task>();
+        {
+            if (Application.Current.Properties.TryGetValue(key, out var json))
+            {
+                var tasks = JsonSerializer.Deserialize<IList<Task>>((string)json);
+                return tasks ?? new List<Task>();
+            }
+
+            return new List<Task>();
+        }
     }
 }

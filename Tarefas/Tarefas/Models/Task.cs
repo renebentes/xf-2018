@@ -7,7 +7,7 @@ namespace Tarefas.Models
     {
         public DateTime FinishDate { get; set; }
 
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         public Priority Priority { get; set; }
     }

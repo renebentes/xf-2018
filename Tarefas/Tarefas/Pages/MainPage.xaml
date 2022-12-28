@@ -3,6 +3,7 @@
     x:Class="Tarefas.Pages.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:Tarefas.Models"
     xmlns:sys="clr-namespace:System;assembly=netstandard">
 
     <StackLayout Margin="10,0">
@@ -22,45 +23,52 @@
                 VerticalOptions="End" />
         </StackLayout>
 
-        <FlexLayout JustifyContent="SpaceAround">
-            <Image
-                Source="{OnPlatform Default=CheckOff.png,
-                                    UWP=Assets/CheckOff.png}"
-                VerticalOptions="Center" />
-            <Label FlexLayout.Grow="1">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Task 1" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Image VerticalOptions="Center" />
-            <Image
-                Source="{OnPlatform Default=Delete.png,
-                                    UWP=Assets/Delete.png}"
-                VerticalOptions="Center" />
-        </FlexLayout>
+        <ListView
+            x:Name="listView"
+            BindingContext=".">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:Task">
+                    <ViewCell>
+                        <FlexLayout JustifyContent="SpaceAround">
+                            <Image
+                                Source="{OnPlatform Default=CheckOff.png,
+                                                    UWP=Assets/CheckOff.png}"
+                                VerticalOptions="Center">
+                                <Image.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding Done}"
+                                        TargetType="Image"
+                                        Value="True">
+                                        <Setter Property="Source" Value="{OnPlatform Default=CheckOn.png, UWP=Assets/CheckOn.png}" />
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                            <StackLayout
+                                FlexLayout.Grow="1"
+                                Spacing="0">
 
-        <FlexLayout JustifyContent="SpaceAround">
-            <Image
-                Source="{OnPlatform Default=CheckOn.png,
-                                    UWP=Assets/CheckOn.png}"
-                VerticalOptions="Center" />
-            <Label
-                FlexLayout.Grow="1"
-                TextColor="LightGray">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Task 2" />
-                        <Span
-                            FontSize="10"
-                            Text="&#10;Finalizado em 09/04/2022 13:00" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Image VerticalOptions="Center" />
-            <Image VerticalOptions="Center" />
-        </FlexLayout>
+                                <Label
+                                    Text="{Binding Name}"
+                                    TextColor="White"
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    FontSize="10"
+                                    IsVisible="{Binding Done}"
+                                    Text="{Binding FinishDate, StringFormat='Finalizado em {0:dd/MM/yyyy hh:mm}h'}" />
+                            </StackLayout>
+                            <BoxView StyleClass="Priority" />
+                            <Image
+                                Source="{OnPlatform Default=Delete.png,
+                                                    UWP=Assets/Delete.png}"
+                                VerticalOptions="Center" />
+                        </FlexLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
         <ImageButton
             Clicked="OpenAddPage"
             HorizontalOptions="Center"

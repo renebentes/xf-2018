@@ -5,7 +5,9 @@ namespace Tarefas.Models
 {
     public class Task
     {
-        public DateTime FinishDate { get; set; }
+        public bool Done => FinishDate is not null;
+
+        public DateTime? FinishDate { get; set; }
 
         public string Name { get; set; } = string.Empty;
 

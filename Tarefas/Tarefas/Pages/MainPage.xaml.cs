@@ -1,3 +1,4 @@
+using Tarefas.Models;
 using Xamarin.Forms;
 
 namespace Tarefas.Pages
@@ -6,6 +7,11 @@ namespace Tarefas.Pages
     {
         public MainPage()
             => InitializeComponent();
+
+        protected override void OnAppearing()
+        {
+            listView.ItemsSource = new TaskManager().ListAll();
+        }
 
         private void OpenAddPage(object sender, System.EventArgs e)
             => Navigation.PushAsync(new AddPage());

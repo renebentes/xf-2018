@@ -4,6 +4,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
+        <Color x:Key="Red">#ff1a2b</Color>
+        <Color x:Key="Orange">#ff8220</Color>
+        <Color x:Key="Yellow">#ffd200</Color>
+        <Color x:Key="Green">#3daa00</Color>
+        <Color x:Key="Blue">#0030b8</Color>
         <Style
             Class="Priority"
             TargetType="BoxView">
@@ -16,25 +21,25 @@
         <Style
             Class="VeryHighPriority"
             TargetType="BoxView">
-            <Setter Property="BackgroundColor" Value="#ff1a2b" />
+            <Setter Property="BackgroundColor" Value="{StaticResource Red}" />
         </Style>
 
         <Style
             Class="HighPriority"
             TargetType="BoxView">
-            <Setter Property="BackgroundColor" Value="#ff8220" />
+            <Setter Property="BackgroundColor" Value="{StaticResource Orange}" />
         </Style>
 
         <Style
             Class="MediumPriority"
             TargetType="BoxView">
-            <Setter Property="BackgroundColor" Value="#ffd200" />
+            <Setter Property="BackgroundColor" Value="{StaticResource Yellow}" />
         </Style>
 
         <Style
             Class="LowPriority"
             TargetType="BoxView">
-            <Setter Property="BackgroundColor" Value="#3daa00" />
+            <Setter Property="BackgroundColor" Value="{StaticResource Green}" />
         </Style>
     </Application.Resources>
 </Application>

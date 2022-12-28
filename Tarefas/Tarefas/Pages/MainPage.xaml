@@ -8,7 +8,7 @@
 
     <StackLayout Margin="10,0">
         <StackLayout
-            BackgroundColor="#0030b8"
+            BackgroundColor="{StaticResource Blue}"
             HeightRequest="250">
             <Label
                 FontSize="Medium"

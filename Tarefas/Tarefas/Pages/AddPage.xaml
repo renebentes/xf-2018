@@ -84,7 +84,7 @@
                 Text="Não urgente e não importante" />
         </FlexLayout>
         <Button
-            BackgroundColor="#0030b8"
+            BackgroundColor="{StaticResource Blue}"
             Clicked="OnSave"
             HorizontalOptions="End"
             Text="Ok"

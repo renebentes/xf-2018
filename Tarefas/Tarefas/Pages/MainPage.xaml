@@ -34,7 +34,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Task">
                     <ViewCell>
-                        <FlexLayout JustifyContent="SpaceAround">
+                        <FlexLayout
+                            AlignItems="Center"
+                            JustifyContent="SpaceBetween">
                             <Image
                                 Source="{OnPlatform Default=CheckOff.png,
                                                     UWP=Assets/CheckOff.png}"
@@ -67,8 +69,7 @@
                                 Style="{StaticResource Priority}" />
                             <Image
                                 Source="{OnPlatform Default=Delete.png,
-                                                    UWP=Assets/Delete.png}"
-                                VerticalOptions="Center" />
+                                                    UWP=Assets/Delete.png}" />
                         </FlexLayout>
                     </ViewCell>
                 </DataTemplate>

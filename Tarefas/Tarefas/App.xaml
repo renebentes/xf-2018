@@ -14,8 +14,8 @@
             TargetType="BoxView">
             <Setter Property="Margin" Value="0,0,5,0" />
             <Setter Property="CornerRadius" Value="50" />
-            <Setter Property="HeightRequest" Value="10" />
-            <Setter Property="WidthRequest" Value="10" />
+            <Setter Property="HeightRequest" Value="30" />
+            <Setter Property="WidthRequest" Value="30" />
         </Style>
     </Application.Resources>
 </Application>

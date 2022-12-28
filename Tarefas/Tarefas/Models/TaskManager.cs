@@ -30,6 +30,11 @@ namespace Tarefas.Models
 
         private void PersistOnProperties()
         {
+            if (Application.Current.Properties.ContainsKey(key))
+            {
+                Application.Current.Properties.Remove(key);
+            }
+
             var tasksJson = JsonSerializer.Serialize<IList<Task>>(_tasks);
             Application.Current.Properties.Add(key, tasksJson);
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Tarefas.Enums;
+using Tarefas.Extensions;
 using Tarefas.Models;
 using Xamarin.Forms;
 
@@ -16,12 +17,13 @@ namespace Tarefas.Pages
 
         private void GetPriority(BoxView boxView)
         {
-            var priority = boxView
-                            .StyleClass
-                            .LastOrDefault(style => style.Contains("Priority"))?
-                            .Replace("Priority", string.Empty) ?? "Low";
+            var keyColor = Application
+                .Current
+                .Resources
+                .FirstOrDefault(r => (Color)r.Value == boxView.BackgroundColor)
+                .Key;
 
-            _priority = (Priority)Enum.Parse(typeof(Priority), priority);
+            _priority = keyColor.ToPriority();
         }
 
         private void OnSave(object sender, EventArgs e)

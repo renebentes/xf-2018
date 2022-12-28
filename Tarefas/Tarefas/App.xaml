@@ -4,42 +4,18 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
-        <Color x:Key="Red">#ff1a2b</Color>
-        <Color x:Key="Orange">#ff8220</Color>
-        <Color x:Key="Yellow">#ffd200</Color>
-        <Color x:Key="Green">#3daa00</Color>
-        <Color x:Key="Blue">#0030b8</Color>
+        <Color x:Key="VeryHighPriorityColor">#ff1a2b</Color>
+        <Color x:Key="HighPriorityColor">#ff8220</Color>
+        <Color x:Key="MediumPriorityColor">#ffd200</Color>
+        <Color x:Key="LowPriorityColor">#3daa00</Color>
+        <Color x:Key="BlueColor">#0030b8</Color>
         <Style
-            Class="Priority"
+            x:Key="Priority"
             TargetType="BoxView">
             <Setter Property="Margin" Value="0,0,5,0" />
             <Setter Property="CornerRadius" Value="50" />
             <Setter Property="HeightRequest" Value="10" />
             <Setter Property="WidthRequest" Value="10" />
-        </Style>
-
-        <Style
-            Class="VeryHighPriority"
-            TargetType="BoxView">
-            <Setter Property="BackgroundColor" Value="{StaticResource Red}" />
-        </Style>
-
-        <Style
-            Class="HighPriority"
-            TargetType="BoxView">
-            <Setter Property="BackgroundColor" Value="{StaticResource Orange}" />
-        </Style>
-
-        <Style
-            Class="MediumPriority"
-            TargetType="BoxView">
-            <Setter Property="BackgroundColor" Value="{StaticResource Yellow}" />
-        </Style>
-
-        <Style
-            Class="LowPriority"
-            TargetType="BoxView">
-            <Setter Property="BackgroundColor" Value="{StaticResource Green}" />
         </Style>
     </Application.Resources>
 </Application>

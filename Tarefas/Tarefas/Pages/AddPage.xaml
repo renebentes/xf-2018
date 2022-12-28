@@ -41,7 +41,9 @@
                     NumberOfTapsRequired="1"
                     Tapped="OnTapped" />
             </FlexLayout.GestureRecognizers>
-            <BoxView StyleClass="Priority, VeryHighPriority" />
+            <BoxView
+                BackgroundColor="{StaticResource VeryHighPriorityColor}"
+                Style="{StaticResource Priority}" />
             <Label
                 FlexLayout.Grow="1"
                 Style="{StaticResource PriorityLabel}"
@@ -53,7 +55,9 @@
                     NumberOfTapsRequired="1"
                     Tapped="OnTapped" />
             </FlexLayout.GestureRecognizers>
-            <BoxView StyleClass="Priority, HighPriority" />
+            <BoxView
+                BackgroundColor="{StaticResource HighPriorityColor}"
+                Style="{StaticResource Priority}" />
             <Label
                 FlexLayout.Grow="1"
                 Style="{StaticResource PriorityLabel}"
@@ -65,7 +69,9 @@
                     NumberOfTapsRequired="1"
                     Tapped="OnTapped" />
             </FlexLayout.GestureRecognizers>
-            <BoxView StyleClass="Priority, MediumPriority" />
+            <BoxView
+                BackgroundColor="{StaticResource MediumPriorityColor}"
+                Style="{StaticResource Priority}" />
             <Label
                 FlexLayout.Grow="1"
                 Style="{StaticResource PriorityLabel}"
@@ -77,14 +83,16 @@
                     NumberOfTapsRequired="1"
                     Tapped="OnTapped" />
             </FlexLayout.GestureRecognizers>
-            <BoxView StyleClass="Priority, LowPriority" />
+            <BoxView
+                BackgroundColor="{StaticResource LowPriorityColor}"
+                Style="{StaticResource Priority}" />
             <Label
                 FlexLayout.Grow="1"
                 Style="{StaticResource PriorityLabel}"
                 Text="Não urgente e não importante" />
         </FlexLayout>
         <Button
-            BackgroundColor="{StaticResource Blue}"
+            BackgroundColor="{StaticResource BlueColor}"
             Clicked="OnSave"
             HorizontalOptions="End"
             Text="Ok"

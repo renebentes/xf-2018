@@ -8,7 +8,7 @@
 
     <StackLayout Margin="10,0">
         <StackLayout
-            BackgroundColor="{StaticResource Blue}"
+            BackgroundColor="{StaticResource BlueColor}"
             HeightRequest="250">
             <Label
                 FontSize="Medium"
@@ -67,7 +67,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
 
         <ImageButton
             Clicked="OpenAddPage"

@@ -20,6 +20,11 @@ namespace Tarefas.Pages
 
         protected override void OnAppearing()
         {
+            LoadTasks();
+        }
+
+        private void LoadTasks()
+        {
             _tasks.Clear();
             _taskManager
                 .ListAll()
@@ -31,10 +36,7 @@ namespace Tarefas.Pages
             if (sender is ImageButton button && button.CommandParameter is Task task)
             {
                 _taskManager.Remove(task);
-                _tasks.Clear();
-                _taskManager
-                    .ListAll()
-                    .ForEach(_tasks.Add);
+                LoadTasks();
             }
         }
 

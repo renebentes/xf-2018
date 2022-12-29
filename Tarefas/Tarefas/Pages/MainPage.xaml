@@ -67,7 +67,9 @@
                             <BoxView
                                 BackgroundColor="{Binding Priority, Converter={StaticResource priorityToColorConverter}}"
                                 Style="{StaticResource Priority}" />
-                            <Image
+                            <ImageButton
+                                Clicked="OnDelete"
+                                CommandParameter="{Binding .}"
                                 Source="{OnPlatform Default=Delete.png,
                                                     UWP=Assets/Delete.png}" />
                         </FlexLayout>

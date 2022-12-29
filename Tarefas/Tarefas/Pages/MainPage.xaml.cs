@@ -26,6 +26,18 @@ namespace Tarefas.Pages
                 .ForEach(_tasks.Add);
         }
 
+        private void OnDelete(object sender, System.EventArgs e)
+        {
+            if (sender is ImageButton button && button.CommandParameter is Task task)
+            {
+                _taskManager.Remove(task);
+                _tasks.Clear();
+                _taskManager
+                    .ListAll()
+                    .ForEach(_tasks.Add);
+            }
+        }
+
         private void OpenAddPage(object sender, System.EventArgs e)
             => Navigation.PushAsync(new AddPage());
     }

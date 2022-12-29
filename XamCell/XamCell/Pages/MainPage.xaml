@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage
+    x:Class="XamCell.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu" />
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments />
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

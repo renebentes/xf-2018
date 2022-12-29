@@ -54,6 +54,12 @@ Aplicativo para lista de tarefas a fazer em Xamarin Forms.
 
 [Ver código-fonte](Tarefas)
 
+### XamCell
+
+Aplicativo para apresentar os tipos de controle Cell.
+
+[Ver código-fonte](XamCell)
+
 ## Licença
 
 Este projeto está sob os termos da licença [MIT](LICENSE)

@@ -62,7 +62,7 @@
                                 <Label
                                     FontSize="10"
                                     IsVisible="{Binding Done}"
-                                    Text="{Binding FinishDate, StringFormat='Finalizado em {0:dd/MM/yyyy hh:mm}h'}" />
+                                    Text="{Binding FinishDate, StringFormat='Finalizado em {0:dd/MM/yyyy HH:mm}h'}" />
                             </StackLayout>
                             <BoxView
                                 BackgroundColor="{Binding Priority, Converter={StaticResource priorityToColorConverter}}"

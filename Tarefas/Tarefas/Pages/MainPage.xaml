@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:Tarefas.Converters"
     xmlns:model="clr-namespace:Tarefas.Models"
-    xmlns:sys="clr-namespace:System;assembly=netstandard">
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
+    NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
         <converters:PriorityToColorConverter x:Key="priorityToColorConverter" />

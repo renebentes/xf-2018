@@ -1,6 +1,5 @@
-using System.Collections.Generic;
 using Xamarin.Forms;
-using XamCell.Models;
+using XamCell.Services;
 
 namespace XamCell.Pages
 {
@@ -10,16 +9,9 @@ namespace XamCell.Pages
         {
             InitializeComponent();
 
-            var funcionarios = new List<Funcionario>
-            {
-                new Funcionario { Nome = "José", Cargo = "Presidente" },
-                new Funcionario { Nome = "Maria", Cargo = "Gerente de Vendas" },
-                new Funcionario { Nome = "Elaine", Cargo = "Gerente de Marketing" },
-                new Funcionario { Nome = "Felipe", Cargo = "Entregador" },
-                new Funcionario { Nome = "João", Cargo = "Vendedor" }
-            };
+            var service = new FuncionarioService();
 
-            listView.ItemsSource = funcionarios;
+            listView.ItemsSource = service.GetAll();
         }
     }
 }

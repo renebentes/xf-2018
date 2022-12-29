@@ -9,11 +9,15 @@ namespace Tarefas.Pages
 {
     public partial class AddPage : ContentPage
     {
+        private readonly TaskManager _taskManager;
         private Label _lastTapped = new Label();
         private Priority _priority;
 
         public AddPage()
-            => InitializeComponent();
+        {
+            InitializeComponent();
+            _taskManager = new TaskManager();
+        }
 
         private void GetPriority(BoxView boxView)
         {
@@ -40,7 +44,7 @@ namespace Tarefas.Pages
                 Priority = _priority
             };
 
-            new TaskManager().Save(task);
+            _taskManager.Save(task);
 
             Navigation.PopAsync();
         }

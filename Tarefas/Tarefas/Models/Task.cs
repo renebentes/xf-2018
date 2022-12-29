@@ -3,7 +3,7 @@ using Tarefas.Enums;
 
 namespace Tarefas.Models
 {
-    public class Task
+    public record Task
     {
         public bool Done => FinishDate is not null;
 

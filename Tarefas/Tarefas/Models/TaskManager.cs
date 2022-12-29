@@ -8,38 +8,24 @@ namespace Tarefas.Models
     {
         private const string key = "tasks";
 
-        private readonly IList<Task> _tasks;
-
-        public TaskManager()
-            => _tasks = RetrieveFromProperties();
-
         public IEnumerable<Task> ListAll()
-            => _tasks;
+            => FromProperties();
 
         public void Remove(Task task)
         {
-            _tasks.Remove(task);
-            PersistOnProperties();
+            var tasks = FromProperties();
+            tasks.Remove(task);
+            ToProperties(tasks);
         }
 
         public void Save(Task task)
         {
-            _tasks.Add(task);
-            PersistOnProperties();
+            var tasks = FromProperties();
+            tasks.Add(task);
+            ToProperties(tasks);
         }
 
-        private void PersistOnProperties()
-        {
-            if (Application.Current.Properties.ContainsKey(key))
-            {
-                Application.Current.Properties.Remove(key);
-            }
-
-            var tasksJson = JsonSerializer.Serialize<IList<Task>>(_tasks);
-            Application.Current.Properties.Add(key, tasksJson);
-        }
-
-        private IList<Task> RetrieveFromProperties()
+        private IList<Task> FromProperties()
         {
             if (Application.Current.Properties.TryGetValue(key, out var json))
             {
@@ -48,6 +34,17 @@ namespace Tarefas.Models
             }
 
             return new List<Task>();
+        }
+
+        private void ToProperties(IList<Task> tasks)
+        {
+            if (Application.Current.Properties.ContainsKey(key))
+            {
+                Application.Current.Properties.Remove(key);
+            }
+
+            var json = JsonSerializer.Serialize(tasks);
+            Application.Current.Properties.Add(key, json);
         }
     }
 }

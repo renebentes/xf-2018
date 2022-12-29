@@ -30,7 +30,7 @@
 
         <ListView
             x:Name="listView"
-            BindingContext=".">
+            ItemsSource="{Binding .}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Task">
                     <ViewCell>

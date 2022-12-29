@@ -31,6 +31,15 @@ namespace Tarefas.Pages
                 .ForEach(_tasks.Add);
         }
 
+        private void OnComplete(object sender, System.EventArgs e)
+        {
+            if (sender is ImageButton button && button.CommandParameter is Task task)
+            {
+                _taskManager.MarkAsComplete(task);
+                LoadTasks();
+            }
+        }
+
         private void OnDelete(object sender, System.EventArgs e)
         {
             if (sender is ImageButton button && button.CommandParameter is Task task)

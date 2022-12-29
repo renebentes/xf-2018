@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 using Xamarin.Forms;
 
@@ -10,6 +12,13 @@ namespace Tarefas.Models
 
         public IEnumerable<Task> ListAll()
             => FromProperties();
+
+        public void MarkAsComplete(Task task)
+        {
+            var tasks = FromProperties();
+            tasks.FirstOrDefault(t => t == task).FinishDate = DateTime.Now;
+            ToProperties(tasks);
+        }
 
         public void Remove(Task task)
         {

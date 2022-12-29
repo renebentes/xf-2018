@@ -37,19 +37,21 @@
                         <FlexLayout
                             AlignItems="Center"
                             JustifyContent="SpaceBetween">
-                            <Image
+                            <ImageButton
+                                Clicked="OnComplete"
+                                CommandParameter="{Binding .}"
                                 Source="{OnPlatform Default=CheckOff.png,
-                                                    UWP=Assets/CheckOff.png}"
-                                VerticalOptions="Center">
-                                <Image.Triggers>
+                                                    UWP=Assets/CheckOff.png}">
+                                <ImageButton.Triggers>
                                     <DataTrigger
                                         Binding="{Binding Done}"
-                                        TargetType="Image"
+                                        TargetType="ImageButton"
                                         Value="True">
                                         <Setter Property="Source" Value="{OnPlatform Default=CheckOn.png, UWP=Assets/CheckOn.png}" />
+                                        <Setter Property="IsEnabled" Value="False" />
                                     </DataTrigger>
-                                </Image.Triggers>
-                            </Image>
+                                </ImageButton.Triggers>
+                            </ImageButton>
                             <StackLayout
                                 FlexLayout.Grow="1"
                                 Spacing="0">

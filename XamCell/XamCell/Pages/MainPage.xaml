@@ -15,6 +15,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="ImageCell" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="EntryCell" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

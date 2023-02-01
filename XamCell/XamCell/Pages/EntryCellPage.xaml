@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamCell.Pages.EntryCellPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <TableView>
+        <TableView.Root>
+            <TableSection Title="Cadastro">
+                <EntryCell
+                    Label="Nome"
+                    Placeholder="Digite o nome" />
+                <EntryCell
+                    Label="Cargo"
+                    Placeholder="Digite o cargo" />
+            </TableSection>
+        </TableView.Root>
+    </TableView>
+</ContentPage>

@@ -13,6 +13,7 @@ namespace XamCell.Pages
             var service = new FuncionarioService();
 
             listView.ItemsSource = service.GetAll();
+            listButtonView.ItemsSource = service.GetAll();
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -25,9 +26,21 @@ namespace XamCell.Pages
 
         private void OnVacationClicked(object sender, System.EventArgs e)
         {
-            if (((MenuItem)sender).CommandParameter is Funcionario funcionario)
+            if (sender is MenuItem menu)
             {
-                _ = DisplayAlert($"Título: {funcionario.Nome}", $"Mensagem: {funcionario.Cargo}", "Ok");
+                Show(menu.CommandParameter);
+            }
+            else if (sender is Button button)
+            {
+                Show(button.CommandParameter);
+            }
+
+            void Show(object commandParameter)
+            {
+                if (commandParameter is Funcionario funcionario)
+                {
+                    _ = DisplayAlert($"Título: {funcionario.Nome}", $"Mensagem: {funcionario.Cargo}", "Ok");
+                }
             }
         }
     }

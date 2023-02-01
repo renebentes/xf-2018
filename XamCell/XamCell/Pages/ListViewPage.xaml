@@ -10,7 +10,15 @@
             <DataTemplate>
                 <TextCell
                     Detail="{Binding Cargo}"
-                    Text="{Binding Nome}" />
+                    Text="{Binding Nome}">
+                    <TextCell.ContextActions>
+                        <MenuItem
+                            Clicked="OnVacationClicked"
+                            CommandParameter="{Binding .}"
+                            Text="Férias" />
+                        <MenuItem Text="Abono" />
+                    </TextCell.ContextActions>
+                </TextCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

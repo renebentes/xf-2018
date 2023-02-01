@@ -22,5 +22,13 @@ namespace XamCell.Pages
                 _ = Navigation.PushAsync(new EmployeeDetailPage(funcionario));
             }
         }
+
+        private void OnVacationClicked(object sender, System.EventArgs e)
+        {
+            if (((MenuItem)sender).CommandParameter is Funcionario funcionario)
+            {
+                _ = DisplayAlert($"Título: {funcionario.Nome}", $"Mensagem: {funcionario.Cargo}", "Ok");
+            }
+        }
     }
 }

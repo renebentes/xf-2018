@@ -24,6 +24,11 @@
                 <Button
                     Clicked="GoToPage"
                     Text="ViewCell" />
+
+                <Label Text="Componentes" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="ListView" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

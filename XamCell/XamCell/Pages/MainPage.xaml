@@ -21,6 +21,9 @@
                 <Button
                     Clicked="GoToPage"
                     Text="SwitchCell" />
+                <Button
+                    Clicked="GoToPage"
+                    Text="ViewCell" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

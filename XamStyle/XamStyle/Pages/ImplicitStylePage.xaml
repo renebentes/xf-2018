@@ -19,6 +19,21 @@
         <Label Text="Welcome to Implicit Styles 2" />
         <Label Text="Welcome to Implicit Styles 3" />
         <Label Text="Welcome to Implicit Styles 4" />
+
+        <StackLayout>
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="Yellow" />
+                        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <Label Text="Welcome to Implicit Styles 1" />
+            <Label Text="Welcome to Implicit Styles 2" />
+            <Label Text="Welcome to Implicit Styles 3" />
+            <Label Text="Welcome to Implicit Styles 4" />
+    </StackLayout>
     </StackLayout>
 </ContentPage>
 

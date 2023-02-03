@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="XamStyle.Pages.ImplicitStylePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -33,7 +33,7 @@
             <Label Text="Welcome to Implicit Styles 2" />
             <Label Text="Welcome to Implicit Styles 3" />
             <Label Text="Welcome to Implicit Styles 4" />
-    </StackLayout>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
 

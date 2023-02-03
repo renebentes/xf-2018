@@ -9,6 +9,7 @@
         <ContentPage Title="Menu">
             <StackLayout>
                 <Button Text="ImplicitStyle" />
+                <Button Text="ExplicitStyle" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

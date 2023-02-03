@@ -7,13 +7,15 @@
 
     <FlyoutPage.Flyout>
         <ContentPage Title="Menu">
-
+            <StackLayout>
+                <Button Text="ImplicitStyle" />
+            </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>
     <FlyoutPage.Detail>
         <NavigationPage>
             <x:Arguments>
-
+                <pages:ImplicitStylePage />
             </x:Arguments>
         </NavigationPage>
     </FlyoutPage.Detail>

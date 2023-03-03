@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="XamStyle.Pages.InheritStylePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <Style x:Key="ViewStyle" TargetType="View">
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="BackgroundColor" Value="Green" />
+        </Style>
+        <Style
+            x:Key="LabelStyle"
+            BasedOn="{StaticResource ViewStyle}"
+            TargetType="Label">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+        <Style
+            x:Key="ButtonStyle"
+            BasedOn="{StaticResource ViewStyle}"
+            TargetType="Button">
+            <Setter Property="TextColor" Value="Blue" />
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Label Style="{StaticResource LabelStyle}" Text="Hello, world!" />
+        <Label Text="Hello, world!" />
+        <Label Text="Hello, world!" />
+        <Button Style="{StaticResource ButtonStyle}" Text="Hello, world!" />
+    </StackLayout>
+</ContentPage>
+

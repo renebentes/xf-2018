@@ -11,6 +11,7 @@
                 <Button Text="ImplicitStyle" />
                 <Button Text="ExplicitStyle" />
                 <Button Text="GlobalStyle" />
+                <Button Text="InheritStyle" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

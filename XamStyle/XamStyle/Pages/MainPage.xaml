@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <FlyoutPage
     x:Class="XamStyle.Pages.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -12,6 +12,7 @@
                 <Button Text="ExplicitStyle" />
                 <Button Text="GlobalStyle" />
                 <Button Text="InheritStyle" />
+                <Button Text="DynamicStyle" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

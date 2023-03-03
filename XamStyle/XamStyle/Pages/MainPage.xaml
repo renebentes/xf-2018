@@ -10,6 +10,7 @@
             <StackLayout>
                 <Button Text="ImplicitStyle" />
                 <Button Text="ExplicitStyle" />
+                <Button Text="GlobalStyle" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

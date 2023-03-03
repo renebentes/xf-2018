@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamStyle.App">
     <Application.Resources>
-
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Blue"></Setter>
+            <Setter Property="BackgroundColor" Value="Yellow"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

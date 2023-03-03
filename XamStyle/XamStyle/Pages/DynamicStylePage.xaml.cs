@@ -9,7 +9,10 @@ namespace XamStyle.Pages
             => InitializeComponent();
 
         private void OnChangeColor(object sender, EventArgs e)
-            => Resources["RedColor"] = Color.FromHex("#ffb3b3");
+        {
+            Resources["RedColor"] = Color.FromHex("#ffb3b3");
+            Resources["LabelStyle"] = Resources["InvertedLabelStyle"];
+        }
     }
 }
 

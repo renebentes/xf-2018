@@ -5,6 +5,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Resources>
         <Color x:Key="RedColor">#ff4d4d</Color>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="Black" />
+        </Style>
+        <Style x:Key="InvertedLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="BackgroundColor" Value="White" />
+        </Style>
     </ContentPage.Resources>
     <StackLayout>
         <Label
@@ -16,6 +24,16 @@
             HorizontalOptions="CenterAndExpand"
             Text="Hello, world!"
             TextColor="{DynamicResource RedColor}"
+            VerticalOptions="CenterAndExpand" />
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            Style="{StaticResource LabelStyle}"
+            Text="Static Style"
+            VerticalOptions="CenterAndExpand" />
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            Style="{DynamicResource LabelStyle}"
+            Text="Dynamic Style"
             VerticalOptions="CenterAndExpand" />
         <Button Clicked="OnChangeColor" Text="Mudar cor" />
     </StackLayout>

@@ -135,4 +135,10 @@
       <Name>Cinemix</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fundo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\poster.png" />
+  </ItemGroup>
 </Project>

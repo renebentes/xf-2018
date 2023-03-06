@@ -60,6 +60,12 @@ Aplicativo para apresentar os tipos de controle Cell.
 
 [Ver código-fonte](XamCell)
 
+### XamStyles
+
+Aplicativo para apresentar as formas de uso dos **Estilos** no Xamarin.Forms.
+
+[Ver código-fonte](XamStyles)
+
 ## Licença
 
 Este projeto está sob os termos da licença [MIT](LICENSE)

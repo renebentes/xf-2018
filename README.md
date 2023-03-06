@@ -66,6 +66,12 @@ Aplicativo para apresentar as formas de uso dos **Estilos** no Xamarin.Forms.
 
 [Ver código-fonte](XamStyles)
 
+### Cinemix
+
+Aplicativo exemplo de uso dos **Estilos** no Xamarin.Forms.
+
+[Ver código-fonte](Cinemix)
+
 ## Licença
 
 Este projeto está sob os termos da licença [MIT](LICENSE)

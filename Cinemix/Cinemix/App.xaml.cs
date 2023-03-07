@@ -1,6 +1,4 @@
-﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Cinemix {
     public partial class App : Application {

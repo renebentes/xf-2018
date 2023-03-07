@@ -1,8 +1,63 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cinemix.App">
+<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="Cinemix.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PurpleColor">#6A34B0</Color>
+            <Color x:Key="PurpleLightColor">#947Ac4</Color>
 
+            <Style TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+            <Style
+                x:Key="Header"
+                TargetType="StackLayout">
+                <Setter Property="Spacing" Value="0" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
+            <Style
+                x:Key="ContentLayout"
+                BasedOn="{StaticResource Header}"
+                TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource PurpleColor}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Segoe UI" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="{StaticResource PurpleLightColor}" />
+            </Style>
+
+            <Style
+                x:Key="PageTitle"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="TextColor" Value="{StaticResource PurpleColor}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style
+                x:Key="PageSubtitle"
+                BasedOn="{StaticResource PageTitle}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+
+            <Style
+                x:Key="MovieTitle"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="64" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

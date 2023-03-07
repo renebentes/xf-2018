@@ -52,8 +52,7 @@
                                 TextColor="White" />
                         </Frame>
 
-                        <Frame
-                            Style="{StaticResource TimeStyle}">
+                        <Frame Style="{StaticResource TimeStyle}">
                             <Label
                                 Text="10:00h"
                                 TextColor="White" />
@@ -66,6 +65,40 @@
                         </Frame>
                     </StackLayout>
                 </Grid>
+
+                <Frame
+                    Margin="0,10,0,0"
+                    BackgroundColor="White"
+                    CornerRadius="10"
+                    HasShadow="False"
+                    HorizontalOptions="Center"
+                    IsClippedToBounds="False">
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal">
+                        <StackLayout
+                            Padding="3"
+                            HorizontalOptions="End">
+                            <Label
+                                Style="{StaticResource PageSubtitle}"
+                                Text="MEIA" />
+                            <Label
+                                Style="{StaticResource PageTitle}"
+                                Text="R$ 15,00" />
+                        </StackLayout>
+
+                        <StackLayout Padding="3">
+                            <Label
+                                Style="{StaticResource PageSubtitle}"
+                                Text="INTEIRA" />
+                            <Label
+                                Style="{StaticResource PageTitle}"
+                                Text="R$ 30,00" />
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
+
             </StackLayout>
         </StackLayout>
     </ScrollView>

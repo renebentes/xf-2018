@@ -53,7 +53,7 @@
             <Style
                 x:Key="MovieTitle"
                 TargetType="Label">
-                <Setter Property="FontSize" Value="64" />
+                <Setter Property="FontSize" Value="{OnPlatform Default=40,UWP=64}" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="TextColor" Value="White" />
             </Style>

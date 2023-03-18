@@ -1,4 +1,3 @@
-# Based on https://github.com/dotnet/maui/blob/main/.github/workflows/dotnet-format-daily.yml
 name: Daily code format check
 on:
     workflow_dispatch:
@@ -19,7 +18,11 @@ jobs:
                   ref: ${{ github.head_ref }}
 
             - name: Run dotnet format
-              run: dotnet format ./Cinemix/Cinemix.sln --no-restore
+              uses: jfversluis/dotnet-format@v1.0.5
+              with:
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
+                  action: "fix"
+                  workspace: "ConsultaCep.sln"
 
             - name: Commit files
               if: steps.format.outputs.has-changes == 'true'
@@ -35,8 +38,7 @@ jobs:
                   body: |
                       Automated PR to fix formatting errors
                   author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
-                  labels: |
-                      t/housekeeping ♻︎
+                  labels: housekeeping ♻︎
                   assignees: renebentes
                   reviewers: renebentes
                   branch: housekeeping/fix-codeformatting

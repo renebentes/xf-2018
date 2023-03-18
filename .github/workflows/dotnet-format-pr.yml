@@ -1,0 +1,39 @@
+name: PR code format check
+on: pull_request
+
+# This action only need a single permission in order to autoformat the code.
+permissions:
+  contents: read
+
+jobs:
+  dotnet-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Run dotnet format
+        id: format
+        uses: jfversluis/dotnet-format@v1.0.5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          action: "fix"
+          only-changed-files: true
+          workspace: ConsultaCep.sln
+
+      - name: Commit files
+        if: steps.format.outputs.has-changes == 'true'
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -a -m 'styles: Apply automated code formatting
+          Co-authored-by: ${{ github.event.pull_request.user.login }} <${{ github.event.pull_request.user.id }}+${{ github.event.pull_request.user.login }}@users.noreply.github.com>'
+
+      - name: Push changes
+        if: steps.format.outputs.has-changes == 'true'
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.head_ref }}

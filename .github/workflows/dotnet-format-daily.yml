@@ -1,44 +1,44 @@
 name: Daily code format check
 on:
-    workflow_dispatch:
-    schedule:
-        - cron: 0 0 * * * # Every day at midnight (UTC)
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 * * * # Every day at midnight (UTC)
 
 permissions:
-    pull-requests: write
-    contents: write
+  pull-requests: write
+  contents: write
 
 jobs:
-    dotnet-format:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repo
-              uses: actions/checkout@v3
-              with:
-                  ref: ${{ github.head_ref }}
+  dotnet-format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
 
-            - name: Run dotnet format
-              uses: jfversluis/dotnet-format@v1.0.5
-              with:
-                  repo-token: ${{ secrets.GITHUB_TOKEN }}
-                  action: "fix"
-                  workspace: "ConsultaCep.sln"
+      - name: Run dotnet format
+        uses: jfversluis/dotnet-format@v1.0.5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          action: "fix"
+          workspace: "ConsultaCep.sln"
 
-            - name: Commit files
-              if: steps.format.outputs.has-changes == 'true'
-              run: |
-                  git config --local user.name "github-actions[bot]"
-                  git config --local user.email "github-actions[bot]@users.noreply.github.com"
-                  git commit -a -m 'styles: Apply automated code formatting'
+      - name: Commit files
+        if: steps.format.outputs.has-changes == 'true'
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -a -m 'styles: Apply automated code formatting'
 
-            - name: Create Pull Request
-              uses: peter-evans/create-pull-request@v4
-              with:
-                  title: "styles: Automated PR to fix formatting errors"
-                  body: |
-                      Automated PR to fix formatting errors
-                  author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
-                  labels: housekeeping ♻︎
-                  assignees: renebentes
-                  reviewers: renebentes
-                  branch: housekeeping/fix-codeformatting
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: "styles: Automated PR to fix formatting errors"
+          body: |
+            Automated PR to fix formatting errors
+          author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          labels: housekeeping ♻︎
+          assignees: renebentes
+          reviewers: renebentes
+          branch: housekeeping/fix-codeformatting

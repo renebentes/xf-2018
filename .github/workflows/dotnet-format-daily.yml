@@ -18,6 +18,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Run dotnet format
+        id: format
         uses: jfversluis/dotnet-format@v1.0.5
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}

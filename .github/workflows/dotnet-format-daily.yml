@@ -19,11 +19,8 @@ jobs:
 
       - name: Run dotnet format
         id: format
-        uses: jfversluis/dotnet-format@v1.0.9
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          action: "fix"
-          workspace: "./ConsultaCep/ConsultaCep.sln"
+        run: |
+          find ./ -type f -name *.sln | xargs -n 1 dotnet format --no-restore
 
       - name: Commit files
         if: steps.format.outputs.has-changes == 'true'

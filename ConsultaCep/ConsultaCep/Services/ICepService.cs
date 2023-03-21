@@ -1,5 +1,5 @@
-using System.Threading.Tasks;
 using ConsultaCep.Model;
+using System.Threading.Tasks;
 
 namespace ConsultaCep.Services
 {

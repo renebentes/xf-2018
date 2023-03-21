@@ -1,4 +1,4 @@
-﻿using ConsultaCep.Model;
+using ConsultaCep.Model;
 using ConsultaCep.Services;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;

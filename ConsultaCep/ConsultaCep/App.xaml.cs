@@ -1,4 +1,4 @@
-﻿using ConsultaCep.Pages;
+using ConsultaCep.Pages;
 using Xamarin.Forms;
 
 namespace ConsultaCep

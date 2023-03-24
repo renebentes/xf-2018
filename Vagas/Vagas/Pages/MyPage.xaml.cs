@@ -56,5 +56,26 @@ namespace Vagas.Pages
                 await Navigation.PushAsync(new CreatePage(vaga));
             }
         }
+
+        private async void OnSearch(object sender, TextChangedEventArgs e)
+        {
+            if (sender is Entry entry)
+            {
+                await SearchAsync(entry);
+            }
+
+            FillData();
+        }
+
+        private async Task SearchAsync(Entry entry)
+        {
+            if (string.IsNullOrEmpty(entry.Text))
+            {
+                vagas = await App.Database.GetAllAsync();
+                return;
+            }
+
+            vagas = await App.Database.SearchByName(entry.Text);
+        }
     }
 }

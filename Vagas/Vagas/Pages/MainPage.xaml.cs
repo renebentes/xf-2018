@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Vagas.Models;
 using Xamarin.Forms;
 
@@ -6,6 +8,8 @@ namespace Vagas.Pages
 {
     public partial class MainPage : ContentPage
     {
+        private IReadOnlyCollection<Vaga>? vagas;
+
         public MainPage()
             => InitializeComponent();
 
@@ -13,7 +17,7 @@ namespace Vagas.Pages
         {
             base.OnAppearing();
 
-            var vagas = await App.Database.GetAllAsync();
+            vagas = await App.Database.GetAllAsync();
             collection.ItemsSource = vagas;
             totalVagas.Text = vagas.Count switch
             {
@@ -32,6 +36,14 @@ namespace Vagas.Pages
             {
                 var vaga = (Vaga)tapGesture.CommandParameter;
                 await Navigation.PushAsync(new DetailPage(vaga));
+            }
+        }
+
+        private void OnSearch(object sender, TextChangedEventArgs e)
+        {
+            if (sender is Entry entry)
+            {
+                collection.ItemsSource = vagas.Where(vaga => vaga.Nome == entry.Text);
             }
         }
     }

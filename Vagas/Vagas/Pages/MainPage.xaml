@@ -27,7 +27,9 @@
             <Button Text="Minhas Vagas" />
         </FlexLayout>
 
-        <Entry Placeholder="Pesquisar" />
+        <Entry
+            Placeholder="Pesquisar"
+            TextChanged="OnSearch" />
         <Label
             x:Name="totalVagas"
             Text="Nenhuma vaga encontrada" />

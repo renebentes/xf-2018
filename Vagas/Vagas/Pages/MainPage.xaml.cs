@@ -1,3 +1,5 @@
+using System;
+using Vagas.Models;
 using Xamarin.Forms;
 
 namespace Vagas.Pages
@@ -13,5 +15,8 @@ namespace Vagas.Pages
 
             collection.ItemsSource = await App.Database.GetAllAsync();
         }
+
+        private void OnGoToCreatePage(object sender, EventArgs e)
+            => Navigation.PushAsync(new CreatePage());
     }
 }

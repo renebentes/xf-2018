@@ -21,7 +21,9 @@
                     VerticalOptions="End" />
             </StackLayout>
 
-            <Button Text="Nova" />
+            <Button
+                Clicked="OnGoToCreatePage"
+                Text="Nova" />
             <Button Text="Minhas Vagas" />
         </FlexLayout>
 

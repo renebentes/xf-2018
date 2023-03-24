@@ -2,16 +2,52 @@
 <ContentPage
     x:Class="Vagas.Pages.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:Vagas.Models">
 
     <StackLayout>
-        <FlexLayout>
-            <Label
-                FontSize="24"
-                Text="Vagas" />
+        <FlexLayout JustifyContent="SpaceAround">
+            <StackLayout
+                FlexLayout.Grow="1"
+                Orientation="Horizontal"
+                Spacing="0">
+                <Label
+                    FontSize="24"
+                    Text="Vagas"
+                    VerticalOptions="Center" />
+                <Label
+                    FontSize="10"
+                    Text="encontre seu emprego aqui"
+                    VerticalOptions="End" />
+            </StackLayout>
 
+            <Button Text="Nova" />
+            <Button Text="Minhas Vagas" />
         </FlexLayout>
 
-    </StackLayout>
+        <Entry Placeholder="Pesquisar" />
+        <Label Text="Nenhuma vaga encontrada" />
 
+        <CollectionView x:DataType="models:Vaga">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label
+                            Grid.Column="0"
+                            FontAttributes="Bold"
+                            Text="{Binding Nome}" />
+                        <Label
+                            Grid.Column="0"
+                            Text="{Binding Empresa}" />
+                        <Label
+                            Grid.Column="0"
+                            Text="{Binding Cidade}" />
+                        <Label
+                            Grid.Column="1"
+                            Text="+ Detalhes" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>

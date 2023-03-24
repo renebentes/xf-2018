@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Vagas.Models;
 using Xamarin.Forms;
 
@@ -17,14 +17,24 @@ namespace Vagas.Pages
         {
             base.OnAppearing();
 
-            vagas = await App.Database.GetAllAsync();
+            await LoadAsync();
+        }
+
+        private void FillData()
+        {
             collection.ItemsSource = vagas;
-            totalVagas.Text = vagas.Count switch
+            totalVagas.Text = vagas?.Count switch
             {
                 0 => "Nenhuma vaga encontrada!",
                 1 => "1 vaga encontrada!",
-                _ => $"{vagas.Count} vagas encontradas!"
+                _ => $"{vagas?.Count} vagas encontradas!"
             };
+        }
+
+        private async Task LoadAsync()
+        {
+            vagas = await App.Database.GetAllAsync();
+            FillData();
         }
 
         private void OnGoToCreatePage(object sender, EventArgs e)
@@ -39,12 +49,25 @@ namespace Vagas.Pages
             }
         }
 
-        private void OnSearch(object sender, TextChangedEventArgs e)
+        private async void OnSearch(object sender, TextChangedEventArgs e)
         {
             if (sender is Entry entry)
             {
-                collection.ItemsSource = vagas.Where(vaga => vaga.Nome == entry.Text);
+                await SearchAsync(entry);
             }
+
+            FillData();
+        }
+
+        private async Task SearchAsync(Entry entry)
+        {
+            if (string.IsNullOrEmpty(entry.Text))
+            {
+                vagas = await App.Database.GetAllAsync();
+                return;
+            }
+
+            vagas = await App.Database.SearchByName(entry.Text);
         }
     }
 }

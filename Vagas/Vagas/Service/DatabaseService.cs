@@ -28,7 +28,7 @@ namespace Vagas.Service
             => await _connection.FindAsync<Vaga>(id);
 
         public async Task<IReadOnlyCollection<Vaga>> SearchByName(string name)
-            => await _connection.Table<Vaga>().Where(vaga => vaga.Nome == name).ToListAsync();
+            => await _connection.Table<Vaga>().Where(vaga => vaga.Nome.Contains(name)).ToListAsync();
 
         public async Task UpdateAsync(Vaga vaga)
             => await _connection.UpdateAsync(vaga);

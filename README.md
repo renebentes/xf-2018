@@ -78,6 +78,12 @@ Aplicativo exemplo de uso de banco de dados no Xamarin.Forms.
 
 [Ver código-fonte](Vagas)
 
+### Mímica
+
+Jogo usando os conceitos do padrão Model-View-ViewModel (MVVM) de desenvolvimento no Xamarin.Forms.
+
+[Ver código-fonte](Mimica)
+
 ## Licença
 
 Este projeto está sob os termos da licença [MIT](LICENSE)

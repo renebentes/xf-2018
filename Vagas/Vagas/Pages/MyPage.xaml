@@ -40,7 +40,13 @@
                             Orientation="Horizontal">
                             <Label Text="Editar" />
                             <Label Text="|" />
-                            <Label Text="Excluir" />
+                            <Label Text="Excluir">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        Tapped="OnDelete" />
+                                </Label.GestureRecognizers>
+                            </Label>
                         </StackLayout>
 
                     </Grid>

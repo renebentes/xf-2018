@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Vagas.Models;
@@ -34,6 +35,17 @@ namespace Vagas.Pages
         {
             vagas = await App.Database.GetAllAsync();
             FillData();
+        }
+
+        private async void OnDelete(object sender, EventArgs e)
+        {
+            if (sender is Label label && label.GestureRecognizers[0] is TapGestureRecognizer tapGesture)
+            {
+                var vaga = (Vaga)tapGesture.CommandParameter;
+                await App.Database.DeleteAsync(vaga);
+            }
+
+            await LoadAsync();
         }
     }
 }

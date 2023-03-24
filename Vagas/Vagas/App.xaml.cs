@@ -18,7 +18,7 @@ namespace Vagas
         }
 
         public static DatabaseService Database
-                    => database ??= new DatabaseService(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "vagas.db3"));
+            => database ??= new DatabaseService(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "vagas.db3"));
 
         protected override void OnResume()
         {

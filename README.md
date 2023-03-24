@@ -72,6 +72,12 @@ Aplicativo exemplo de uso dos **Estilos** no Xamarin.Forms.
 
 [Ver código-fonte](Cinemix)
 
+### Vagas
+
+Aplicativo exemplo de uso de banco de dados no Xamarin.Forms.
+
+[Ver código-fonte](Vagas)
+
 ## Licença
 
 Este projeto está sob os termos da licença [MIT](LICENSE)

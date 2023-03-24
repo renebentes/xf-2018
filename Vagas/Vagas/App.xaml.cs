@@ -1,19 +1,26 @@
 using System;
+using System.IO;
+using Vagas.Pages;
+using Vagas.Service;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Vagas
 {
     public partial class App : Application
     {
+        private static DatabaseService? database;
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
-        protected override void OnStart()
+        public static DatabaseService Database
+                    => database ??= new DatabaseService(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "vagas.db3"));
+
+        protected override void OnResume()
         {
         }
 
@@ -21,7 +28,7 @@ namespace Vagas
         {
         }
 
-        protected override void OnResume()
+        protected override void OnStart()
         {
         }
     }

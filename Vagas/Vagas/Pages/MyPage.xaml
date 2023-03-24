@@ -38,7 +38,13 @@
                         <StackLayout
                             Grid.Column="1"
                             Orientation="Horizontal">
-                            <Label Text="Editar" />
+                            <Label Text="Editar">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        Tapped="OnEdit" />
+                                </Label.GestureRecognizers>
+                            </Label>
                             <Label Text="|" />
                             <Label Text="Excluir">
                                 <Label.GestureRecognizers>

@@ -24,7 +24,9 @@
             <Button
                 Clicked="OnGoToCreatePage"
                 Text="Nova" />
-            <Button Text="Minhas Vagas" />
+            <Button
+                Clicked="OnGoToMyPage"
+                Text="Minhas Vagas" />
         </FlexLayout>
 
         <Entry

@@ -69,5 +69,8 @@ namespace Vagas.Pages
 
             vagas = await App.Database.SearchByName(entry.Text);
         }
+
+        private void OnGoToMyPage(object sender, EventArgs e)
+            => Navigation.PushAsync(new MyPage());
     }
 }

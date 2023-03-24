@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Vagas.Pages.MyPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:Vagas.Models">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label
+                FontSize="24"
+                Text="Vagas"
+                VerticalOptions="Center" />
+            <Label
+                FontSize="12"
+                Text="encontre seu emprego aqui"
+                VerticalOptions="End" />
+        </StackLayout>
+
+        <Entry Placeholder="Pesquisar" />
+        <Label
+            x:Name="totalVagas"
+            Text="Nenhuma vaga encontrada" />
+
+        <CollectionView
+            x:Name="collection"
+            x:DataType="models:Vaga">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*,Auto">
+                        <StackLayout Grid.Column="0">
+                            <Label
+                                FontAttributes="Bold"
+                                Text="{Binding Nome}" />
+                            <Label Text="{Binding Empresa}" />
+                            <Label Text="{Binding Cidade}" />
+                        </StackLayout>
+
+                        <StackLayout
+                            Grid.Column="1"
+                            Orientation="Horizontal">
+                            <Label Text="Editar" />
+                            <Label Text="|" />
+                            <Label Text="Excluir" />
+                        </StackLayout>
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

@@ -28,7 +28,9 @@
         </FlexLayout>
 
         <Entry Placeholder="Pesquisar" />
-        <Label Text="Nenhuma vaga encontrada" />
+        <Label
+            x:Name="totalVagas"
+            Text="Nenhuma vaga encontrada" />
 
         <CollectionView
             x:Name="collection"
@@ -36,16 +38,13 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid ColumnDefinitions="*,Auto">
-                        <Label
-                            Grid.Column="0"
-                            FontAttributes="Bold"
-                            Text="{Binding Nome}" />
-                        <Label
-                            Grid.Column="0"
-                            Text="{Binding Empresa}" />
-                        <Label
-                            Grid.Column="0"
-                            Text="{Binding Cidade}" />
+                        <StackLayout Grid.Column="0">
+                            <Label
+                                FontAttributes="Bold"
+                                Text="{Binding Nome}" />
+                            <Label Text="{Binding Empresa}" />
+                            <Label Text="{Binding Cidade}" />
+                        </StackLayout>
                         <Label
                             Grid.Column="1"
                             Text="+ Detalhes" />

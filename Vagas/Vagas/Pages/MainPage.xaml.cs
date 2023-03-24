@@ -25,5 +25,14 @@ namespace Vagas.Pages
 
         private void OnGoToCreatePage(object sender, EventArgs e)
             => Navigation.PushAsync(new CreatePage());
+
+        private async void OnGoToDetail(object sender, EventArgs e)
+        {
+            if (sender is Label label && label.GestureRecognizers[0] is TapGestureRecognizer tapGesture)
+            {
+                var vaga = (Vaga)tapGesture.CommandParameter;
+                await Navigation.PushAsync(new DetailPage(vaga));
+            }
+        }
     }
 }

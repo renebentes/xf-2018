@@ -47,7 +47,13 @@
                         </StackLayout>
                         <Label
                             Grid.Column="1"
-                            Text="+ Detalhes" />
+                            Text="+ Detalhes">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    CommandParameter="{Binding .}"
+                                    Tapped="OnGoToDetail" />
+                            </Label.GestureRecognizers>
+                        </Label>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

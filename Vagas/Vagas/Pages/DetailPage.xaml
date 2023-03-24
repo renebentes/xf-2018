@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Vagas.Pages.DetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:Vagas.Models"
+    x:DataType="models:Vaga">
+
+    <FlexLayout Direction="Column">
+        <Label
+            FlexLayout.AlignSelf="Center"
+            FontAttributes="Bold"
+            FontSize="18"
+            Text="{Binding Nome}" />
+        <Label
+            FlexLayout.AlignSelf="Center"
+            FontSize="16"
+            Text="{Binding Empresa}" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label
+                FontAttributes="Bold"
+                Text="Quantidade:" />
+            <Label Text="{Binding Quantidade}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label
+                FontAttributes="Bold"
+                Text="Cidade:" />
+            <Label Text="{Binding Cidade}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label
+                FontAttributes="Bold"
+                Text="Salário:" />
+            <Label Text="{Binding Salario}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label
+                FontAttributes="Bold"
+                Text="Descrição:" />
+            <Label Text="{Binding Descricao}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label
+                FontAttributes="Bold"
+                Text="Tipo de Contratação:" />
+            <Label Text="{Binding TipoContratacao}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label
+                FontAttributes="Bold"
+                Text="Telefone:" />
+            <Label Text="{Binding Telefone}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label
+                FontAttributes="Bold"
+                Text="E-mail:" />
+            <Label Text="{Binding Email}" />
+        </StackLayout>
+    </FlexLayout>
+</ContentPage>

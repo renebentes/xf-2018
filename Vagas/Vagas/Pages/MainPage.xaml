@@ -28,7 +28,9 @@
         <Entry Placeholder="Pesquisar" />
         <Label Text="Nenhuma vaga encontrada" />
 
-        <CollectionView x:DataType="models:Vaga">
+        <CollectionView
+            x:Name="collection"
+            x:DataType="models:Vaga">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid ColumnDefinitions="*,Auto">

@@ -6,5 +6,12 @@ namespace Vagas.Pages
     {
         public MainPage()
             => InitializeComponent();
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            collection.ItemsSource = await App.Database.GetAllAsync();
+        }
     }
 }

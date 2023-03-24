@@ -3,40 +3,43 @@
     x:Class="Vagas.Pages.CreatePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <StackLayout>
-        <Entry
-            x:Name="name"
-            Placeholder="Vaga" />
-        <Entry
-            x:Name="company"
-            Placeholder="Empresa" />
-        <Entry
-            x:Name="quantity"
-            Placeholder="Quantidade" />
-        <Entry
-            x:Name="city"
-            Placeholder="Cidade" />
-        <Entry
-            x:Name="salary"
-            Placeholder="Salário" />
-        <Editor
-            x:Name="description"
-            HeightRequest="200"
-            Placeholder="Descrição" />
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Tipo de Contratação" />
-            <Label Text="CLT" />
-            <Switch x:Name="tipoContratacao" />
-            <Label Text="PJ" />
+
+    <ScrollView>
+        <StackLayout>
+            <Entry
+                x:Name="name"
+                Placeholder="Vaga" />
+            <Entry
+                x:Name="company"
+                Placeholder="Empresa" />
+            <Entry
+                x:Name="quantity"
+                Placeholder="Quantidade" />
+            <Entry
+                x:Name="city"
+                Placeholder="Cidade" />
+            <Entry
+                x:Name="salary"
+                Placeholder="Salário" />
+            <Editor
+                x:Name="description"
+                HeightRequest="200"
+                Placeholder="Descrição" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Tipo de Contratação" />
+                <Label Text="CLT" />
+                <Switch x:Name="tipoContratacao" />
+                <Label Text="PJ" />
+            </StackLayout>
+            <Entry
+                x:Name="telefone"
+                Placeholder="Telefone" />
+            <Entry
+                x:Name="email"
+                Placeholder="E-mail" />
+            <Button
+                Clicked="OnSave"
+                Text="Salvar" />
         </StackLayout>
-        <Entry
-            x:Name="telefone"
-            Placeholder="Telefone" />
-        <Entry
-            x:Name="email"
-            Placeholder="E-mail" />
-        <Button
-            Clicked="OnSave"
-            Text="Salvar" />
-    </StackLayout>
+    </ScrollView>
 </ContentPage>

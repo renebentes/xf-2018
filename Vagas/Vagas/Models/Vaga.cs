@@ -10,6 +10,8 @@ namespace Vagas.Models
 
         public string? Email { get; set; }
 
+        public string? Empresa { get; set; }
+
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 

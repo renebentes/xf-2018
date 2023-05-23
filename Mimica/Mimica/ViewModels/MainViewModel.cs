@@ -1,3 +1,4 @@
+using Mimica.Data;
 using Mimica.Models;
 using Mimica.Pages;
 using System;
@@ -10,7 +11,7 @@ namespace Mimica.ViewModels
     public class MainViewModel : INotifyPropertyChanged
     {
         public MainViewModel()
-            => StartGameCommand = new Command(StartGame);
+            => StartGameCommand = new Command(OnStartGame);
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -23,7 +24,11 @@ namespace Mimica.ViewModels
         private void OnPropertyChanged(string propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        private void StartGame(object obj)
-            => App.Current.MainPage = new GamePage();
+        private void OnStartGame()
+        {
+            DataStore.Game = Game;
+            DataStore.CurrentRound = 1;
+            Application.Current.MainPage = new GamePage();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Mimica.Pages.GamePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -27,15 +27,21 @@
             </StackLayout>
         </Frame>
 
-        <Label
-            FontSize="100"
+        <StackLayout
             HorizontalOptions="CenterAndExpand"
-            Text="200" />
-        <Label
-            HorizontalOptions="CenterAndExpand"
-            Text="seg" />
+            IsVisible="{Binding ShowTimeCount}"
+            Orientation="Horizontal">
 
-        <StackLayout Orientation="Horizontal">
+            <Label
+                FontSize="100"
+                Text="{Binding TimeCount}" />
+            <Label Text="seg" />
+        </StackLayout>
+
+        <StackLayout
+            HorizontalOptions="Center"
+            IsVisible="{Binding ShowOptions}"
+            Orientation="Horizontal">
             <Button
                 BackgroundColor="LightGreen"
                 Text="Acertou" />
@@ -45,6 +51,7 @@
         </StackLayout>
 
         <Button
+            Command="{Binding StartCommand}"
             IsVisible="{Binding ShowStart}"
             Text="Iniciar" />
     </StackLayout>

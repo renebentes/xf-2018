@@ -10,9 +10,12 @@ namespace Mimica.ViewModels
     public class MainViewModel : BaseViewModel
     {
         public MainViewModel()
-            => StartGameCommand = new Command(OnStartGame);
+        {
+            StartGameCommand = new Command(OnStartGame);
+            Game = new Game();
+        }
 
-        public Game Game { get; set; } = null!;
+        public Game Game { get; set; }
 
         public string[] Levels => Enum.GetNames(typeof(Level));
 

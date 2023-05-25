@@ -12,7 +12,11 @@ namespace Mimica.ViewModels
         public MainViewModel()
         {
             StartGameCommand = new Command(OnStartGame);
-            Game = new Game();
+            Game = new Game
+            {
+                PlayerOne = new Player(),
+                PlayerTwo = new Player()
+            };
         }
 
         public Game Game { get; set; }

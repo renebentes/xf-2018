@@ -28,7 +28,7 @@
         </Frame>
 
         <StackLayout
-            HorizontalOptions="CenterAndExpand"
+            HorizontalOptions="Center"
             IsVisible="{Binding ShowTimeCount}"
             Orientation="Horizontal">
 

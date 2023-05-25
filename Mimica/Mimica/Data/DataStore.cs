@@ -2,7 +2,7 @@ using Mimica.Models;
 
 namespace Mimica.Data
 {
-    public class DataStore
+    public static class DataStore
     {
         public static Game Game { get; set; }
 

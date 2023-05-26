@@ -30,12 +30,15 @@
         <StackLayout
             HorizontalOptions="Center"
             IsVisible="{Binding ShowTimeCount}"
-            Orientation="Horizontal">
+            Orientation="Vertical">
 
             <Label
                 FontSize="100"
                 Text="{Binding TimeCount}" />
-            <Label Text="seg" />
+            <Label
+                HorizontalOptions="Center"
+                Text="seg" />
+
         </StackLayout>
 
         <StackLayout

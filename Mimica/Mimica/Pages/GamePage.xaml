@@ -14,7 +14,7 @@
             <StackLayout>
                 <Label
                     HorizontalOptions="CenterAndExpand"
-                    Text="{Binding Score, StringFormat='Pontuação {0}'}" />
+                    Text="{Binding WordScore, StringFormat='Pontuação {0}'}" />
                 <Label
                     FontSize="30"
                     HorizontalOptions="CenterAndExpand"
@@ -44,9 +44,11 @@
             Orientation="Horizontal">
             <Button
                 BackgroundColor="LightGreen"
+                Command="{Binding SuccessCommand}"
                 Text="Acertou" />
             <Button
                 BackgroundColor="OrangeRed"
+                Command="{Binding ErrorCommand}"
                 Text="Errou" />
         </StackLayout>
 

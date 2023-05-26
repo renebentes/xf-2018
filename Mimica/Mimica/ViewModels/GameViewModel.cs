@@ -1,4 +1,6 @@
 using Mimica.Data;
+using Mimica.Models;
+using Mimica.Pages;
 using System;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -7,29 +9,26 @@ namespace Mimica.ViewModels
 {
     public class GameViewModel : BaseViewModel
     {
-        private byte score;
+        private readonly Player _player;
+
         private bool showOptions;
         private bool showStart;
         private bool showTimeCount;
         private bool showWord = true;
         private short timeCount;
         private string word = "***************";
+        private byte wordScore;
 
-        public GameViewModel()
+        public GameViewModel(Player player)
         {
             ShowWordCommand = new Command(OnShowWord);
             StartCommand = new Command(OnStart);
+            SuccessCommand = new Command(OnSuccess);
+            ErrorCommand = new Command(OnError);
+            _player = player;
         }
 
-        public byte Score
-        {
-            get => score;
-            set
-            {
-                score = value;
-                OnPropertyChanged(nameof(Score));
-            }
-        }
+        public ICommand ErrorCommand { get; set; }
 
         public bool ShowOptions
         {
@@ -75,6 +74,8 @@ namespace Mimica.ViewModels
 
         public ICommand StartCommand { get; set; }
 
+        public ICommand SuccessCommand { get; set; }
+
         public short TimeCount
         {
             get => timeCount;
@@ -95,9 +96,28 @@ namespace Mimica.ViewModels
             }
         }
 
+        public byte WordScore
+        {
+            get => wordScore;
+            set
+            {
+                wordScore = value;
+                OnPropertyChanged(nameof(WordScore));
+            }
+        }
+
+        private void NextPlayer()
+        {
+            var player = _player == DataStore.Game.PlayerOne ? DataStore.Game.PlayerTwo : DataStore.Game.PlayerOne;
+            Application.Current.MainPage = new GamePage(player);
+        }
+
+        private void OnError()
+            => NextPlayer();
+
         private void OnShowWord()
         {
-            Score = 3;
+            WordScore = 3;
             Word = "Sentar";
             ShowWord = false;
             ShowStart = true;
@@ -121,6 +141,12 @@ namespace Mimica.ViewModels
                     return true;
                 });
             }
+        }
+
+        private void OnSuccess()
+        {
+            _player.Score += WordScore;
+            NextPlayer();
         }
     }
 }

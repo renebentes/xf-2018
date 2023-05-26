@@ -29,7 +29,7 @@ namespace Mimica.ViewModels
         {
             DataStore.Game = Game;
             DataStore.CurrentRound = 1;
-            Application.Current.MainPage = new GamePage();
+            Application.Current.MainPage = new GamePage(Game.PlayerOne);
         }
     }
 }

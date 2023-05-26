@@ -15,7 +15,7 @@ namespace Mimica.ViewModels
         private bool showStart;
         private bool showTimeCount;
         private bool showWord = true;
-        private short timeCount;
+        private string timeCount;
         private string word = "***************";
         private byte wordScore;
 
@@ -76,7 +76,7 @@ namespace Mimica.ViewModels
 
         public ICommand SuccessCommand { get; set; }
 
-        public short TimeCount
+        public string TimeCount
         {
             get => timeCount;
             set
@@ -149,7 +149,7 @@ namespace Mimica.ViewModels
 
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
-                    TimeCount = wordTimeInSeconds;
+                    TimeCount = wordTimeInSeconds > 0 ? wordTimeInSeconds.ToString() : "Tempo esgotado";
                     wordTimeInSeconds--;
                     return true;
                 });

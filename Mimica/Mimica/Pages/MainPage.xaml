@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Mimica.Pages.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -10,11 +10,11 @@
         <Label Text="Jogador 1" />
         <Entry
             Placeholder="(Opcional)"
-            Text="{Binding Game.PlayerOne}" />
+            Text="{Binding Game.PlayerOne.Name}" />
         <Label Text="Jogador 2" />
         <Entry
             Placeholder="(Opcional)"
-            Text="{Binding Game.PlayerTwo}" />
+            Text="{Binding Game.PlayerTwo.Name}" />
 
         <Label Text="Nível" />
         <Picker ItemsSource="{Binding Levels}" />

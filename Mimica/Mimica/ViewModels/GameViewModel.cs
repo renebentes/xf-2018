@@ -108,8 +108,21 @@ namespace Mimica.ViewModels
 
         private void NextPlayer()
         {
-            var player = _player == DataStore.Game.PlayerOne ? DataStore.Game.PlayerTwo : DataStore.Game.PlayerOne;
-            Application.Current.MainPage = new GamePage(player);
+            Player player;
+
+            if (_player == DataStore.Game.PlayerOne)
+            {
+                player = DataStore.Game.PlayerTwo;
+            }
+            else
+            {
+                player = DataStore.Game.PlayerOne;
+                DataStore.CurrentRound++;
+            }
+
+            Application.Current.MainPage = DataStore.CurrentRound > DataStore.Game.Matches
+                ? new ScorePage()
+                : new GamePage(player);
         }
 
         private void OnError()

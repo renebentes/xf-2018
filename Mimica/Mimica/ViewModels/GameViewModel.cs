@@ -15,7 +15,7 @@ namespace Mimica.ViewModels
         private bool showStart;
         private bool showTimeCount;
         private bool showWord = true;
-        private string timeCount;
+        private string timeCount = null!;
         private string word = "***************";
         private byte wordScore;
 

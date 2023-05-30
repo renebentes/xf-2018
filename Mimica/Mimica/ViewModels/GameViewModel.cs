@@ -10,7 +10,7 @@ namespace Mimica.ViewModels
     public class GameViewModel : BaseViewModel
     {
         private readonly Player _player;
-
+        private readonly Random _random = new();
         private bool showOptions;
         private bool showStart;
         private bool showTimeCount;
@@ -106,6 +106,20 @@ namespace Mimica.ViewModels
             }
         }
 
+        private void LoadValues(Level level)
+        {
+            if (level == Level.Random)
+            {
+                level = (Level)_random.Next((int)Level.Beginner, (int)Level.Hard);
+                LoadValues(level);
+                return;
+            }
+
+            var index = _random.Next(0, DataStore.Words[level].Length - 1);
+            Word = DataStore.Words[level].GetValue(index).ToString();
+            WordScore = DataStore.Scores[level];
+        }
+
         private void NextPlayer()
         {
             Player player;
@@ -130,8 +144,8 @@ namespace Mimica.ViewModels
 
         private void OnShowWord()
         {
-            WordScore = 3;
-            Word = "Sentar";
+            LoadValues(DataStore.Game.Level);
+
             ShowWord = false;
             ShowStart = true;
         }

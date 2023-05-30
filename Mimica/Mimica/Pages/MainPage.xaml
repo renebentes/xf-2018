@@ -17,7 +17,9 @@
             Text="{Binding Game.PlayerTwo.Name}" />
 
         <Label Text="Nível" />
-        <Picker ItemsSource="{Binding Levels}" />
+        <Picker
+            ItemsSource="{Binding Levels}"
+            SelectedItem="{Binding SelectedLevelName, Mode=TwoWay}" />
         <Label Text="Tempo por palavra(seg)" />
         <Entry Text="{Binding Game.WordTimeInSeconds}" />
         <Label Text="Rodadas" />

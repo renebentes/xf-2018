@@ -1,3 +1,4 @@
+using Mimica.ViewModels;
 using Xamarin.Forms;
 
 namespace Mimica.Pages
@@ -5,6 +6,9 @@ namespace Mimica.Pages
     public partial class ScorePage : ContentPage
     {
         public ScorePage()
-            => InitializeComponent();
+        {
+            InitializeComponent();
+            BindingContext = new ScoreViewModel();
+        }
     }
 }

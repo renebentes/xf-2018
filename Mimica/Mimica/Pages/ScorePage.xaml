@@ -6,24 +6,24 @@
     xmlns:viewModels="clr-namespace:Mimica.ViewModels"
     x:DataType="viewModels:ScoreViewModel">
     <StackLayout>
-        <Label Text="Jogador 1" />
+        <Label Text="{Binding Game.PlayerOne.Name}" />
 
         <Frame
             BorderColor="Black"
             HasShadow="False">
             <Label
                 FontSize="50"
-                Text="30 pontos" />
+                Text="{Binding Game.PlayerOne.Score, StringFormat='Nome: {0}'}" />
         </Frame>
 
-        <Label Text="Jogador 2" />
+        <Label Text="{Binding Game.PlayerTwo.Name, StringFormat='Nome: {0}'}" />
 
         <Frame
             BorderColor="Black"
             HasShadow="False">
             <Label
                 FontSize="50"
-                Text="20 pontos" />
+                Text="{Binding Game.PlayerOne.Score}" />
         </Frame>
 
         <Button

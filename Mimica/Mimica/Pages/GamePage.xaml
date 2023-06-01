@@ -27,19 +27,13 @@
             </StackLayout>
         </Frame>
 
-        <StackLayout
+
+        <Label
+            FontSize="100"
             HorizontalOptions="Center"
             IsVisible="{Binding ShowTimeCount}"
-            Orientation="Vertical">
+            Text="{Binding TimeCount, StringFormat='{0} seg'}" />
 
-            <Label
-                FontSize="100"
-                Text="{Binding TimeCount}" />
-            <Label
-                HorizontalOptions="Center"
-                Text="seg" />
-
-        </StackLayout>
 
         <StackLayout
             HorizontalOptions="Center"

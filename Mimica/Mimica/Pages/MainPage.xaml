@@ -7,6 +7,10 @@
     x:DataType="viewmodels:MainViewModel">
 
     <StackLayout>
+        <Label
+            Text="{Binding ErrorMessage}"
+            TextColor="Red" />
+
         <Label Text="Jogador 1" />
         <Entry
             Placeholder="(Opcional)"

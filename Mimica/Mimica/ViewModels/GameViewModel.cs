@@ -9,8 +9,8 @@ namespace Mimica.ViewModels
 {
     public class GameViewModel : BaseViewModel
     {
-        private readonly Player _player;
         private readonly Random _random = new();
+        private Player player;
         private bool showOptions;
         private bool showStart;
         private bool showTimeCount;
@@ -25,10 +25,20 @@ namespace Mimica.ViewModels
             StartCommand = new Command(OnStart);
             SuccessCommand = new Command(OnSuccess);
             ErrorCommand = new Command(OnError);
-            _player = player;
+            Player = player;
         }
 
         public ICommand ErrorCommand { get; set; }
+
+        public Player Player
+        {
+            get => player;
+            set
+            {
+                player = value;
+                OnPropertyChanged();
+            }
+        }
 
         public bool ShowOptions
         {
@@ -122,21 +132,21 @@ namespace Mimica.ViewModels
 
         private void NextPlayer()
         {
-            Player player;
+            Player nextPlayer;
 
-            if (_player == DataStore.Game.PlayerOne)
+            if (Player == DataStore.Game.PlayerOne)
             {
-                player = DataStore.Game.PlayerTwo;
+                nextPlayer = DataStore.Game.PlayerTwo;
             }
             else
             {
-                player = DataStore.Game.PlayerOne;
+                nextPlayer = DataStore.Game.PlayerOne;
                 DataStore.CurrentRound++;
             }
 
             Application.Current.MainPage = DataStore.CurrentRound > DataStore.Game.Matches
                 ? new ScorePage()
-                : new GamePage(player);
+                : new GamePage(nextPlayer);
         }
 
         private void OnError()
@@ -172,7 +182,7 @@ namespace Mimica.ViewModels
 
         private void OnSuccess()
         {
-            _player.Score += WordScore;
+            player.Score += WordScore;
             NextPlayer();
         }
     }

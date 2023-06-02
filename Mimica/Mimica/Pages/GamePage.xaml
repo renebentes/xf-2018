@@ -7,7 +7,7 @@
     x:DataType="viewModel:GameViewModel">
 
     <StackLayout>
-        <Label Text="Jogador" />
+        <Label Text="{Binding Player.Name, StringFormat='Jogador: {0}'}" />
         <Frame
             BorderColor="Black"
             HasShadow="False">

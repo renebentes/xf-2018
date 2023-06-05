@@ -25,6 +25,11 @@
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource PrimayColor}" />
             </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimayColor}" />
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

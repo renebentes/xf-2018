@@ -46,7 +46,7 @@
             <Entry Text="{Binding Game.Matches}"/>
         </StackLayout>
 
-        <Button
+        <Button Margin="10,0,10,0"
             Command="{Binding StartGameCommand}"
             Text="Iniciar" />
     </StackLayout>

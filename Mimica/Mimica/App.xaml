@@ -3,5 +3,28 @@
     x:Class="Mimica.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Application.Resources />
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimayColor">#F78053</Color>
+            <Color x:Key="SecondaryColor">#FAFF7F</Color>
+
+            <Style
+                ApplyToDerivedTypes="True"
+                TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}" />
+            </Style>
+
+            <Style TargetType="StackLayout">
+                <Setter Property="Spacing" Value="0" />
+            </Style>
+
+            <Style TargetType="StackLayout" x:Key="ContentBlock">
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource PrimayColor}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

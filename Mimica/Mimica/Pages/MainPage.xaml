@@ -8,27 +8,44 @@
     x:DataType="viewmodels:MainViewModel">
 
     <StackLayout>
-        <Label
-            Text="{Binding ErrorMessage}"
-            TextColor="Red" />
+        <views:HeaderView/>
+        <StackLayout Style="{StaticResource ContentBlock}">
+            <Label
+                   Text="{Binding ErrorMessage}"
+                   TextColor="Red" />
+        </StackLayout>
 
-        <Label Text="Jogador 1" />
-        <Entry
-            Placeholder="(Opcional)"
-            Text="{Binding Game.PlayerOne.Name}" />
-        <Label Text="Jogador 2" />
-        <Entry
-            Placeholder="(Opcional)"
-            Text="{Binding Game.PlayerTwo.Name}" />
+        <StackLayout Style="{StaticResource ContentBlock}">
+            <Label Text="Jogador 1" />
+            <Entry
+                Placeholder="(Opcional)"
+                Text="{Binding Game.PlayerOne.Name}" />
+        </StackLayout>
 
-        <Label Text="Nível" />
-        <Picker
-            ItemsSource="{Binding Levels}"
-            SelectedItem="{Binding SelectedLevelName, Mode=TwoWay}" />
-        <Label Text="Tempo por palavra(seg)" />
-        <Entry Text="{Binding Game.WordTimeInSeconds}" />
-        <Label Text="Rodadas" />
-        <Entry Text="{Binding Game.Matches}" />
+        <StackLayout Style="{StaticResource ContentBlock}">
+            <Label Text="Jogador 2" />
+            <Entry
+                Placeholder="(Opcional)"
+                Text="{Binding Game.PlayerTwo.Name}" />
+        </StackLayout>
+
+        <StackLayout Style="{StaticResource ContentBlock}">
+            <Label Text="Nível"/>
+            <Picker
+                ItemsSource="{Binding Levels}"
+                SelectedItem="{Binding SelectedLevelName, Mode=TwoWay}" />
+        </StackLayout>
+
+        <StackLayout Style="{StaticResource ContentBlock}">
+            <Label Text="Tempo por palavra(seg)"/>
+            <Entry Text="{Binding Game.WordTimeInSeconds}"/>
+        </StackLayout>
+
+        <StackLayout Style="{StaticResource ContentBlock}">
+            <Label Text="Rodadas"/>
+            <Entry Text="{Binding Game.Matches}"/>
+        </StackLayout>
+
         <Button
             Command="{Binding StartGameCommand}"
             Text="Iniciar" />

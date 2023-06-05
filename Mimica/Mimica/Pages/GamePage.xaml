@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Mimica.Pages.GamePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -8,52 +8,64 @@
     x:DataType="viewModel:GameViewModel">
 
     <StackLayout>
-        <views:HeaderView/>
-        <Label Text="{Binding Player.Name, StringFormat='Jogador: {0}'}" />
-        <Frame
-            BorderColor="Black"
-            HasShadow="False">
-            <StackLayout>
-                <Label
-                    HorizontalOptions="CenterAndExpand"
-                    Text="{Binding WordScore, StringFormat='Pontuação {0}'}" />
-                <Label
-                    FontSize="30"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="{Binding Word}" />
-                <Button
-                    Command="{Binding ShowWordCommand}"
-                    HorizontalOptions="CenterAndExpand"
-                    IsVisible="{Binding ShowWord}"
-                    Text="Mostrar" />
-            </StackLayout>
-        </Frame>
+        <views:HeaderView />
 
+        <StackLayout
+            Style="{StaticResource ContentBlock}"
+            VerticalOptions="FillAndExpand">
+            <Label
+                FontSize="Medium"
+                Text="{Binding Player.Name, StringFormat='Jogador: {0}'}" />
+            <Frame>
+                <StackLayout VerticalOptions="Center">
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding WordScore, StringFormat='Pontuação {0}'}" />
+                    <Label
+                        FontSize="30"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding Word}" />
+                    <Button
+                        Command="{Binding ShowWordCommand}"
+                        HorizontalOptions="CenterAndExpand"
+                        IsVisible="{Binding ShowWord}"
+                        Text="Mostrar" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
 
         <Label
-            FontSize="100"
+            FontAttributes="Bold"
+            FontSize="60"
             HorizontalOptions="Center"
             IsVisible="{Binding ShowTimeCount}"
-            Text="{Binding TimeCount, StringFormat='{0} seg'}" />
-
+            Text="{Binding TimeCount}" />
 
         <StackLayout
             HorizontalOptions="Center"
-            IsVisible="{Binding ShowOptions}"
-            Orientation="Horizontal">
+            Orientation="Horizontal"
+            Style="{StaticResource ContentBlock}"
+            VerticalOptions="FillAndExpand">
+
             <Button
                 BackgroundColor="LightGreen"
                 Command="{Binding SuccessCommand}"
-                Text="Acertou" />
+                IsVisible="{Binding ShowOptions}"
+                Text="Acertou"
+                VerticalOptions="End" />
             <Button
                 BackgroundColor="OrangeRed"
                 Command="{Binding ErrorCommand}"
-                Text="Errou" />
-        </StackLayout>
+                IsVisible="{Binding ShowOptions}"
+                Text="Errou"
+                VerticalOptions="End" />
 
-        <Button
-            Command="{Binding StartCommand}"
-            IsVisible="{Binding ShowStart}"
-            Text="Iniciar" />
+            <Button
+                Margin="10,0,10,0"
+                Command="{Binding StartCommand}"
+                IsVisible="{Binding ShowStart}"
+                Text="Iniciar"
+                VerticalOptions="End" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>

@@ -173,7 +173,7 @@ namespace Mimica.ViewModels
 
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
-                    TimeCount = wordTimeInSeconds > 0 ? wordTimeInSeconds.ToString() : "Tempo esgotado";
+                    TimeCount = wordTimeInSeconds > 0 ? $"{wordTimeInSeconds.ToString()} seg" : "Tempo esgotado";
                     wordTimeInSeconds--;
                     return true;
                 });

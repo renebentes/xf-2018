@@ -35,11 +35,13 @@
         </StackLayout>
 
         <Label
+            Margin="10,0,10,0"
             FontAttributes="Bold"
             FontSize="60"
-            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
             IsVisible="{Binding ShowTimeCount}"
-            Text="{Binding TimeCount}" />
+            Text="{Binding TimeCount}"
+            VerticalOptions="Center" />
 
         <StackLayout
             HorizontalOptions="Center"

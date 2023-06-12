@@ -3,13 +3,24 @@
 <ContentView
     x:Class="Mimica.Views.HeaderView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:Mimica.ViewModels;assembly=Mimica"
+    x:DataType="viewModels:BaseViewModel">
     <StackLayout
         Padding="10"
-        BackgroundColor="#FCC14E">
+        BackgroundColor="#FCC14E"
+        Orientation="Horizontal">
         <Label
             Text="Jogo de Mímica"
-            TextColor="White" />
+            TextColor="White"
+            VerticalOptions="Center" />
+        <Button
+            Padding="0"
+            BackgroundColor="Transparent"
+            Command="{Binding RestartCommand}"
+            HeightRequest="20"
+            HorizontalOptions="EndAndExpand"
+            Text="Reiniciar"
+            TextTransform="None" />
     </StackLayout>
 </ContentView>
-

@@ -170,7 +170,8 @@ namespace Mimica.ViewModels
             void DecreaseTime()
             {
                 var wordTimeInSeconds = DataStore.Game.WordTimeInSeconds;
-
+                TimeCount = $"{wordTimeInSeconds.ToString()} seg";
+                wordTimeInSeconds--;
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     TimeCount = wordTimeInSeconds > 0 ? $"{wordTimeInSeconds.ToString()} seg" : "Tempo esgotado";

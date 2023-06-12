@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Mimica.Pages.ScorePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -7,27 +7,41 @@
     xmlns:views="clr-namespace:Mimica.Views"
     x:DataType="viewModels:ScoreViewModel">
     <StackLayout>
-        <views:HeaderView/>
-        <Label Text="{Binding Game.PlayerOne.Name}" />
+        <views:HeaderView />
 
-        <Frame
-            BorderColor="Black"
-            HasShadow="False">
-            <Label
-                FontSize="50"
-                Text="{Binding Game.PlayerOne.Score, StringFormat='Nome: {0}'}" />
-        </Frame>
+        <StackLayout
+            Style="{StaticResource ContentBlock}"
+            VerticalOptions="FillAndExpand">
+            <Frame>
+                <StackLayout>
+                    <Label
+                        FontSize="Medium"
+                        Text="{Binding Game.PlayerOne.Name, StringFormat='Jogador: {0}'}" />
+                    <Label
+                        FontSize="50"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding Game.PlayerOne.Score}"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
 
-        <Label Text="{Binding Game.PlayerTwo.Name, StringFormat='Nome: {0}'}" />
-
-        <Frame
-            BorderColor="Black"
-            HasShadow="False">
-            <Label
-                FontSize="50"
-                Text="{Binding Game.PlayerOne.Score}" />
-        </Frame>
-
+        <StackLayout
+            Style="{StaticResource ContentBlock}"
+            VerticalOptions="FillAndExpand">
+            <Frame>
+                <StackLayout>
+                    <Label
+                        FontSize="Medium"
+                        Text="{Binding Game.PlayerTwo.Name, StringFormat='Jogador: {0}'}" />
+                    <Label
+                        FontSize="50"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding Game.PlayerOne.Score}"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
         <Button
             BackgroundColor="CornflowerBlue"
             Command="{Binding RestartCommand}"

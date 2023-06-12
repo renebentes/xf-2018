@@ -37,7 +37,7 @@
                     <Label
                         FontSize="50"
                         HorizontalOptions="CenterAndExpand"
-                        Text="{Binding Game.PlayerOne.Score}"
+                        Text="{Binding Game.PlayerTwo.Score}"
                         VerticalOptions="CenterAndExpand" />
                 </StackLayout>
             </Frame>

@@ -9,6 +9,7 @@ namespace Mimica.ViewModels
     public class ScoreViewModel : BaseViewModel
     {
         public Game Game { get; set; }
+
         public ScoreViewModel()
         {
             Game = DataStore.Game;

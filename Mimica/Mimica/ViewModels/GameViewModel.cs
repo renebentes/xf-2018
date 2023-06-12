@@ -46,7 +46,7 @@ namespace Mimica.ViewModels
             set
             {
                 showOptions = value;
-                OnPropertyChanged(nameof(ShowOptions));
+                OnPropertyChanged();
             }
         }
 
@@ -56,7 +56,7 @@ namespace Mimica.ViewModels
             set
             {
                 showStart = value;
-                OnPropertyChanged(nameof(ShowStart));
+                OnPropertyChanged();
             }
         }
 
@@ -66,7 +66,7 @@ namespace Mimica.ViewModels
             set
             {
                 showTimeCount = value;
-                OnPropertyChanged(nameof(ShowTimeCount));
+                OnPropertyChanged();
             }
         }
 
@@ -76,7 +76,7 @@ namespace Mimica.ViewModels
             set
             {
                 showWord = value;
-                OnPropertyChanged(nameof(ShowWord));
+                OnPropertyChanged();
             }
         }
 
@@ -92,7 +92,7 @@ namespace Mimica.ViewModels
             set
             {
                 timeCount = value;
-                OnPropertyChanged(nameof(TimeCount));
+                OnPropertyChanged();
             }
         }
 
@@ -102,7 +102,7 @@ namespace Mimica.ViewModels
             set
             {
                 word = value;
-                OnPropertyChanged(nameof(Word));
+                OnPropertyChanged();
             }
         }
 
@@ -112,7 +112,7 @@ namespace Mimica.ViewModels
             set
             {
                 wordScore = value;
-                OnPropertyChanged(nameof(WordScore));
+                OnPropertyChanged();
             }
         }
 

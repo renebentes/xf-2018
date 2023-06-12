@@ -32,6 +32,7 @@
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource PrimayColor}" />
                 <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
 
             <Style TargetType="Frame">

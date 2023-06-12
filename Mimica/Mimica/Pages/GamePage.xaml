@@ -50,13 +50,13 @@
             VerticalOptions="FillAndExpand">
 
             <Button
-                BackgroundColor="LightGreen"
+                BackgroundColor="#00B22D"
                 Command="{Binding SuccessCommand}"
                 IsVisible="{Binding ShowOptions}"
                 Text="Acertou"
                 VerticalOptions="End" />
             <Button
-                BackgroundColor="OrangeRed"
+                BackgroundColor="#FF4000"
                 Command="{Binding ErrorCommand}"
                 IsVisible="{Binding ShowOptions}"
                 Text="Errou"

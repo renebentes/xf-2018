@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    x:Class="NossoChat.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:NossoChat.ViewModels;assembly=NossoChat"
+    x:DataType="viewModels:MainViewModel">
+
+    <StackLayout>
+        <Label Text="NossoChat"></Label>
+    </StackLayout>
+</ContentPage>

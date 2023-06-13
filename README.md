@@ -34,55 +34,55 @@ Aplicativo para exemplificar o uso dos tipos de páginas disponíveis no Xamarin
 
 Aplicativo para exemplificar o uso dos tipos de layouts disponíveis no Xamarin Forms.
 
-[Ver código-fonte](Layouts)
+[Ver código-fonte](src/Layouts)
 
 ### XamPages
 
 Aplicativo de exemplo de implementação de Layouts com Xamarin Forms.
 
-[Ver código-fonte](XamPages)
+[Ver código-fonte](src/XamPages)
 
 ### XamControle
 
 Aplicativo de exemplo de uso dos controles disponíveis no Xamarin Forms.
 
-[Ver código-fonte](XamControle)
+[Ver código-fonte](src/XamControle)
 
 ### Tarefas
 
 Aplicativo para lista de tarefas a fazer em Xamarin Forms.
 
-[Ver código-fonte](Tarefas)
+[Ver código-fonte](src/Tarefas)
 
 ### XamCell
 
 Aplicativo para apresentar os tipos de controle Cell.
 
-[Ver código-fonte](XamCell)
+[Ver código-fonte](src/XamCell)
 
 ### XamStyles
 
 Aplicativo para apresentar as formas de uso dos **Estilos** no Xamarin.Forms.
 
-[Ver código-fonte](XamStyles)
+[Ver código-fonte](src/XamStyles)
 
 ### Cinemix
 
 Aplicativo exemplo de uso dos **Estilos** no Xamarin.Forms.
 
-[Ver código-fonte](Cinemix)
+[Ver código-fonte](src/Cinemix)
 
 ### Vagas
 
 Aplicativo exemplo de uso de banco de dados no Xamarin.Forms.
 
-[Ver código-fonte](Vagas)
+[Ver código-fonte](src/Vagas)
 
 ### Mímica
 
 Jogo usando os conceitos do padrão Model-View-ViewModel (MVVM) de desenvolvimento no Xamarin.Forms.
 
-[Ver código-fonte](Mimica)
+[Ver código-fonte](src/Mimica)
 
 ## Licença
 

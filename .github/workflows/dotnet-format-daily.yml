@@ -25,7 +25,7 @@ jobs:
       - name: Run dotnet format
         id: format
         run: |
-          find ./ -type f -name *.sln | xargs -n 1 dotnet format --no-restore
+          find ./ -type f -name "*.sln" | xargs -n 1 dotnet format --no-restore
 
       - name: Commit files
         if: steps.format.outputs.has-changes == 'true'

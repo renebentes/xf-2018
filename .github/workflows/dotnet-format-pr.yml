@@ -27,7 +27,6 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           action: "fix"
           only-changed-files: true
-          workspace: ConsultaCep.sln
 
       - name: Commit files
         if: steps.format.outputs.has-changes == 'true'

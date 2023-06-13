@@ -84,6 +84,12 @@ Jogo usando os conceitos do padrão Model-View-ViewModel (MVVM) de desenvolvimen
 
 [Ver código-fonte](src/Mimica)
 
+### NossoChat
+
+Aplicativo de chat online.
+
+[Ver código-fonte](src/Mimica)
+
 ## Licença
 
 Este projeto está sob os termos da licença [MIT](LICENSE)

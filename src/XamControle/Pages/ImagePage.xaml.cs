@@ -18,7 +18,8 @@ public partial class ImagePage : ContentPage
             imagePath = Path.Combine("Assets", imagePath);
         }
 
-        var image = new Image {
+        var image = new Image
+        {
             Source = imagePath
         };
 

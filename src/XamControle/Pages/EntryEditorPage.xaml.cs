@@ -8,11 +8,13 @@ public partial class EntryEditorPage : ContentPage
     {
         InitializeComponent();
 
-        Idade.TextChanged += (s, e) => {
+        Idade.TextChanged += (s, e) =>
+        {
             Duplicado.Text = Idade.Text;
         };
 
-        Comentario.Completed += (s, e) => {
+        Comentario.Completed += (s, e) =>
+        {
             QuantidadeCaracteres.Text = Comentario.Text.Length.ToString();
         };
     }

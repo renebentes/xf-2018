@@ -23,6 +23,7 @@ indent_size = 2
 [*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct}]
 indent_size = 2
 
+[*.cs]
 indent_size = 4
 tab_width = 4
 
@@ -53,21 +54,19 @@ dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:sil
 dotnet_style_require_accessibility_modifiers = for_non_interface_members:silent
 
 # Preferências de nível de expressão
-dotnet_style_coalesce_expression = true:suggestion
+dotnet_style_coalesce_expression = true:warning
 dotnet_style_collection_initializer = true:suggestion
 dotnet_style_explicit_tuple_names = true:suggestion
 dotnet_style_namespace_match_folder = true:suggestion
-dotnet_style_null_propagation = true:suggestion
+dotnet_style_null_propagation = true:warning
+dotnet_style_prefer_auto_properties = true:silent
 dotnet_style_object_initializer = true:suggestion
-dotnet_style_operator_placement_when_wrapping = beginning_of_line
-dotnet_style_prefer_auto_properties = true:suggestion
-dotnet_style_prefer_compound_assignment = true:suggestion
 dotnet_style_prefer_conditional_expression_over_assignment = true:suggestion
 dotnet_style_prefer_conditional_expression_over_return = true:suggestion
 dotnet_style_prefer_foreach_explicit_cast_in_source = when_strongly_typed
 dotnet_style_prefer_inferred_anonymous_type_member_names = true:suggestion
 dotnet_style_prefer_inferred_tuple_names = true:suggestion
-dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:warning
 dotnet_style_prefer_simplified_boolean_expressions = true:suggestion
 dotnet_style_prefer_simplified_interpolation = true:suggestion
 
@@ -124,6 +123,7 @@ csharp_prefer_simple_using_statement = true:warning
 csharp_style_namespace_declarations= file_scoped:warning
 csharp_style_prefer_method_group_conversion = true:silent
 csharp_style_prefer_top_level_statements = true:silent
+csharp_style_prefer_primary_constructors = true:suggestion
 
 # Preferências de nível de expressão
 csharp_prefer_simple_default_expression = true:suggestion
@@ -141,7 +141,7 @@ csharp_style_unused_value_assignment_preference = discard_variable:suggestion
 csharp_style_unused_value_expression_statement_preference = discard_variable:suggestion
 
 # Preferências da diretiva 'using'
-csharp_using_directive_placement = outside_namespace:silent
+csharp_using_directive_placement = outside_namespace:warning
 
 # New line preferences
 csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental = false:warning

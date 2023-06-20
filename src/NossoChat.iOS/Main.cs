@@ -1,4 +1,6 @@
-﻿namespace NossoChat.iOS
+using UIKit;
+
+namespace NossoChat.iOS
 {
     public class Application
     {

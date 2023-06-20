@@ -1,4 +1,11 @@
-﻿namespace NossoChat.UWP
+using System;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
+
+namespace NossoChat.UWP
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

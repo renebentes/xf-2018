@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NossoChat.Android", "src\No
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NossoChat.iOS", "src\NossoChat.iOS\NossoChat.iOS.csproj", "{7689AFFB-D6D4-4653-B8A6-55C3B1444357}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NossoChat", "src\NossoChat\NossoChat.csproj", "{B879DD9B-7DEC-4900-8EDC-84866C8AADA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NossoChat", "src\NossoChat\NossoChat.csproj", "{B879DD9B-7DEC-4900-8EDC-84866C8AADA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{29FC1DBD-1D01-4358-B91E-84B39E488695}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

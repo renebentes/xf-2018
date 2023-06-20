@@ -4,7 +4,7 @@ namespace NossoChat.Services
 {
     public class DataService
     {
-        private const string BaseUrl = "https://teste.com";
+        private const string BaseUrl = "https://jsonplaceholder.typicode.com/";
         private readonly HttpClient _httpClient;
         private readonly JsonSerializerOptions _jsonSerializerOptions;
 

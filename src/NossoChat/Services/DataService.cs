@@ -28,7 +28,7 @@ namespace NossoChat.Services
             {
                 var json = JsonSerializer.Serialize(user, _jsonSerializerOptions);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _httpClient.PostAsync("user", content);
+                var response = await _httpClient.PostAsync("users", content);
 
                 if (response.IsSuccessStatusCode)
                 {

@@ -1,7 +1,7 @@
+using Mimica.Pages;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using Mimica.Pages;
 using Xamarin.Forms;
 
 namespace Mimica.ViewModels

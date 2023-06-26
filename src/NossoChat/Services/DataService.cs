@@ -46,5 +46,26 @@ namespace NossoChat.Services
 
             return new User();
         }
+
+        public async Task<IList<Chat>> GetChats()
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync("chats");
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonSerializer.Deserialize<IList<Chat>>(content, _jsonSerializerOptions)
+                        ?? throw new InvalidOperationException();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                throw;
+            }
+
+            return Enumerable.Empty<Chat>().ToList();
+        }
     }
 }

@@ -88,7 +88,7 @@ Jogo usando os conceitos do padrão Model-View-ViewModel (MVVM) de desenvolvimen
 
 Aplicativo de chat online.
 
-[Ver código-fonte](src/Mimica)
+[Ver código-fonte](src/NossoChat)
 
 ## Licença
 

@@ -67,5 +67,22 @@ namespace NossoChat.Services
 
             return Enumerable.Empty<Chat>().ToList();
         }
+
+        public async Task<bool> AddChat(Chat chat)
+        {
+            try
+            {
+                var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync("chats", content);
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

@@ -138,6 +138,21 @@ namespace NossoChat.Services
             }
         }
 
+        public async Task<bool> RemoveMessage(Message message)
+        {
+            try
+            {
+                var response = await _httpClient.DeleteAsync($"chats/{message.ChatId}/messages/{message.Id}");
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                throw;
+            }
+        }
+
         public async Task<bool> RenameChat(Chat chat)
         {
             try

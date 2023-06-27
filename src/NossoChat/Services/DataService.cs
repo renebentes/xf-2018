@@ -101,5 +101,20 @@ namespace NossoChat.Services
                 throw;
             }
         }
+
+        public async Task<bool> RemoveChat(Chat chat)
+        {
+            try
+            {
+                var response = await _httpClient.DeleteAsync($"chats/{chat.Id}");
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

@@ -23,13 +23,14 @@
 
             <Style TargetType="Entry">
                 <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource PrimayColor}" />
                 <Setter Property="TextColor" Value="{StaticResource PrimayColor}" />
             </Style>
 
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="TextColor" Value="White" />
                 <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

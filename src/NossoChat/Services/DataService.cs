@@ -22,6 +22,44 @@ namespace NossoChat.Services
             };
         }
 
+        public async Task<bool> AddChat(Chat chat)
+        {
+            try
+            {
+                var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync("chats", content);
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                throw;
+            }
+        }
+
+        public async Task<IList<Chat>> GetChats()
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync("chats");
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonSerializer.Deserialize<IList<Chat>>(content, _jsonSerializerOptions)
+                        ?? throw new InvalidOperationException();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                throw;
+            }
+
+            return Enumerable.Empty<Chat>().ToList();
+        }
+
         public async Task<User> GetUser(User user)
         {
             try
@@ -47,34 +85,11 @@ namespace NossoChat.Services
             return new User();
         }
 
-        public async Task<IList<Chat>> GetChats()
+        public async Task<bool> RemoveChat(Chat chat)
         {
             try
             {
-                var response = await _httpClient.GetAsync("chats");
-                if (response.IsSuccessStatusCode)
-                {
-                    var content = await response.Content.ReadAsStringAsync();
-                    return JsonSerializer.Deserialize<IList<Chat>>(content, _jsonSerializerOptions)
-                        ?? throw new InvalidOperationException();
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
-            }
-
-            return Enumerable.Empty<Chat>().ToList();
-        }
-
-        public async Task<bool> AddChat(Chat chat)
-        {
-            try
-            {
-                var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _httpClient.PostAsync("chats", content);
+                var response = await _httpClient.DeleteAsync($"chats/{chat.Id}");
 
                 return response.IsSuccessStatusCode;
             }
@@ -92,21 +107,6 @@ namespace NossoChat.Services
                 var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await _httpClient.PutAsync($"chats/{chat.Id}", content);
-
-                return response.IsSuccessStatusCode;
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
-            }
-        }
-
-        public async Task<bool> RemoveChat(Chat chat)
-        {
-            try
-            {
-                var response = await _httpClient.DeleteAsync($"chats/{chat.Id}");
 
                 return response.IsSuccessStatusCode;
             }

@@ -39,6 +39,23 @@ namespace NossoChat.Services
             }
         }
 
+        public async Task<bool> AddMessage(Message message)
+        {
+            try
+            {
+                var json = JsonSerializer.Serialize(message, _jsonSerializerOptions);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync($"chats/{message.ChatId}/messages", content);
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                throw;
+            }
+        }
+
         public async Task<IList<Chat>> GetChats()
         {
             try

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 
 <ContentPage
     x:Class="NossoChat.Pages.MainPage"
@@ -8,6 +8,22 @@
     x:DataType="viewModels:MainViewModel">
 
     <StackLayout>
-        <Label Text="NossoChat"></Label>
+        <Label Text="NossoChat" />
+
+        <StackLayout
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="300">
+            <Entry
+                Placeholder="Nome"
+                Text="{Binding Name}" />
+
+            <Entry
+                IsPassword="True"
+                Placeholder="Senha"
+                Text="{Binding Name}" />
+
+            <Button Text="Acessar" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>

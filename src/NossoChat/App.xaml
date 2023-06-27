@@ -1,45 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application
     x:Class="NossoChat.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="PrimayColor">#F78053</Color>
-            <Color x:Key="SecondaryColor">#FAFF7F</Color>
-            <Color x:Key="TertiaryColor">#FBFFB3</Color>
+            <Color x:Key="PrimayColor">#5ED055</Color>
 
             <Style
                 ApplyToDerivedTypes="True"
                 TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimayColor}" />
             </Style>
 
             <Style TargetType="StackLayout">
                 <Setter Property="Spacing" Value="0" />
             </Style>
 
-            <Style
-                x:Key="ContentBlock"
-                TargetType="StackLayout">
-                <Setter Property="Padding" Value="10" />
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
             </Style>
 
-            <Style TargetType="Label">
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="White" />
                 <Setter Property="TextColor" Value="{StaticResource PrimayColor}" />
             </Style>
 
             <Style TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource PrimayColor}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="TextColor" Value="White" />
-                <Setter Property="HorizontalOptions" Value="Center"/>
-            </Style>
-
-            <Style TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{StaticResource TertiaryColor}" />
-                <Setter Property="BorderColor" Value="{StaticResource PrimayColor}" />
-                <Setter Property="HasShadow" Value="False" />
-                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

@@ -84,5 +84,22 @@ namespace NossoChat.Services
                 throw;
             }
         }
+
+        public async Task<bool> RenameChat(Chat chat)
+        {
+            try
+            {
+                var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _httpClient.PutAsync($"chats/{chat.Id}", content);
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

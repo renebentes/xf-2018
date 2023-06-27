@@ -4,5 +4,19 @@
     { "id": 1, "name": "1º chat" },
     { "id": 2, "name": "2º chat" },
     { "id": 3, "name": "3º chat" }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "content": "olá",
+      "chatId": 1,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "content": "bom dia",
+      "chatId": 1,
+      "userId": 1
+    }
   ]
 }

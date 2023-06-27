@@ -56,27 +56,6 @@ namespace NossoChat.Services
             }
         }
 
-        public async Task<IList<Chat>> GetChats()
-        {
-            try
-            {
-                var response = await _httpClient.GetAsync("chats");
-                if (response.IsSuccessStatusCode)
-                {
-                    var content = await response.Content.ReadAsStringAsync();
-                    return JsonSerializer.Deserialize<IList<Chat>>(content, _jsonSerializerOptions)
-                        ?? throw new InvalidOperationException();
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
-            }
-
-            return Enumerable.Empty<Chat>().ToList();
-        }
-
         public async Task<IList<Message>> GetChatMessages(Chat chat)
         {
             try
@@ -96,6 +75,27 @@ namespace NossoChat.Services
             }
 
             return Enumerable.Empty<Message>().ToList();
+        }
+
+        public async Task<IList<Chat>> GetChats()
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync("chats");
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonSerializer.Deserialize<IList<Chat>>(content, _jsonSerializerOptions)
+                        ?? throw new InvalidOperationException();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                throw;
+            }
+
+            return Enumerable.Empty<Chat>().ToList();
         }
 
         public async Task<User> GetUser(User user)

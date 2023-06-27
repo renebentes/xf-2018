@@ -40,7 +40,7 @@ namespace NossoChat.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Debug.WriteLine(e);
                 throw;
             }
 
@@ -80,7 +80,7 @@ namespace NossoChat.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Debug.WriteLine(e);
                 throw;
             }
         }
@@ -97,7 +97,7 @@ namespace NossoChat.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Debug.WriteLine(e);
                 throw;
             }
         }
@@ -112,7 +112,7 @@ namespace NossoChat.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Debug.WriteLine(e);
                 throw;
             }
         }

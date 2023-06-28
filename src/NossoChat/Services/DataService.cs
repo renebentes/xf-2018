@@ -4,7 +4,7 @@ namespace NossoChat.Services
 {
     public class DataService
     {
-        private const string BaseUrl = "https://my-json-server.typicode.com/renebentes/xf-2018";
+        private const string BaseUrl = "https://my-json-server.typicode.com/renebentes/xf-2018/";
         private readonly HttpClient _httpClient;
         private readonly JsonSerializerOptions _jsonSerializerOptions;
 
@@ -27,8 +27,8 @@ namespace NossoChat.Services
             try
             {
                 var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _httpClient.PostAsync("chats", content);
+                using var content = new StringContent(json, Encoding.UTF8, "application/json");
+                using var response = await _httpClient.PostAsync("chats", content);
 
                 return response.IsSuccessStatusCode;
             }
@@ -44,8 +44,8 @@ namespace NossoChat.Services
             try
             {
                 var json = JsonSerializer.Serialize(message, _jsonSerializerOptions);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _httpClient.PostAsync($"chats/{message.ChatId}/messages", content);
+                using var content = new StringContent(json, Encoding.UTF8, "application/json");
+                using var response = await _httpClient.PostAsync($"chats/{message.ChatId}/messages", content);
 
                 return response.IsSuccessStatusCode;
             }
@@ -60,7 +60,7 @@ namespace NossoChat.Services
         {
             try
             {
-                var response = await _httpClient.GetAsync($"chats/{chat.Id}/messages");
+                using var response = await _httpClient.GetAsync($"chats/{chat.Id}/messages");
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
@@ -81,7 +81,7 @@ namespace NossoChat.Services
         {
             try
             {
-                var response = await _httpClient.GetAsync("chats");
+                using var response = await _httpClient.GetAsync("chats");
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
@@ -103,8 +103,8 @@ namespace NossoChat.Services
             try
             {
                 var json = JsonSerializer.Serialize(user, _jsonSerializerOptions);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _httpClient.PostAsync("users", content);
+                using var content = new StringContent(json, Encoding.UTF8, "application/json");
+                using var response = await _httpClient.PostAsync("users", content);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -127,7 +127,7 @@ namespace NossoChat.Services
         {
             try
             {
-                var response = await _httpClient.DeleteAsync($"chats/{chat.Id}");
+                using var response = await _httpClient.DeleteAsync($"chats/{chat.Id}");
 
                 return response.IsSuccessStatusCode;
             }
@@ -142,7 +142,7 @@ namespace NossoChat.Services
         {
             try
             {
-                var response = await _httpClient.DeleteAsync($"chats/{message.ChatId}/messages/{message.Id}");
+                using var response = await _httpClient.DeleteAsync($"chats/{message.ChatId}/messages/{message.Id}");
 
                 return response.IsSuccessStatusCode;
             }
@@ -158,8 +158,8 @@ namespace NossoChat.Services
             try
             {
                 var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await _httpClient.PutAsync($"chats/{chat.Id}", content);
+                using var content = new StringContent(json, Encoding.UTF8, "application/json");
+                using var response = await _httpClient.PutAsync($"chats/{chat.Id}", content);
 
                 return response.IsSuccessStatusCode;
             }

@@ -1,16 +1,58 @@
+using NossoChat.Models;
+using NossoChat.Pages;
+using System.Windows.Input;
+using Xamarin.Forms;
+
 namespace NossoChat.ViewModels;
 
 public class MainViewModel : BaseViewModel
 {
-    private string _name;
+    private string _username;
 
-    public string Name
+    private string _password;
+
+    public MainViewModel()
+        => EnterCommand = new Command(async () => await OnEnterCommand());
+
+    public ICommand EnterCommand { get; set; }
+
+    public string Username
     {
-        get => _name;
+        get => _username;
         set
         {
-            _name = value;
+            _username = value;
             OnPropertyChanged();
         }
+    }
+
+    public string Password
+    {
+        get => _password;
+        set
+        {
+            _password = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private async Task OnEnterCommand()
+    {
+        var user = new User
+        {
+            Username = Username,
+            Password = Password
+        };
+
+        var loggedUser = await DataService.GetUser(user);
+
+        if (loggedUser.Id == 0)
+        {
+            await Application.Current.MainPage.DisplayAlert("Erro", "Nome de usuário ou senha inválidos", "Ok");
+            return;
+        }
+
+        Application.Current.Properties["USER"] = JsonSerializer.Serialize(loggedUser);
+        Application.Current.MainPage = new NavigationPage(new ChatsPage());
     }
 }

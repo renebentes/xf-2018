@@ -15,15 +15,17 @@
             VerticalOptions="CenterAndExpand"
             WidthRequest="300">
             <Entry
-                Placeholder="Nome"
-                Text="{Binding Name}" />
+                Placeholder="Nome de usuário"
+                Text="{Binding Username}" />
 
             <Entry
                 IsPassword="True"
                 Placeholder="Senha"
-                Text="{Binding Name}" />
+                Text="{Binding Password}" />
 
-            <Button Text="Acessar" />
+            <Button
+                Command="{Binding EnterCommand}"
+                Text="Acessar" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

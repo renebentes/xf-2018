@@ -5,7 +5,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewModels="clr-namespace:NossoChat.ViewModels;assembly=NossoChat"
-    x:DataType="viewModels:MainViewModel">
+    x:DataType="viewModels:MainViewModel"
+    BackgroundColor="{StaticResource PrimayColor}">
 
     <StackLayout>
         <Label Text="NossoChat" />

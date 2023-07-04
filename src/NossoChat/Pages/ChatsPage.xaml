@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="NossoChat.Pages.ChatsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:NossoChat.Models"
+    xmlns:viewModels="clr-namespace:NossoChat.ViewModels"
+    Title="NossoChat"
+    x:DataType="viewModels:ChatsViewModel">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Command="{Binding AddCommand}"
+            IconImageSource="{OnPlatform Default=add.png,
+                                         UWP=Assets/add.png}"
+            Text="Novo chat" />
+        <ToolbarItem
+            Command="{Binding SortCommand}"
+            IconImageSource="{OnPlatform Default=sort.png,
+                                         UWP=Assets/sort.png}"
+            Text="Ordernar" />
+
+        <ToolbarItem
+            Command="{Binding LoadDataCommand}"
+            IconImageSource="{OnPlatform Default=refresh.png,
+                                         UWP=Assets/refresh.png}"
+            Text="Recarregar" />
+    </ContentPage.ToolbarItems>
+
+    <CollectionView
+        BackgroundColor="White"
+        ItemsSource="{Binding Chats}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:Chat">
+                <Label
+                    Padding="10,0"
+                    Text="{Binding Name}"
+                    TextColor="{StaticResource PrimayColor}" />
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

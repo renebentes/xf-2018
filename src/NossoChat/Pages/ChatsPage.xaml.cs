@@ -11,4 +11,11 @@ public partial class ChatsPage : ContentPage
 
         BindingContext = new ChatsViewModel();
     }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        (BindingContext as ChatsViewModel).LoadDataCommand.Execute(null);
+    }
 }

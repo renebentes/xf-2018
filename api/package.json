@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "NossoChat fake api",
   "main": "server.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node ./server.js"
+  },
   "author": {
     "name": "Rene Bentes Pinto",
     "email": "renebentes@yahoo.com.br",

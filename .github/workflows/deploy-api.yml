@@ -1,3 +1,4 @@
+name: Build and Deploy json-server
 on:
   push:
     branches:

@@ -2,11 +2,13 @@
   "name": "api",
   "version": "1.0.0",
   "description": "NossoChat fake api",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "server.js",
+  "scripts": {},
+  "author": {
+    "name": "Rene Bentes Pinto",
+    "email": "renebentes@yahoo.com.br",
+    "url": "https://github.com/renebentes"
   },
-  "author": "",
   "license": "MIT",
   "devDependencies": {
     "json-server": "^0.17.3"

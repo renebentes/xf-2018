@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "api/*"
 
 env:
   AZURE_WEBAPP_NAME: xf-2018 # set this to your application's name

@@ -4,7 +4,7 @@ namespace NossoChat.Services
 {
     public class DataService
     {
-        private const string BaseUrl = "https://my-json-server.typicode.com/renebentes/xf-2018/";
+        private const string BaseUrl = "https://xf-2018.azurewebsites.net/";
         private readonly HttpClient _httpClient;
         private readonly JsonSerializerOptions _jsonSerializerOptions;
 

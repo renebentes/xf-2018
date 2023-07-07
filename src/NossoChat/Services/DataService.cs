@@ -102,16 +102,14 @@ namespace NossoChat.Services
         {
             try
             {
-                var json = JsonSerializer.Serialize(user, _jsonSerializerOptions);
-                using var content = new StringContent(json, Encoding.UTF8, "application/json");
-                using var response = await _httpClient.PostAsync("users", content);
+                using var response = await _httpClient.GetAsync($"users/?username={user.Username}&password={user.Password}");
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var userContent = await response.Content.ReadAsStringAsync();
+                    var content = await response.Content.ReadAsStringAsync();
+                    var users = JsonSerializer.Deserialize<IList<User>>(content, _jsonSerializerOptions);
 
-                    return JsonSerializer.Deserialize<User>(userContent, _jsonSerializerOptions)
-                           ?? throw new InvalidOperationException();
+                    return users.SingleOrDefault();
                 }
             }
             catch (Exception e)

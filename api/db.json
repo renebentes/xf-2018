@@ -1,5 +1,8 @@
 {
-  "users": [{ "id": 1, "username": "demo", "password": "123456" }],
+  "users": [
+    { "id": 1, "username": "demo", "password": "123456" },
+    { "id": 1, "username": "demo2", "password": "123456" }
+  ],
   "chats": [
     { "id": 1, "name": "1º chat" },
     { "id": 2, "name": "2º chat" },
@@ -17,6 +20,12 @@
       "content": "bom dia",
       "chatId": 1,
       "userId": 1
+    },
+    {
+      "id": 3,
+      "content": "bom dia",
+      "chatId": 1,
+      "userId": 2
     }
   ]
 }

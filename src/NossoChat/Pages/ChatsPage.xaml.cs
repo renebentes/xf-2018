@@ -16,6 +16,6 @@ public partial class ChatsPage : ContentPage
     {
         base.OnAppearing();
 
-        (BindingContext as ChatsViewModel).LoadDataCommand.Execute(null);
+        ((ChatsViewModel)BindingContext).LoadDataCommand.Execute(null);
     }
 }

@@ -1,5 +1,6 @@
 using NossoChat.Models;
 using NossoChat.Pages;
+using NossoChat.Services;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -52,7 +53,8 @@ public class MainViewModel : BaseViewModel
             return;
         }
 
-        Application.Current.Properties["USER"] = JsonSerializer.Serialize(loggedUser);
+        PreferenceService.SaveUser(loggedUser);
+
         Application.Current.MainPage = new NavigationPage(new ChatsPage());
     }
 }

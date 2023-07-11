@@ -5,7 +5,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:NossoChat.Models"
     xmlns:viewModels="clr-namespace:NossoChat.ViewModels"
-    Title="NossoChat"
     x:DataType="viewModels:ChatsViewModel">
 
     <ContentPage.ToolbarItems>

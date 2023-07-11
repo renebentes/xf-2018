@@ -9,6 +9,12 @@
 
             <Style
                 ApplyToDerivedTypes="True"
+                TargetType="ContentPage">
+                <Setter Property="Title" Value="NossoChat" />
+            </Style>
+
+            <Style
+                ApplyToDerivedTypes="True"
                 TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource PrimayColor}" />
                 <Setter Property="BarTextColor" Value="White" />

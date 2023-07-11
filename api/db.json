@@ -1,7 +1,7 @@
 {
   "users": [
     { "id": 1, "username": "demo", "password": "123456" },
-    { "id": 1, "username": "demo2", "password": "123456" }
+    { "id": 2, "username": "demo2", "password": "123456" }
   ],
   "chats": [
     { "id": 1, "name": "1º chat" },

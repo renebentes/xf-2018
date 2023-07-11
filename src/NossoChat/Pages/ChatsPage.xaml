@@ -28,13 +28,20 @@
 
     <CollectionView
         BackgroundColor="White"
-        ItemsSource="{Binding Chats}">
+        ItemsSource="{Binding Chats}"
+        SelectionMode="Single">
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:Chat">
                 <Label
                     Padding="10,0"
                     Text="{Binding Name}"
-                    TextColor="{StaticResource PrimayColor}" />
+                    TextColor="{StaticResource PrimayColor}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:ChatsViewModel}}, Path=GetChatMessagesCommand}"
+                            CommandParameter="{Binding .}" />
+                    </Label.GestureRecognizers>
+                </Label>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

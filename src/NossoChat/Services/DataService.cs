@@ -56,11 +56,11 @@ namespace NossoChat.Services
             }
         }
 
-        public async Task<IList<Message>> GetChatMessages(Chat chat)
+        public async Task<IList<Message>> GetChatMessages(int chatId)
         {
             try
             {
-                using var response = await _httpClient.GetAsync($"chats/{chat.Id}/messages");
+                using var response = await _httpClient.GetAsync($"chats/{chatId}/messages");
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();

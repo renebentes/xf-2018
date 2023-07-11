@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="NossoChat.Pages.ChatPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:templates="clr-namespace:NossoChat.Templates"
+    xmlns:viewModels="clr-namespace:NossoChat.ViewModels"
+    x:DataType="viewModels:ChatViewModel">
+
+    <StackLayout Margin="10,0">
+        <CollectionView
+            EmptyView="Chat não iniciado"
+            ItemTemplate="{templates:MessageDataTemplateSelector}"
+            ItemsSource="{Binding Messages}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout
+                    ItemSpacing="2"
+                    Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+        </CollectionView>
+
+        <FlexLayout
+            AlignContent="SpaceBetween"
+            Direction="Row">
+            <Frame
+                Padding="0"
+                FlexLayout.Grow="1"
+                Style="{StaticResource OutlinePrimaryBorder}">
+                <Entry Placeholder="Mensagem" />
+            </Frame>
+            <Button Text="Enviar" />
+        </FlexLayout>
+    </StackLayout>
+</ContentPage>

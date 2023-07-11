@@ -60,7 +60,7 @@ namespace NossoChat.Services
         {
             try
             {
-                using var response = await _httpClient.GetAsync($"chats/{chatId}/messages");
+                using var response = await _httpClient.GetAsync($"chats/{chatId}/messages?_expand=user");
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();

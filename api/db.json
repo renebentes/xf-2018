@@ -5,8 +5,7 @@
   ],
   "chats": [
     { "id": 1, "name": "1º chat" },
-    { "id": 2, "name": "2º chat" },
-    { "id": 3, "name": "3º chat" }
+    { "id": 2, "name": "Lorem ipsum" }
   ],
   "messages": [
     {
@@ -25,6 +24,18 @@
       "id": 3,
       "content": "bom dia",
       "chatId": 1,
+      "userId": 2
+    },
+    {
+      "id": 4,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "chatId": 2,
+      "userId": 1
+    },
+    {
+      "id": 5,
+      "content": "Pellentesque non dolor interdum, finibus massa id, ullamcorper erat.",
+      "chatId": 2,
       "userId": 2
     }
   ]

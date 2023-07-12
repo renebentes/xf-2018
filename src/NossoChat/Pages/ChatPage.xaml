@@ -7,7 +7,7 @@
     xmlns:viewModels="clr-namespace:NossoChat.ViewModels"
     x:DataType="viewModels:ChatViewModel">
 
-    <StackLayout Margin="10,0">
+    <StackLayout Margin="10">
         <CollectionView
             EmptyView="Chat não iniciado"
             ItemTemplate="{templates:MessageDataTemplateSelector}"
@@ -26,9 +26,13 @@
                 Padding="0"
                 FlexLayout.Grow="1"
                 Style="{StaticResource OutlinePrimaryBorder}">
-                <Entry Placeholder="Mensagem" />
+                <Entry
+                    Placeholder="Mensagem"
+                    Text="{Binding NewMessage}" />
             </Frame>
-            <Button Text="Enviar" />
+            <Button
+                Command="{Binding SendMessageCommand}"
+                Text="Enviar" />
         </FlexLayout>
     </StackLayout>
 </ContentPage>

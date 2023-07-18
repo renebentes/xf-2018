@@ -6,11 +6,11 @@ namespace NossoChat.Templates;
 
 public class MessageDataTemplateSelector : DataTemplateSelector
 {
-    public DataTemplate DefaultMessageTemplate
-        => new(typeof(DefaultMessageTemplate));
+    public DataTemplate IncomingMessageTemplate
+        => new(typeof(IncomingMessageTemplate));
 
-    public DataTemplate OwnMessageTemplate
-        => new(typeof(OwnMessageTemplate));
+    public DataTemplate OutgoingMessageTemplate
+        => new(typeof(OutgoingMessageTemplate));
 
     protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
     {
@@ -20,10 +20,10 @@ public class MessageDataTemplateSelector : DataTemplateSelector
 
             if (message.UserId == loggedUser.Id)
             {
-                return OwnMessageTemplate;
+                return OutgoingMessageTemplate;
             }
         }
 
-        return DefaultMessageTemplate;
+        return IncomingMessageTemplate;
     }
 }

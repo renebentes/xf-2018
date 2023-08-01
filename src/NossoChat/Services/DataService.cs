@@ -1,171 +1,170 @@
 using NossoChat.Models;
 
-namespace NossoChat.Services
+namespace NossoChat.Services;
+
+public class DataService
 {
-    public class DataService
+    private const string BaseUrl = "https://xf-2018.azurewebsites.net/";
+    private readonly HttpClient _httpClient;
+    private readonly JsonSerializerOptions _jsonSerializerOptions;
+
+    public DataService()
     {
-        private const string BaseUrl = "https://xf-2018.azurewebsites.net/";
-        private readonly HttpClient _httpClient;
-        private readonly JsonSerializerOptions _jsonSerializerOptions;
-
-        public DataService()
+        _httpClient = new HttpClient
         {
-            _httpClient = new HttpClient
-            {
-                BaseAddress = new Uri(BaseUrl)
-            };
+            BaseAddress = new Uri(BaseUrl)
+        };
 
-            _jsonSerializerOptions = new JsonSerializerOptions
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                WriteIndented = true
-            };
+        _jsonSerializerOptions = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            WriteIndented = true
+        };
+    }
+
+    public async Task<bool> AddChat(Chat chat)
+    {
+        try
+        {
+            var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
+            using var content = new StringContent(json, Encoding.UTF8, "application/json");
+            using var response = await _httpClient.PostAsync("chats", content);
+
+            return response.IsSuccessStatusCode;
         }
-
-        public async Task<bool> AddChat(Chat chat)
+        catch (Exception e)
         {
-            try
-            {
-                var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
-                using var content = new StringContent(json, Encoding.UTF8, "application/json");
-                using var response = await _httpClient.PostAsync("chats", content);
-
-                return response.IsSuccessStatusCode;
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
-            }
+            Debug.WriteLine(e);
+            throw;
         }
+    }
 
-        public async Task<bool> AddMessage(Message message)
+    public async Task<bool> AddMessage(Message message)
+    {
+        try
         {
-            try
-            {
-                var json = JsonSerializer.Serialize(message, _jsonSerializerOptions);
-                using var content = new StringContent(json, Encoding.UTF8, "application/json");
-                using var response = await _httpClient.PostAsync("messages", content);
+            var json = JsonSerializer.Serialize(message, _jsonSerializerOptions);
+            using var content = new StringContent(json, Encoding.UTF8, "application/json");
+            using var response = await _httpClient.PostAsync("messages", content);
 
-                return response.IsSuccessStatusCode;
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
-            }
+            return response.IsSuccessStatusCode;
         }
-
-        public async Task<IList<Message>> GetChatMessages(int chatId)
+        catch (Exception e)
         {
-            try
-            {
-                using var response = await _httpClient.GetAsync($"chats/{chatId}/messages?_expand=user");
-                if (response.IsSuccessStatusCode)
-                {
-                    var content = await response.Content.ReadAsStringAsync();
-                    return JsonSerializer.Deserialize<IList<Message>>(content, _jsonSerializerOptions)
-                        ?? throw new InvalidOperationException();
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
-            }
-
-            return Enumerable.Empty<Message>().ToList();
+            Debug.WriteLine(e);
+            throw;
         }
+    }
 
-        public async Task<IList<Chat>> GetChats()
+    public async Task<IList<Message>> GetChatMessages(int chatId)
+    {
+        try
         {
-            try
+            using var response = await _httpClient.GetAsync($"chats/{chatId}/messages?_expand=user");
+            if (response.IsSuccessStatusCode)
             {
-                using var response = await _httpClient.GetAsync("chats");
-                if (response.IsSuccessStatusCode)
-                {
-                    var content = await response.Content.ReadAsStringAsync();
-                    return JsonSerializer.Deserialize<IList<Chat>>(content, _jsonSerializerOptions)
-                        ?? throw new InvalidOperationException();
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
-            }
-
-            return Enumerable.Empty<Chat>().ToList();
-        }
-
-        public async Task<User> GetUser(User user)
-        {
-            try
-            {
-                using var response = await _httpClient.GetAsync($"users/?username={user.Username}&password={user.Password}");
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var content = await response.Content.ReadAsStringAsync();
-                    var users = JsonSerializer.Deserialize<IList<User>>(content, _jsonSerializerOptions);
-
-                    return users.SingleOrDefault();
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
-            }
-
-            return new User();
-        }
-
-        public async Task<bool> RemoveChat(Chat chat)
-        {
-            try
-            {
-                using var response = await _httpClient.DeleteAsync($"chats/{chat.Id}");
-
-                return response.IsSuccessStatusCode;
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<IList<Message>>(content, _jsonSerializerOptions)
+                    ?? throw new InvalidOperationException();
             }
         }
-
-        public async Task<bool> RemoveMessage(Message message)
+        catch (Exception e)
         {
-            try
-            {
-                using var response = await _httpClient.DeleteAsync($"messages/{message.Id}");
-
-                return response.IsSuccessStatusCode;
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-                throw;
-            }
+            Debug.WriteLine(e);
+            throw;
         }
 
-        public async Task<bool> RenameChat(Chat chat)
-        {
-            try
-            {
-                var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
-                using var content = new StringContent(json, Encoding.UTF8, "application/json");
-                using var response = await _httpClient.PutAsync($"chats/{chat.Id}", content);
+        return Enumerable.Empty<Message>().ToList();
+    }
 
-                return response.IsSuccessStatusCode;
-            }
-            catch (Exception e)
+    public async Task<IList<Chat>> GetChats()
+    {
+        try
+        {
+            using var response = await _httpClient.GetAsync("chats");
+            if (response.IsSuccessStatusCode)
             {
-                Debug.WriteLine(e);
-                throw;
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<IList<Chat>>(content, _jsonSerializerOptions)
+                    ?? throw new InvalidOperationException();
             }
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e);
+            throw;
+        }
+
+        return Enumerable.Empty<Chat>().ToList();
+    }
+
+    public async Task<User> GetUser(User user)
+    {
+        try
+        {
+            using var response = await _httpClient.GetAsync($"users/?username={user.Username}&password={user.Password}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var users = JsonSerializer.Deserialize<IList<User>>(content, _jsonSerializerOptions);
+
+                return users.SingleOrDefault();
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e);
+            throw;
+        }
+
+        return new User();
+    }
+
+    public async Task<bool> RemoveChat(Chat chat)
+    {
+        try
+        {
+            using var response = await _httpClient.DeleteAsync($"chats/{chat.Id}");
+
+            return response.IsSuccessStatusCode;
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e);
+            throw;
+        }
+    }
+
+    public async Task<bool> RemoveMessage(Message message)
+    {
+        try
+        {
+            using var response = await _httpClient.DeleteAsync($"messages/{message.Id}");
+
+            return response.IsSuccessStatusCode;
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e);
+            throw;
+        }
+    }
+
+    public async Task<bool> RenameChat(Chat chat)
+    {
+        try
+        {
+            var json = JsonSerializer.Serialize(chat, _jsonSerializerOptions);
+            using var content = new StringContent(json, Encoding.UTF8, "application/json");
+            using var response = await _httpClient.PutAsync($"chats/{chat.Id}", content);
+
+            return response.IsSuccessStatusCode;
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e);
+            throw;
         }
     }
 }

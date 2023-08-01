@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ViewCell
+<ContentView
     x:Class="NossoChat.Templates.OutgoingMessageTemplate"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:NossoChat.Models"
-    xmlns:viewModels="clr-namespace:NossoChat.ViewModels"
-    x:DataType="viewModels:ChatViewModel">
+    x:DataType="models:Message">
 
-    <ViewCell.ContextActions>
-        <MenuItem Text="Excluir" />
-    </ViewCell.ContextActions>
+    <Frame
+        Padding="10"
+        BackgroundColor="{StaticResource PrimayColor}"
+        HorizontalOptions="End">
 
-    <StackLayout>
+        <Label Text="{Binding Content}" />
 
-        <Label Text="texto" />
+    </Frame>
 
-        <Frame
-            Padding="10"
-            x:DataType="models:Message"
-            BackgroundColor="{StaticResource PrimayColor}"
-            HorizontalOptions="End">
-
-            <Label Text="{Binding Content}" />
-
-        </Frame>
-    </StackLayout>
-
-</ViewCell>
+</ContentView>

@@ -5,16 +5,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:NossoChat.Models"
     x:DataType="models:Message">
-
     <Frame
         Padding="10"
         HorizontalOptions="Start"
         Style="{StaticResource OutlinePrimaryBorder}">
         <StackLayout Spacing="0">
-            <Label Text="{Binding Content}" />
+            <Label
+                Text="{Binding Content}"
+                TextColor="{StaticResource PrimayColor}" />
             <Label
                 FontSize="10"
-                Text="{Binding User.Username}" />
+                Text="{Binding User.Username}"
+                TextColor="{StaticResource PrimayColor}" />
         </StackLayout>
     </Frame>
 </ContentView>

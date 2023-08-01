@@ -9,7 +9,7 @@ public class MessageDataTemplateSelector : DataTemplateSelector
     public DataTemplate IncomingMessageTemplate
         => new(typeof(IncomingMessageTemplate));
 
-    public DataTemplate OutgoingMessageTemplate
+    public DataTemplate OwnMessageTemplate
         => new(typeof(OutgoingMessageTemplate));
 
     protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
@@ -20,7 +20,7 @@ public class MessageDataTemplateSelector : DataTemplateSelector
 
             if (message.UserId == loggedUser.Id)
             {
-                return OutgoingMessageTemplate;
+                return OwnMessageTemplate;
             }
         }
 

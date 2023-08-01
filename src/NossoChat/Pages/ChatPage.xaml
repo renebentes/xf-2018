@@ -7,11 +7,23 @@
     xmlns:viewModels="clr-namespace:NossoChat.ViewModels"
     x:DataType="viewModels:ChatViewModel">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Command="{Binding DeleteMessageCommand}"
+            CommandParameter="{Binding SelectedMessage}"
+            IconImageSource="{OnPlatform Default='delete.png',
+                                         UWP='Assets/delete.png'}"
+            Order="Primary"
+            Text="Excluir mensagem" />
+    </ContentPage.ToolbarItems>
+
     <StackLayout Margin="10">
         <CollectionView
             EmptyView="Chat não iniciado"
             ItemTemplate="{templates:MessageDataTemplateSelector}"
-            ItemsSource="{Binding Messages}">
+            ItemsSource="{Binding Messages}"
+            SelectedItem="{Binding SelectedMessage}"
+            SelectionMode="Single">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout
                     ItemSpacing="2"

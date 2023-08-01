@@ -11,6 +11,7 @@ public class ChatViewModel : BaseViewModel
 {
     private Chat _chat = default!;
     private string _newMessage = string.Empty;
+    private Message _selectedMessage = default!;
 
     public ChatViewModel(Chat chat)
         => Chat = chat;
@@ -28,6 +29,9 @@ public class ChatViewModel : BaseViewModel
             LoadMessagesCommand.Execute(value);
         }
     }
+
+    public ICommand DeleteMessageCommand
+        => new Command<Message>(async (message) => await DeleteMessage(message), (Message message) => message is not null);
 
     public ICommand LoadMessagesCommand
         => new Command<Chat>(async (chat) => await LoadMessages(chat));
@@ -47,8 +51,33 @@ public class ChatViewModel : BaseViewModel
         }
     }
 
+    public Message SelectedMessage
+    {
+        get => _selectedMessage;
+        set
+        {
+            if (_selectedMessage == value)
+                return;
+
+            _selectedMessage = value;
+            OnPropertyChanged();
+            ((Command)DeleteMessageCommand).ChangeCanExecute();
+        }
+    }
+
     public ICommand SendMessageCommand
         => new Command(async () => await SendMessage());
+
+    private async Task DeleteMessage(Message message)
+    {
+        var isRemoved = await DataService.RemoveMessage(message);
+        if (!isRemoved)
+        {
+            await Application.Current.MainPage.DisplayAlert("Erro", "Não foi possível remover a mensagem", "Ok");
+        }
+
+        await LoadMessages(Chat);
+    }
 
     private async Task LoadMessages(Chat chat)
     {

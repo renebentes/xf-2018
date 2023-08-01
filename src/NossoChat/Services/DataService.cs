@@ -140,7 +140,7 @@ namespace NossoChat.Services
         {
             try
             {
-                using var response = await _httpClient.DeleteAsync($"chats/{message.ChatId}/messages/{message.Id}");
+                using var response = await _httpClient.DeleteAsync($"messages/{message.Id}");
 
                 return response.IsSuccessStatusCode;
             }

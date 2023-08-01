@@ -28,8 +28,7 @@
 
     <CollectionView
         BackgroundColor="White"
-        ItemsSource="{Binding Chats}"
-        SelectionMode="Single">
+        ItemsSource="{Binding Chats}">
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:Chat">
                 <Label

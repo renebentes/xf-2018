@@ -18,9 +18,10 @@ public class AddChatViewModel : BaseViewModel
         }
     }
 
-    public ICommand SaveCommand => new Command(async () => await OnSave());
+    public ICommand SaveCommand
+        => new Command(async () => await Save());
 
-    private async Task OnSave()
+    private async Task Save()
     {
         var chat = new Chat
         {

@@ -97,7 +97,16 @@ public class ChatViewModel : BaseViewModel
             UserId = user.Id
         };
 
-        _ = await DataService.AddMessage(newMessage);
+        var isSaved = await DataService.AddMessage(newMessage);
+        if (isSaved)
+        {
+            NewMessage = string.Empty;
+        }
+        else
+        {
+            await Application.Current.MainPage.DisplayAlert("Erro", "Não foi possível enviar a mensagem", "Ok");
+        }
+
         await LoadMessages(Chat);
     }
 }

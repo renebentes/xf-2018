@@ -43,5 +43,9 @@ public class ChatsViewModel : BaseViewModel
     }
 
     private void SortData()
-        => Chats = (ObservableCollection<Chat>)Chats.OrderBy(c => c.Name);
+    {
+        var ordered = Chats.OrderBy(c => c.Name).ToList();
+        Chats.Clear();
+        ordered.ForEach(chat => Chats.Add(chat));
+    }
 }

@@ -26,7 +26,8 @@
             SelectionMode="Single">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout
-                    ItemSpacing="2"
+                    ItemSpacing="{OnPlatform UWP=2,
+                                             Default=10}"
                     Orientation="Vertical" />
             </CollectionView.ItemsLayout>
         </CollectionView>

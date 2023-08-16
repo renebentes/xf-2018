@@ -2,6 +2,7 @@ using NossoChat.Models;
 using NossoChat.Services;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -31,24 +32,17 @@ public class ChatViewModel : BaseViewModel
     }
 
     public ICommand DeleteMessageCommand
-        => new Command<Message>(async (message) => await DeleteMessage(message), (Message message) => message is not null);
+        => CommandFactory.Create(async (message) => await DeleteMessage(message), (Message message) => message is not null);
 
     public ICommand LoadMessagesCommand
-        => new Command<Chat>(async (chat) => await LoadMessages(chat));
+        => CommandFactory.Create<Chat>(async (chat) => await LoadMessages(chat));
 
     public ObservableCollection<Message> Messages { get; } = new ObservableCollection<Message>();
 
     public string NewMessage
     {
         get => _newMessage;
-        set
-        {
-            if (_newMessage != value)
-            {
-                _newMessage = value;
-                OnPropertyChanged();
-            }
-        }
+        set => SetProperty(ref _newMessage, value);
     }
 
     public Message SelectedMessage
@@ -66,7 +60,7 @@ public class ChatViewModel : BaseViewModel
     }
 
     public ICommand SendMessageCommand
-        => new Command(async () => await SendMessage());
+        => CommandFactory.Create(async () => await SendMessage());
 
     private async Task DeleteMessage(Message message)
     {

@@ -2,6 +2,7 @@ using NossoChat.Models;
 using NossoChat.Pages;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -12,15 +13,19 @@ public class ChatsViewModel : BaseViewModel
     public ChatsViewModel()
         => LoadDataCommand.Execute(null);
 
-    public ICommand AddCommand => new Command(async () => await AddChat());
+    public ICommand AddCommand
+        => CommandFactory.Create(async () => await AddChat());
 
     public ObservableCollection<Chat> Chats { get; private set; } = new ObservableCollection<Chat>();
 
-    public ICommand GetChatMessagesCommand => new Command<Chat>(async (chat) => await GetChatMessages(chat));
+    public ICommand GetChatMessagesCommand
+        => CommandFactory.Create<Chat>(async (chat) => await GetChatMessages(chat));
 
-    public ICommand LoadDataCommand => new Command(async () => await LoadDataAsync());
+    public ICommand LoadDataCommand
+        => CommandFactory.Create(async () => await LoadDataAsync());
 
-    public ICommand SortCommand => new Command(SortData);
+    public ICommand SortCommand
+        => CommandFactory.Create(SortData);
 
     private Task AddChat()
         => Application.Current.MainPage.Navigation.PushAsync(new AddChatPage());

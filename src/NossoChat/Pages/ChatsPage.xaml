@@ -5,7 +5,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:NossoChat.Models"
     xmlns:viewModels="clr-namespace:NossoChat.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     x:DataType="viewModels:ChatsViewModel">
+
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior
+            Command="{Binding LoadDataCommand}"
+            EventName="Appearing" />
+    </ContentPage.Behaviors>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem

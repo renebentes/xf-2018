@@ -1,5 +1,6 @@
 using NossoChat.Models;
 using System.Windows.Input;
+using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 
 namespace NossoChat.ViewModels;
@@ -11,15 +12,11 @@ public class AddChatViewModel : BaseViewModel
     public string Name
     {
         get => _name;
-        set
-        {
-            _name = value;
-            OnPropertyChanged();
-        }
+        set => SetProperty(ref _name, value);
     }
 
     public ICommand SaveCommand
-        => new Command(async () => await Save());
+        => CommandFactory.Create(async () => await Save());
 
     private async Task Save()
     {

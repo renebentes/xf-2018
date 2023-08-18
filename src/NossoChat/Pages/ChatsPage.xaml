@@ -45,7 +45,7 @@
                     TextColor="{StaticResource PrimayColor}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:ChatsViewModel}}, Path=GetChatMessagesCommand}"
+                            Command="{Binding GetChatMessagesCommand, Source={RelativeSource AncestorType={x:Type viewModels:ChatsViewModel}}}"
                             CommandParameter="{Binding .}" />
                     </Label.GestureRecognizers>
                 </Label>

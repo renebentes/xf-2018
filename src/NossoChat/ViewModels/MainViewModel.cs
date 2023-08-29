@@ -1,33 +1,22 @@
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using NossoChat.Models;
 using NossoChat.Pages;
 using NossoChat.Services;
-using System.Windows.Input;
-using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 
 namespace NossoChat.ViewModels;
 
-public class MainViewModel : BaseViewModel
+public partial class MainViewModel : BaseViewModel
 {
+    [ObservableProperty]
     private string _password = string.Empty;
+
+    [ObservableProperty]
     private string _username = string.Empty;
 
-    public ICommand EnterCommand
-        => CommandFactory.Create(OnEnterCommand);
-
-    public string Password
-    {
-        get => _password;
-        set => SetProperty(ref _password, value);
-    }
-
-    public string Username
-    {
-        get => _username;
-        set => SetProperty(ref _username, value);
-    }
-
-    private async Task OnEnterCommand()
+    [RelayCommand]
+    private async Task SignIn()
     {
         var user = new User
         {

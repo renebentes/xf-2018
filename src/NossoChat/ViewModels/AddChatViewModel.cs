@@ -1,23 +1,16 @@
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using NossoChat.Models;
-using System.Windows.Input;
-using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 
 namespace NossoChat.ViewModels;
 
-public class AddChatViewModel : BaseViewModel
+public partial class AddChatViewModel : BaseViewModel
 {
+    [ObservableProperty]
     private string _name = string.Empty;
 
-    public string Name
-    {
-        get => _name;
-        set => SetProperty(ref _name, value);
-    }
-
-    public ICommand SaveCommand
-        => CommandFactory.Create(async () => await Save());
-
+    [RelayCommand]
     private async Task Save()
     {
         var chat = new Chat

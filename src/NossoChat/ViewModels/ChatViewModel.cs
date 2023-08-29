@@ -1,67 +1,41 @@
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using NossoChat.Models;
 using NossoChat.Services;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
-using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace NossoChat.ViewModels;
 
-public class ChatViewModel : BaseViewModel
+public partial class ChatViewModel : BaseViewModel
 {
+    [ObservableProperty]
     private Chat _chat = default!;
+
+    [ObservableProperty]
     private string _newMessage = string.Empty;
+
     private Message _selectedMessage = default!;
 
     public ChatViewModel(Chat chat)
         => Chat = chat;
 
-    public Chat Chat
-    {
-        get => _chat;
-        set
-        {
-            if (_chat == value)
-                return;
-
-            _chat = value;
-            OnPropertyChanged();
-            LoadMessagesCommand.Execute(value);
-        }
-    }
-
-    public ICommand DeleteMessageCommand
-        => CommandFactory.Create(async (message) => await DeleteMessage(message), (Message message) => message is not null);
-
-    public ICommand LoadMessagesCommand
-        => CommandFactory.Create<Chat>(async (chat) => await LoadMessages(chat));
-
     public ObservableCollection<Message> Messages { get; } = new ObservableCollection<Message>();
-
-    public string NewMessage
-    {
-        get => _newMessage;
-        set => SetProperty(ref _newMessage, value);
-    }
 
     public Message SelectedMessage
     {
         get => _selectedMessage;
         set
         {
-            if (_selectedMessage == value)
-                return;
-
-            _selectedMessage = value;
-            OnPropertyChanged();
-            ((Command)DeleteMessageCommand).ChangeCanExecute();
+            _ = SetProperty(ref _selectedMessage, value);
+            DeleteMessageCommand.NotifyCanExecuteChanged();
         }
     }
 
-    public ICommand SendMessageCommand
-        => CommandFactory.Create(async () => await SendMessage());
+    private bool CanDeleteMessage => SelectedMessage is not null;
 
+    [RelayCommand(CanExecute = nameof(CanDeleteMessage))]
     private async Task DeleteMessage(Message message)
     {
         var isRemoved = await DataService.RemoveMessage(message);
@@ -73,6 +47,7 @@ public class ChatViewModel : BaseViewModel
         await LoadMessages(Chat);
     }
 
+    [RelayCommand]
     private async Task LoadMessages(Chat chat)
     {
         Messages.Clear();
@@ -81,6 +56,7 @@ public class ChatViewModel : BaseViewModel
         messages.ForEach(message => Messages.Add(message));
     }
 
+    [RelayCommand]
     private async Task SendMessage()
     {
         var user = PreferenceService.GetUser();

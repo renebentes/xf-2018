@@ -16,12 +16,12 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-            Command="{Binding AddCommand}"
+            Command="{Binding AddChatCommand}"
             IconImageSource="{OnPlatform Default=add.png,
                                          UWP=Assets/add.png}"
             Text="Novo chat" />
         <ToolbarItem
-            Command="{Binding SortCommand}"
+            Command="{Binding SortDataCommand}"
             IconImageSource="{OnPlatform Default=sort.png,
                                          UWP=Assets/sort.png}"
             Text="Ordernar" />

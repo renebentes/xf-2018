@@ -1,43 +1,24 @@
+using CommunityToolkit.Mvvm.Input;
 using NossoChat.Models;
 using NossoChat.Pages;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace NossoChat.ViewModels;
 
-public class ChatsViewModel : BaseViewModel
+public partial class ChatsViewModel : BaseViewModel
 {
-    public ChatsViewModel()
-        => LoadDataCommand.Execute(null);
-
-    public ICommand AddCommand
-        => CommandFactory.Create(async () => await AddChat());
-
     public ObservableCollection<Chat> Chats { get; private set; } = new ObservableCollection<Chat>();
 
-    public ICommand GetChatMessagesCommand
-        => CommandFactory.Create<Chat>(async (chat) => await GetChatMessages(chat));
-
-    public ICommand LoadDataCommand
-        => CommandFactory.Create(async () => await LoadDataAsync());
-
-    public ICommand SortCommand
-        => CommandFactory.Create(SortData);
-
+    [RelayCommand]
     private Task AddChat()
-        => Application.Current.MainPage.Navigation.PushAsync(new AddChatPage());
+        => Navigation.PushAsync(new AddChatPage());
 
+    [RelayCommand]
     private async Task GetChatMessages(Chat chat)
-    {
-        if (chat is null)
-            return;
+        => await Navigation.PushAsync(new ChatPage(chat));
 
-        await Application.Current.MainPage.Navigation.PushAsync(new ChatPage(chat));
-    }
-
+    [RelayCommand]
     private async Task LoadDataAsync()
     {
         var chats = await DataService.GetChats();
@@ -47,6 +28,7 @@ public class ChatsViewModel : BaseViewModel
         chats.ForEach(chat => Chats.Add(chat));
     }
 
+    [RelayCommand]
     private void SortData()
     {
         var ordered = Chats.OrderBy(c => c.Name).ToList();

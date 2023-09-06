@@ -34,6 +34,6 @@ public partial class MainViewModel : BaseViewModel
 
         PreferenceService.SaveUser(loggedUser);
 
-        Application.Current.MainPage = new NavigationPage(new ChatsPage());
+        await Navigation.PushAsync(new ChatsPage());
     }
 }

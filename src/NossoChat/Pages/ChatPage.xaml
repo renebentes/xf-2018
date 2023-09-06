@@ -11,6 +11,7 @@
     <ContentPage.Behaviors>
         <xct:EventToCommandBehavior
             Command="{Binding LoadMessagesCommand}"
+            CommandParameter="{Binding Chat}"
             EventName="Appearing" />
     </ContentPage.Behaviors>
 

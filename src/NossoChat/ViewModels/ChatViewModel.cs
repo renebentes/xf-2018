@@ -59,7 +59,7 @@ public partial class ChatViewModel : BaseViewModel
     [RelayCommand]
     private async Task SendMessage()
     {
-        var user = PreferenceService.GetUser();
+        var user = SettingsService.GetUser();
         var newMessage = new Message
         {
             ChatId = Chat.Id,

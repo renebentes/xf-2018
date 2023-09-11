@@ -16,7 +16,7 @@ public class MessageDataTemplateSelector : DataTemplateSelector
     {
         if (item is Message message)
         {
-            var loggedUser = PreferenceService.GetUser();
+            var loggedUser = SettingsService.GetUser();
 
             if (message.UserId == loggedUser.Id)
             {

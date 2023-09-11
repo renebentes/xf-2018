@@ -26,13 +26,13 @@ public partial class MainViewModel : BaseViewModel
 
         var loggedUser = await DataService.GetUser(user);
 
-        if (loggedUser.Id == 0)
+        if (loggedUser?.Id == 0)
         {
             await Application.Current.MainPage.DisplayAlert("Erro", "Nome de usuário ou senha inválidos", "Ok");
             return;
         }
 
-        PreferenceService.SaveUser(loggedUser);
+        SettingsService.SaveUser(loggedUser);
 
         await Navigation.PushAsync(new ChatsPage());
     }

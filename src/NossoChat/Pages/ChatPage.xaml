@@ -25,8 +25,12 @@
             Text="Excluir mensagem" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout Margin="10">
+    <Grid
+        Margin="10"
+        RowDefinitions="*,35"
+        RowSpacing="0">
         <CollectionView
+            Grid.Row="0"
             EmptyView="Chat não iniciado"
             ItemTemplate="{templates:MessageDataTemplateSelector}"
             ItemsSource="{Binding Messages}"
@@ -41,6 +45,7 @@
         </CollectionView>
 
         <FlexLayout
+            Grid.Row="1"
             AlignContent="SpaceBetween"
             Direction="Row">
             <Frame
@@ -55,5 +60,15 @@
                 Command="{Binding SendMessageCommand}"
                 Text="Enviar" />
         </FlexLayout>
-    </StackLayout>
+
+        <StackLayout
+            Grid.RowSpan="2"
+            BackgroundColor="{StaticResource PrimayColor}"
+            IsVisible="{Binding LoadMessagesCommand.IsRunning}">
+            <ActivityIndicator
+                IsRunning="True"
+                VerticalOptions="CenterAndExpand"
+                Color="White" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

@@ -33,23 +33,34 @@
             Text="Recarregar" />
     </ContentPage.ToolbarItems>
 
-    <CollectionView
-        BackgroundColor="White"
-        ItemsSource="{Binding Chats}"
-        SelectionMode="None">
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="models:Chat">
-                <Label
-                    Padding="10,0"
-                    Text="{Binding Name}"
-                    TextColor="{StaticResource PrimayColor}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding GetChatMessagesCommand, Source={RelativeSource AncestorType={x:Type viewModels:ChatsViewModel}}}"
-                            CommandParameter="{Binding .}" />
-                    </Label.GestureRecognizers>
-                </Label>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <Grid>
+        <CollectionView
+            BackgroundColor="White"
+            ItemsSource="{Binding Chats}"
+            SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Chat">
+                    <Label
+                        Padding="10,0"
+                        Text="{Binding Name}"
+                        TextColor="{StaticResource PrimayColor}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding GetChatMessagesCommand, Source={RelativeSource AncestorType={x:Type viewModels:ChatsViewModel}}}"
+                                CommandParameter="{Binding .}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <StackLayout
+            BackgroundColor="{StaticResource PrimayColor}"
+            IsVisible="{Binding GetChatMessagesCommand.IsRunning}">
+            <ActivityIndicator
+                IsRunning="True"
+                VerticalOptions="CenterAndExpand"
+                Color="White" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

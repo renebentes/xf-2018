@@ -53,7 +53,7 @@ public partial class ChatViewModel : BaseViewModel
     {
         Messages.Clear();
 
-        var messages = await DataService.GetChatMessages(chat.Id);
+        IList<Message> messages = await DataService.GetChatMessages(chat.Id);
         messages.ForEach(message => Messages.Add(message));
     }
 

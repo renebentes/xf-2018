@@ -37,15 +37,16 @@ public partial class ChatViewModel : BaseViewModel
 
     [RelayCommand(CanExecute = nameof(CanDeleteMessage))]
     private async Task DeleteMessage(Message message)
-    {
-        var isRemoved = await DataService.RemoveMessage(message);
-        if (!isRemoved)
+        => await ExecuteAsync(async () =>
         {
-            await Application.Current.MainPage.DisplayAlert("Erro", "Não foi possível remover a mensagem", "Ok");
-        }
+            var isRemoved = await DataService.RemoveMessage(message);
+            if (!isRemoved)
+            {
+                await Application.Current.MainPage.DisplayAlert("Erro", "Não foi possível remover a mensagem", "Ok");
+            }
 
-        await LoadMessages(Chat);
-    }
+            await LoadMessages(Chat);
+        });
 
     [RelayCommand]
     private async Task LoadMessages(Chat chat)

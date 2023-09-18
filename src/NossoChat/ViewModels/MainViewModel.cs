@@ -17,23 +17,24 @@ public partial class MainViewModel : BaseViewModel
 
     [RelayCommand]
     private async Task SignIn()
-    {
-        var user = new User
+        => await ExecuteAsync(async () =>
         {
-            Username = Username,
-            Password = Password
-        };
+            var user = new User
+            {
+                Username = Username,
+                Password = Password
+            };
 
-        var loggedUser = await DataService.GetUser(user);
+            var loggedUser = await DataService.GetUser(user);
 
-        if (loggedUser?.Id == 0)
-        {
-            await Application.Current.MainPage.DisplayAlert("Erro", "Nome de usuário ou senha inválidos", "Ok");
-            return;
-        }
+            if (loggedUser?.Id == 0)
+            {
+                await Application.Current.MainPage.DisplayAlert("Erro", "Nome de usuário ou senha inválidos", "Ok");
+                return;
+            }
 
-        SettingsService.SaveUser(loggedUser);
+            SettingsService.SaveUser(loggedUser);
 
-        await Navigation.PushAsync(new ChatsPage());
-    }
+            await Navigation.PushAsync(new ChatsPage());
+        });
 }

@@ -15,6 +15,19 @@ public abstract partial class BaseViewModel : ObservableObject
     protected INavigation Navigation
         => Application.Current.MainPage.Navigation;
 
+    protected async Task ExecuteAsync(
+        Func<Task> action)
+    {
+        try
+        {
+            await action?.Invoke();
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex);
+        }
+    }
+
     [RelayCommand]
     private Task NavigateTo(Page? page)
         => page is not null ? Navigation.PushAsync(page) : Task.CompletedTask;

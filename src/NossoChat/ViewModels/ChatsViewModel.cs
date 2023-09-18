@@ -20,13 +20,14 @@ public partial class ChatsViewModel : BaseViewModel
 
     [RelayCommand]
     private async Task LoadDataAsync()
-    {
-        var chats = await DataService.GetChats();
+        => await ExecuteAsync(async () =>
+        {
+            var chats = await DataService.GetChats();
 
-        Chats.Clear();
+            Chats.Clear();
 
-        chats.ForEach(chat => Chats.Add(chat));
-    }
+            chats.ForEach(chat => Chats.Add(chat));
+        });
 
     [RelayCommand]
     private void SortData()

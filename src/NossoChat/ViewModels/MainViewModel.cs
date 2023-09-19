@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using NossoChat.Models;
 using NossoChat.Pages;
 using NossoChat.Services;
-using Xamarin.Forms;
 
 namespace NossoChat.ViewModels;
 
@@ -29,7 +28,7 @@ public partial class MainViewModel : BaseViewModel
 
             if (loggedUser?.Id == 0)
             {
-                await Application.Current.MainPage.DisplayAlert("Erro", "Nome de usuário ou senha inválidos", "Ok");
+                await DisplayAlertAsync("Erro", "Nome de usuário ou senha inválidos", "Ok");
                 return;
             }
 

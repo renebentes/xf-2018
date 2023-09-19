@@ -1,6 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using NossoChat.Services;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace NossoChat.ViewModels;
@@ -15,8 +16,10 @@ public abstract partial class BaseViewModel : ObservableObject
     protected INavigation Navigation
         => Application.Current.MainPage.Navigation;
 
-    protected async Task ExecuteAsync(
-        Func<Task> action)
+    protected Task DisplayAlertAsync(string title, string message, string actionButton)
+        => MainThread.InvokeOnMainThreadAsync(async () => await Application.Current.MainPage.DisplayAlert(title, message, actionButton));
+
+    protected async Task ExecuteAsync(Func<Task> action)
     {
         try
         {
@@ -24,6 +27,7 @@ public abstract partial class BaseViewModel : ObservableObject
         }
         catch (Exception ex)
         {
+            await DisplayAlertAsync("Erro", "Ocorreu um erro. Por favor, tente novamente!", "Ok");
             Debug.WriteLine(ex);
         }
     }

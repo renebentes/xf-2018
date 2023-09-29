@@ -8,7 +8,7 @@ namespace NossoChat.ViewModels;
 
 public partial class ChatsViewModel : BaseViewModel
 {
-    public ObservableCollection<Chat> Chats { get; private set; } = new ObservableCollection<Chat>();
+    public ObservableCollection<Chat> Chats { get; set; } = new();
 
     [RelayCommand]
     private Task AddChat()

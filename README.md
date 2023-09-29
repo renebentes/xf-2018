@@ -4,6 +4,8 @@
 
 Confira o material original em [Xamarin Forms 2018 - Apps para Android, iOS e UWP - 8 Apps](https://www.udemy.com/course/xamarin-forms-2018-apps-para-android-ios-e-uwp-8-apps).
 
+**NOTA:** A publicação da API foi removida do Azure.
+
 ## Tecnologias Utilizadas
 
 - [Xamarin Forms](https://github.com/xamarin/Xamarin.Forms)
